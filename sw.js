@@ -8,6 +8,10 @@ var URLS = [
   `${GHPATH}/index.html`,
   `${GHPATH}/css/style.css`,
   `${GHPATH}/js/main.js`,
+  `${GHPATH}/js/Info.js`,
+  `${GHPATH}/js/Video.js`,
+  `${GHPATH}/js/Prescription.js`,
+  `${GHPATH}/js/vaadin-router.js`,
   `${GHPATH}/favicon.ico`,
   `${GHPATH}/images/hello-icon-144.png`
 ]
