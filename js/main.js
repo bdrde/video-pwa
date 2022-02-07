@@ -14,3 +14,14 @@ router.setRoutes([
   {path: '/video-pwa/prescription', component: 'x-prescription-view'}
   //{path: '(.*)', component: 'x-login-view'},
 ]);
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const idToken = urlParams.get('id_token')
+
+if (null == idToken) {
+  //alert('not authenticated')
+  document.querySelectorAll(".nav-item").forEach((tag) => {
+    tag.style.background = 'red';
+  })
+}
