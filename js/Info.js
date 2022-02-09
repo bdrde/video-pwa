@@ -17,6 +17,8 @@ class Info extends HTMLElement {
         <p><a href="http://192.168.178.50:9999/authenticate?callback=https://bdrde.github.io/video-pwa/">LOGIN</a></p> \
         <h3>Method 3 (external html redirect)</h3> \
         <p><a href="https://bdrde.github.io/authN/">LOGIN</a></p> \
+        <h3>Logout</h3> \
+        <p><a href="https://bdrde.github.io/video-pwa/">LOGOUT</a></p> \
         ';
     }
 
