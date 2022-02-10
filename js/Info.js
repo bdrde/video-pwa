@@ -14,11 +14,12 @@ class Info extends HTMLElement {
         <h3>Method 1 (custom scheme, Android)</h3> \
         <p><a href="openid://">LOGIN</a></p> \
         <h3>Method 2 (http-redirect, iOS)</h3> \
-        <p><a href="http://192.168.178.50:9999/authenticate?callback=https://bdrde.github.io/video-pwa/">LOGIN</a></p> \
+        <p><a href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">LOGIN</a></p> \
         <h3>Method 3 (external html redirect)</h3> \
         <p><a href="https://bdrde.github.io/authN/">LOGIN</a></p> \
         <h3>Logout</h3> \
         <p><a href="https://bdrde.github.io/video-pwa/">LOGOUT</a></p> \
+        <p><button onclick="window.location.href=\'https://bdrde.github.io/video-pwa/\'">Continue</button></p> \
         ';
     }
 
