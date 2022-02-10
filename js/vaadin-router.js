@@ -2228,7 +2228,7 @@ class Router extends Resolver {
       if (event && event.preventDefault) {
         event.preventDefault();
       }
-      this.render({pathname, search, hash}, true);
+      this.render({pathname, search, hash}, false);
     }
   }
 
