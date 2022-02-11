@@ -19,9 +19,22 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idToken = urlParams.get('id_token')
 
+/*
 if (null == idToken) {
   //alert('not authenticated')
   document.querySelectorAll("header").forEach((tag) => {
     tag.style.background = 'lightcoral';
+  })
+
+}
+*/
+
+if (null == idToken) {
+  document.querySelectorAll("#login-overlay").forEach((tag) => {
+    tag.style.display = 'block';
+  })
+} else {
+  document.querySelectorAll("#login-overlay").forEach((tag) => {
+    tag.style.display = 'none';
   })
 }
