@@ -18,7 +18,7 @@ header {
     width: 100%;
     max-height: 40pt;
     min-height: 30pt;
-    background-color: whitesmoke;
+    background-color: lightgray;
     overflow: auto;
 }
 
@@ -32,7 +32,7 @@ header > div {
 }
 
 nav {
-  height: 50pt;
+  height: 60pt;
   min-height: 35pt;
   max-height: 70pt;
   background-color: whitesmoke;
@@ -90,6 +90,6 @@ main {
 .center-vertically {
     position: absolute;
     top:50%;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     text-align: center;
 }
