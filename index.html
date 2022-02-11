@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/hello-icon-152.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="white" />
+    <meta name="theme-color" content="lightgray" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Hello World">
@@ -19,23 +19,49 @@
     <link rel="manifest" href="/video-pwa/manifest.json">
 </head>
 
-<body class="fullscreen">
-    <div class="container">
-        <!--button onclick="login()">Login</button-->
+<body>
+    <div id="container">
+        <header>
+            <div>
+                Sed ut perspiciatis, unde omnis iste natus
+            </div>
+            <div class="header-right-wrapper">
+                <img src="./images/sign-out.svg" class="nav-icon-signout" onclick="logout()" />
+            </div>
+        </header>
+
         <main>
         </main>
+
         <nav>
-            <a href="/video-pwa/info" class="nav-item">
-                <img src="images/info.svg" />
-            </a>
-            <a href="/video-pwa/video" class="nav-item">
-                <img src="images/camera.svg" />
-            </a>
-            <a href="/video-pwa/prescription" class="nav-item">
-                <img src="images/document-signed.svg" />
-            </a>
+            <ul>
+                <li>
+                    <a href="/video-pwa/info">
+                        <img src="./images/info-filled.svg" class="nav-icon center-vertically" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/video-pwa/video">
+                        <img src="./images/camera-filled.svg" class="nav-icon center-vertically" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/video-pwa/prescription">
+
+                        <img src="./images/document-signed-filled.svg" class="nav-icon center-vertically" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <img src="./images/interrogation-filled.svg" class="nav-icon center-vertically" />
+                    </a>
+                </li>
+            </ul>
         </nav>
+
     </div>
+
 
     <script>
         if (navigator.serviceWorker) {
@@ -43,6 +69,11 @@
                 '/video-pwa/sw.js',
                 { scope: '/video-pwa/' }
             )
+        }
+
+        function logout() {
+            console.log('loggin out');
+            window.location.href = 'https://bdrde.github.io/video-pwa/';
         }
     </script>
     <script type="module" src="js/main.js"></script>

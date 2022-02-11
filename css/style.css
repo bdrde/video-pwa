@@ -1,91 +1,95 @@
-body {
-  font-family: sans-serif;
-}
-
-/* Make content area fill the entire browser window */
 html,
-.fullscreen {
-  display: flex;
+body {
   height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 0;
-  width: 100%;
 }
 
-/* Center the content in the browser window */
-.container {
-  margin: auto;
-  text-align: center;
-}
-
-.title {
-  font-size: 3rem;
-}
-body {
-  font-family: sans-serif;
-}
-
-/* Make content area fill the entire browser window */
-html,
-.fullscreen {
-display: flex;
-height: 100%;
-margin: 0;
-padding: 0;
-width: 100%;
-background-color: lightgray;
-}
-
-/* Center the content in the browser window */
-.container {
+#container {
+  display: flex;
+  flex-flow: column;
   height: 100%;
   width: 100%;
-  margin: auto;
-  text-align: center;
-  background-color: white;
 }
 
-.title {
-  font-size: 3rem;
+header {
+   display: flex;
+   height: 40pt;
+    width: 100%;
+    max-height: 40pt;
+    min-height: 30pt;
+    background-color: whitesmoke;
+    overflow: auto;
 }
 
-main {
-  display: flex;
-  height: 90%;
-  width: 100%;
+header > div {
+  margin: 0;
+}
+
+.header-right-wrapper {
+  margin: 0;
+  margin-left: auto;
 }
 
 nav {
-  height: 10%;
-  width: 100%;
-  /*display:flex;
-  justify-content: space-around;*/
-  display: table;
-  table-layout: fixed;
+  height: 50pt;
+  min-height: 35pt;
+  max-height: 70pt;
+  background-color: whitesmoke;
 
- 
-  border-color: lightgray;
-  border-top-style: solid;
-  border-top-width: 0pt;
 }
 
-.nav-item {
-  display: table-cell;
-  text-align: center;
-  align-items: center;
-}
-/*
-nav > a {
-  display: table-cell;
+nav > ul {
+    display: flex; 
+    justify-content: space-around;
+    height:100%;
+    margin: 0;
+    padding: 0;
+
+    /*position: relative;*/
 }
 
-nav > a:active {
-  background-color: lightgray;
-}
-*/
-nav > a > img {
-margin: 0;
-  max-height: 40px;
-  height: auto;
+/* navigational item (menu item)*/
+nav > ul > li {
+    display: block;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+
+    overflow: hidden;
+
+    /* centering vertically, see also -nav-icon */
+    position: relative;
+    border-color: lightgray;
+    border-top-width: 1pt;
+    border-top-style: solid;
+
+    /*
+    border-right-width: 1pt;
+    border-right-style: solid;
+    */
+     
 }
 
+
+main {
+  background-color: white;
+  flex-grow : 1;
+  overflow: auto;
+}
+
+
+.nav-icon {    
+    height: 30pt;
+}
+
+.nav-icon-signout {    
+  height: 30pt;
+}
+
+.center-vertically {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
