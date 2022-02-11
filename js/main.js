@@ -21,7 +21,7 @@ const idToken = urlParams.get('id_token')
 
 if (null == idToken) {
   //alert('not authenticated')
-  document.querySelectorAll(".nav-item").forEach((tag) => {
-    tag.style.background = 'red';
+  document.querySelectorAll("header").forEach((tag) => {
+    tag.style.background = 'lightcoral';
   })
 }
