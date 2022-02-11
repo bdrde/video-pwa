@@ -33,8 +33,8 @@ header > div {
 
 nav {
   height: 60pt;
-  min-height: 35pt;
-  max-height: 70pt;
+  min-height: 60pt;
+  max-height: 60pt;
   background-color: whitesmoke;
 
 }
