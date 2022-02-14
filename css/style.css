@@ -150,6 +150,7 @@ main {
  * *********************************/
 
 .video {
+  display: flex;
   height: 100%;
   width: 100%;
 
@@ -157,35 +158,36 @@ main {
   padding: 0pt;
 
   overflow: hidden;
+  object-fit: contain;
+
+  flex-direction: row;
+  justify-content: center;
 }
 
-.video-peer {
+#video-peer {
+  display: flex;
+}
+
+.left-space {
+  display: flex;
+  position: absolute;
+  height: 30%;
   width: 100%;
-  object-fit: cover;
+  justify-content: center;
+  align-self: flex-end;
+
 }
 
-.video-self {
-  position: fixed;
-  bottom: 150px;
-  right: 50px;
-  z-index: 100;
-
-  width: 20%;
-
-  border-style: solid;
-  border-width: 5pt;
-  border-radius: 10pt;
-  border-color: white;
+#video-self {
+  height: auto;
+  transform: translateX(100%);
 }
 
-.video-self > img {
-  width: 100%;
-}
 
 /* ********************************* 
  * Rezept
  * *********************************/
- .prescription {
+.prescription {
   background-color: rgb(246, 225, 232);
   height: 92%;
   width: 92%;
