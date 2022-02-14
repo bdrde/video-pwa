@@ -13,7 +13,9 @@ var URLS = [
   `${GHPATH}/js/Prescription.js`,
   `${GHPATH}/js/vaadin-router.js`,
   `${GHPATH}/favicon.ico`,
-  `${GHPATH}/images/hello-icon-144.png`
+  `${GHPATH}/images/hello-icon-144.png`,
+  `${GHPATH}/images/arzt-cartoon.jpeg`,
+  `${GHPATH}/images/patient-cartoon.jpeg`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
