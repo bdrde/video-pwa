@@ -149,6 +149,39 @@ main {
  * Video-Chat
  * *********************************/
 
+.video {
+  height: 100%;
+  width: 100%;
+
+  margin: 0pt;
+  padding: 0pt;
+
+  overflow: hidden;
+}
+
+.video-peer {
+  width: 100%;
+  object-fit: cover;
+}
+
+.video-self {
+  position: fixed;
+  bottom: 150px;
+  right: 50px;
+  z-index: 100;
+
+  width: 20%;
+
+  border-style: solid;
+  border-width: 5pt;
+  border-radius: 10pt;
+  border-color: white;
+}
+
+.video-self > img {
+  width: 100%;
+}
+
 /* ********************************* 
  * Rezept
  * *********************************/
