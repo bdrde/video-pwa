@@ -30,7 +30,7 @@ if (null == idToken) {
 */
 if (null == idToken) {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
-    tag.style.display = 'none'; //'block';
+    tag.style.display = 'block';
   })
 } else {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
