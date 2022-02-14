@@ -28,10 +28,9 @@ if (null == idToken) {
 
 }
 */
-
 if (null == idToken) {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
-    tag.style.display = 'block';
+    tag.style.display = 'none'; //'block';
   })
 } else {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
