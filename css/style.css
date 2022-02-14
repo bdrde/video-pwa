@@ -162,6 +162,7 @@ main {
 
 #video-peer {
   display: flex;
+  width: 100%;
 }
 
 .left-space {
