@@ -152,13 +152,9 @@ main {
 .video {
   display: flex;
   height: 100%;
-  width: 100%;
 
   margin: 0pt;
   padding: 0pt;
-
-  overflow: hidden;
-  object-fit: contain;
 
   flex-direction: row;
   justify-content: center;
