@@ -171,7 +171,7 @@ main {
 .left-space {
   display: flex;
   position: absolute;
-  height: 30%;
+  height: 15%;
   width: 100%;
   justify-content: center;
   align-self: flex-end;
@@ -180,7 +180,7 @@ main {
 
 #video-self {
   height: auto;
-  transform: translateX(100%);
+  /*transform: translateX(100%);*/
 }
 
 
