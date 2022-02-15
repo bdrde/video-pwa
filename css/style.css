@@ -88,23 +88,34 @@ body {
   */
 }
 
+.login-box {
+  margin: 10%;
+  /*width: 20%;*/
+}
+
 .rounded-button-link {
   padding: 5pt;
   padding-left: 20pt;
   padding-right: 20pt;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  /*width: 120px;*/
  
   font-weight: bold;
-  color: black;
+  color: white;
 
 
-  background-color: white; /*rgb(0, 191, 255);*/
+  background-color: cornflowerblue; /*rgb(124, 222, 255);*/
+  /*background-color: white;*/
  
   border-style: solid ;
-  border-color: black; /*cornflowerblue;*/
+  border-color: cornflowerblue;
   border-width: 1pt;
   border-radius: 12pt;
 
   text-decoration: none;
+
 }
 
 .rounded-button-link > a:active {
