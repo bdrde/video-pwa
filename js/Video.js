@@ -10,9 +10,9 @@ class Video extends HTMLElement {
     connectedCallback() {
         this.innerHTML = '\
         <div class="video"> \
-            <img src="./images/arzt-cartoon.jpeg" id="video-peer"></img> \
+            <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
             <div class="left-space"> \
-                <img src="./images/patient-cartoon.jpeg" id="video-self"></img> \
+                <img src="./images/arzt-cartoon.jpeg" id="video-self"></img> \
             </div> \
         </div> \
         '

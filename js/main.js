@@ -31,6 +31,7 @@ if (null == idToken) {
 if (null == idToken) {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
     tag.style.display = 'block';
+    //tag.style.display = 'none'
   })
 } else {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
