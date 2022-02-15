@@ -27,21 +27,24 @@
             <h2>Bitte identifizieren sie sich als</h2>
             <div class="login-box">
                 <p>Versicherter einer gesetzlichen Krankenversicherung</p>
-                <a class="rounded-button-link" href="openid://">mit bdr-wallet</a>
+                <a class="rounded-button-link default" href="openid://">mit bdr-wallet</a>
+                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg" style="height: 20pt;"/></button>
             </div>
-
             <div class="login-box">
                 <p>als Angehöriger eines Heilberufes</p>
-                <a class="rounded-button-link"
+                <a class="rounded-button-link default"
                         href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">mit
                         bdr-wallet</a>
+                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg" style="height: 20pt;"/></button>
             </div>
         </div>
     </div>
 
     <div id="container">
         <header>
-            <div>
+            <div id="custom-header">
+            </div>
+            <div id="data-header">
                 Max Musterman (Techniker Krankenkasse)
             </div>
             <div class="header-right-wrapper">
@@ -89,6 +92,10 @@
         function logout() {
             console.log('loggin out');
             window.location.href = 'https://bdrde.github.io/video-pwa/';
+        }
+                
+        function showLoginQrCode() {
+            alert("Hier erscheint ein QR-Code, der mittels der Wallett gescannt werden kann");
         }
     </script>
     <script type="module" src="js/main.js"></script>

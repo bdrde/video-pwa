@@ -8,6 +8,7 @@ class Info extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
+        this.setCustomHeader();
         this.innerHTML= '<h2>Information</h2> \
         <h3>Ihr Gesprächspartner</h3> \
         <p><ul> \
@@ -20,6 +21,10 @@ class Info extends HTMLElement {
             <li>Beruf</li> \
         </ul></p> \
         ';
+    }
+
+    setCustomHeader() {
+        document.querySelector('#custom-header').innerHTML='';
     }
 
 }

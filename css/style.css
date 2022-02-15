@@ -89,17 +89,23 @@ body {
 }
 
 .login-box {
+  display:flex;
+  flex-direction: column;
   margin: 10%;
+  align-items: center;
   /*width: 20%;*/
+  
 }
 
 .rounded-button-link {
+  margin: 5pt;
   padding: 5pt;
   padding-left: 20pt;
   padding-right: 20pt;
-
+  width: fit-content;
   display: inline-flex;
   flex-wrap: wrap;
+  
   /*width: 120px;*/
  
   font-weight: bold;
@@ -115,11 +121,16 @@ body {
   border-radius: 12pt;
 
   text-decoration: none;
-
 }
 
-.rounded-button-link > a:active {
-  background-color: red;
+.rounded-button-link.default {
+  background-color: cornflowerblue; /*rgb(124, 222, 255);*/
+  border-color: cornflowerblue;
+}
+
+.rounded-button-link.alt {
+  background-color: lightgray; /*rgb(124, 222, 255);*/
+  border-color: lightgray;
 }
 
 /* ********************************* 
@@ -136,12 +147,25 @@ header {
 }
 
 header > div {
-  margin: 0;
+  margin: 0pt;
 }
 
 .header-right-wrapper {
   margin: 0;
   margin-left: auto;
+}
+
+header > #data-header {
+}
+
+header > #custom-header {
+  width: 40%;
+  overflow: hidden;
+  /*
+  border-right: 1pt;
+  border-right-color: gray;
+  border-right-style: solid;
+  */
 }
 
 nav {
@@ -249,23 +273,79 @@ main {
 /* ********************************* 
  * Rezept
  * *********************************/
-.prescription {
+/*x-prescription-view*/
+.prescription
+{
+  /*height: 100%;*/
   background-color: rgb(246, 225, 232);
-  height: 92%;
-  width: 92%;
-
-  /*margin: 0pt;*/
-  position: relative;
-  top: 2%;
-  left: 2%;
-  padding: 10pt;
+  
+  
+  margin: 0pt;
+  padding: 7pt;
 
   border-color: lightcoral;
   border-width: 1pt;
   border-style: solid;
 }
 
+.prescription > 
+  #patient, 
+  #med, 
+  #other 
+{
+  border-color: lightcoral;
+  border-width: 1pt;
+  border-style: solid;
+
+  padding: 3pt;
+  margin: 2pt;
+}
+
+#sign-prescription-button {
+  width: 70pt;
+  height: 34pt;
+
+  border-radius: 8pt;
+  border-width: 0pt;
+  background-color: lightgray;
+}
+/*
+.prescription > h2, h3
 .prescription > p {
   margin: 0;
 }
+*/
 /* ********************************* */
+
+
+/* ********************************* */
+/* fun stuff
+/* ********************************* */
+
+/* Blink for Webkit and others
+(Chrome, Safari, Firefox, IE, ...)
+
+<span class="blink"><span>
+*/
+
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+.blink{
+  display:block;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 1.0s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
+}

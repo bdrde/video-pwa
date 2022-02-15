@@ -8,6 +8,7 @@ class Video extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
+        this.setCustomHeader();
         this.innerHTML = '\
         <div class="video"> \
             <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
@@ -16,6 +17,10 @@ class Video extends HTMLElement {
             </div> \
         </div> \
         '
+    }
+
+    setCustomHeader() {
+        document.querySelector('#custom-header').innerHTML='<span class="blink"></span>';
     }
 
 }
