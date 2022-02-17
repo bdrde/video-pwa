@@ -28,15 +28,28 @@
             <div class="login-box">
                 <p>Versicherter einer gesetzlichen Krankenversicherung</p>
                 <a class="rounded-button-link default" href="openid://">mit bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg" style="height: 20pt;"/></button>
+                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
+                        style="height: 20pt;" /></button>
             </div>
             <div class="login-box">
                 <p>als Angehöriger eines Heilberufes</p>
                 <a class="rounded-button-link default"
-                        href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">mit
-                        bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg" style="height: 20pt;"/></button>
+                    href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">mit
+                    bdr-wallet</a>
+                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
+                        style="height: 20pt;" /></button>
             </div>
+        </div>
+        <div id="qr-code-login-overlay">
+            <p>
+                Scannen Sie den angezeigten QR-Code mir Ihrer Wallet.
+                Nach erfolgreicher Identifizierung werden Sie eingeloggt.
+            </p>
+            <img src="./images/qrcode.png"></img>
+            <div> <!-- wrapper for placement-->
+                <div class="loader" style="display:inline-block"></div> 
+            </div>
+            <button class="rounded-button-link alt" onclick="hideLoginQrCode();">Zurück</button>
         </div>
     </div>
 
@@ -90,9 +103,21 @@
             console.log('loggin out');
             window.location.href = 'https://bdrde.github.io/video-pwa/';
         }
-                
+
         function showLoginQrCode() {
-            alert("Hier erscheint ein QR-Code, der mittels der Wallett gescannt werden kann");
+            alert("Hier erscheint ein QR-Code, der mittels der Wallet gescannt werden kann. Die Funktion ist momentan nicht aktiviert.");
+            return;
+            document.querySelectorAll("#qr-code-login-overlay").forEach((tag) => {
+                tag.style.display = 'block';
+                //tag.style.display = 'none'
+            })
+        }
+
+        function hideLoginQrCode() {
+            // alert("Hier erscheint ein QR-Code, der mittels der Wallet gescannt werden kann");
+            document.querySelectorAll("#qr-code-login-overlay").forEach((tag) => {
+                tag.style.display = 'none'
+            })
         }
     </script>
     <script type="module" src="js/main.js"></script>

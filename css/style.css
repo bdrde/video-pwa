@@ -133,6 +133,39 @@ body {
   border-color: lightgray;
 }
 
+#login-overlay > #qr-code-login-overlay {
+  display: none;
+
+  position: absolute;
+
+  overflow: auto;
+  margin: 0;
+  left: 10%;
+  top: 20%;
+  
+  max-height: 300pt;
+  width: 70%;
+  max-width: 300pt;
+  z-index: 5;
+
+  text-align: center;
+  align-content: center;
+  padding: 20pt;
+  margin: 0pt;
+ 
+  color: whitesmoke;
+  background-color: cornflowerblue;
+
+  border-radius: 10pt;
+}
+
+#qr-code-login-overlay > img {
+  height: 100pt;
+}
+#qr-code-login-overlay > div {
+  margin: 10pt;
+}
+
 /* ********************************* 
  * main screen layout
  * *********************************/
@@ -369,4 +402,21 @@ main {
 	-webkit-animation-iteration-count:infinite;
 	-webkit-animation-timing-function:ease-in-out;
 	-webkit-animation-direction: alternate;
+}
+
+/*
+ * loader aqnimation 
+ */
+ .loader {
+  border: 5px solid whitesmoke; 
+  border-top: 5px solid cornflowerblue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
