@@ -169,14 +169,22 @@ header > div {
   align-content: center;
 }
 #signout-header {
-  width: 10%; 
+  width: 10%;
   align-content: right; 
   text-align: right;
 }
 
 .nav-button-signout {
   border: 0;
+  padding: 0;
+  margin: 0;
   background-color: transparent;
+}
+
+.nav-icon-signout {    
+  height: 30pt;
+  margin: 0;
+  border: 0;
 }
 
 nav {
@@ -228,12 +236,6 @@ main {
 
 .nav-icon {    
     height: 30pt;
-}
-
-.nav-icon-signout {    
-  height: 30pt;
-  margin: 0;
-  border: 0;
 }
 
 .center-vertically {
