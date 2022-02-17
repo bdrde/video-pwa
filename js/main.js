@@ -37,4 +37,9 @@ if (null == idToken) {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
     tag.style.display = 'none';
   })
+
+  // show this text only after 'login'
+  document.querySelector('#data-header').innerHTML=' \
+  Max Musterman <br/> Techniker Krankenkasse\
+  ';
 }
