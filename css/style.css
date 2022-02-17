@@ -408,8 +408,8 @@ main {
  * loader aqnimation 
  */
  .loader {
-  border: 5px solid whitesmoke; 
-  border-top: 5px solid cornflowerblue;
+  border: 5px solid; 
+  border-color: whitesmoke transparent whitesmoke transparent;
   border-radius: 50%;
   width: 20px;
   height: 20px;
