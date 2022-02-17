@@ -1,3 +1,4 @@
+import { html, render } from './lit-html/lit-html.js';
 class Info extends HTMLElement {
 
     constructor() {
@@ -9,22 +10,23 @@ class Info extends HTMLElement {
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
         this.setCustomHeader();
-        this.innerHTML= '<h2>Information</h2> \
-        <h3>Ihr Gesprächspartner</h3> \
-        <p><ul> \
-            <li>Name</li> \
-            <li>Krankenkasse</li> \
-        </ul></p> \
-        <h3>Sie</h3> \
-        <p><ul> \
-            <li>Name</li> \
-            <li>Beruf</li> \
-        </ul></p> \
-        ';
+        render(html`
+            <h2>Information</h2> \
+            <h3>Ihr Gesprächspartner</h3> \
+            <p><ul> \
+                <li>Name</li> \
+                <li>Krankenkasse</li> \
+            </ul></p> \
+            <h3>Sie</h3> \
+            <p><ul> \
+                <li>Name</li> \
+                <li>Beruf</li> \
+            </ul></p> \
+        `, this);
     }
 
     setCustomHeader() {
-        document.querySelector('#custom-header').innerHTML='';
+        document.querySelector('#custom-header').innerHTML = '';
     }
 
 }
