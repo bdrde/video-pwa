@@ -144,28 +144,39 @@ header {
    min-height: 35pt;
    background-color: lightgray;
    overflow: auto;
+   flex-direction: row;
 }
 
 header > div {
   margin: 0pt;
-}
-
-.header-right-wrapper {
-  margin: 0;
-  margin-left: auto;
-}
-
-header > #data-header {
-}
-
-header > #custom-header {
-  width: 40%;
+  display: inline-block;
   overflow: hidden;
   /*
-  border-right: 1pt;
+  border-right: 2pt;
   border-right-color: gray;
   border-right-style: solid;
-  */
+*/
+}
+
+#custom-header {
+  width: 20%; 
+  text-align: left;
+  align-content: left;
+}
+#data-header {
+  width: 70%; 
+  text-align: center;
+  align-content: center;
+}
+#signout-header {
+  width: 10%; 
+  align-content: right; 
+  text-align: right;
+}
+
+.nav-button-signout {
+  border: 0;
+  background-color: transparent;
 }
 
 nav {
@@ -221,6 +232,8 @@ main {
 
 .nav-icon-signout {    
   height: 30pt;
+  margin: 0;
+  border: 0;
 }
 
 .center-vertically {
