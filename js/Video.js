@@ -5,6 +5,7 @@ class Video extends HTMLElement {
 
     constructor() {
         super();
+        this.video = null;
     }
 
     // analog zu @PostConstruct
@@ -13,36 +14,64 @@ class Video extends HTMLElement {
     connectedCallback() {
         this.setCustomHeader();
 
+        /*
+        <button class="captureBack">Capture back</button>
+        <button class="captureFront">Capture front</button>
+        <button class="fullscreen">Full screen</button>
+
+                          <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
+
+        */
         render(html`
-          <button class="captureBack">Capture back</button>
-          <button class="captureFront">Capture front</button>
-          <button class="fullscreen">Full screen</button>
+        <div class="video"> \
+                  <video id="video-peer" autoplay></video>
+                <div class="left-space"> \
+                    <video id="video-self" autoplay></video>
+                </div> \
+            </div> \
 
-          <video autoplay></video>
         `, this);
+//        <video id="video-self" autoplay></video>
 
-        const video = document.querySelector("video");
-        video.setAttribute("autoplay", "");
-        video.setAttribute("muted", "");
-        video.setAttribute("playsinline", "");
+        this.video = document.querySelector("#video-self");
+        this.video.setAttribute("autoplay", "");
+        this.video.setAttribute("muted", "");
+        this.video.setAttribute("playsinline", "");
         const fullscreenButton = document.querySelector(".fullscreen");
+        
+        const constraints = {
+            video: { facingMode: 'user' }
+        }
+        
+        navigator.mediaDevices
+            .getUserMedia({ video: { facingMode: 'user' }})
+            .then((stream) => {document.querySelector("#video-self").srcObject = stream;})
+            .catch((error) => {console.error("Error: ", error);});
+        
+        navigator.mediaDevices
+            .getUserMedia({ video: { facingMode: 'environment' }})
+            .then((stream) => {document.querySelector("#video-peer").srcObject = stream;})
+            .catch((error) => {console.error("Error: ", error);});
+
+            /*
 
         this.capture(".captureFront", "user");
         this.capture(".captureBack", "environment");
 
         fullscreenButton.onclick = function () {
-            if (video.webkitEnterFullScreen) {
-                video.webkitEnterFullScreen(); // Mobile Safari
-            } else if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
+            if (this.video.webkitEnterFullScreen) {
+                this.video.webkitEnterFullScreen(); // Mobile Safari
+            } else if (this.video.requestFullscreen) {
+                this.video.requestFullscreen();
+            } else if (this.video.webkitRequestFullscreen) {
                 // Regular Safari
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
+                this.video.webkitRequestFullscreen();
+            } else if (this.video.msRequestFullscreen) {
                 // IE11
-                video.msRequestFullscreen();
+                this.video.msRequestFullscreen();
             }
         };
+        */
     }
 
     setCustomHeader() {
@@ -55,7 +84,7 @@ class Video extends HTMLElement {
     }
 
     handleSuccess(stream) {
-        video.srcObject = stream;
+        this.video.srcObject = stream;
     }
 
     handleError(error) {
@@ -70,7 +99,11 @@ class Video extends HTMLElement {
         };
 
         element.onclick = function () {
-            navigator.mediaDevices.getUserMedia(constraints).then(this.handleSuccess).catch(this.handleError);
+            const video = document.querySelector("#video-self");
+            navigator.mediaDevices
+                .getUserMedia(constraints)
+                .then((stream) => {video.srcObject = stream;})
+                .catch((error) => {console.error("Error: ", error);});
         };
     }
 

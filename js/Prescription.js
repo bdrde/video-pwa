@@ -1,7 +1,7 @@
 import { html, render } from './lit-html/lit-html.js';
 var signPopupRef = null;
 //var domain = 'http://localhost:5500';
-var domain = 'https://bdrde.github.io/video-pwa';
+var domain = 'https://bdrde.github.io';
 
 class Prescription extends HTMLElement {
 
