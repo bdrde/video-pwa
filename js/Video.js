@@ -24,6 +24,9 @@ class Video extends HTMLElement {
         render(html` \
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
+
+        render('', document.querySelector('#data-header'));
+
     }
 
 }

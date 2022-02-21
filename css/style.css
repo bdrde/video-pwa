@@ -220,6 +220,12 @@ header > div {
   background-color: transparent;
 }
 
+.header-image {
+  height: 100%;
+  margin: 0;
+  border: 0;
+}
+
 .nav-icon-signout {    
   height: 30pt;
   margin: 0;
