@@ -31,85 +31,74 @@ class Video extends HTMLElement {
             </div> \
 
         `, this);
-//        <video id="video-self" autoplay></video>
+        //        <video id="video-self" autoplay></video>
 
         this.video = document.querySelector("#video-self");
         this.video.setAttribute("autoplay", "");
         this.video.setAttribute("muted", "");
         this.video.setAttribute("playsinline", "");
         const fullscreenButton = document.querySelector(".fullscreen");
-        
+
         const constraints = {
             video: { facingMode: 'user' }
         }
-        
-        navigator.mediaDevices
-            .getUserMedia({ video: { facingMode: 'user' }})
-            .then((stream) => {document.querySelector("#video-self").srcObject = stream;})
-            .catch((error) => {console.error("Error: ", error);});
-        
-            /*
-        navigator.mediaDevices
-            .getUserMedia({ video: { facingMode: 'environment' }})
-            .then((stream) => {document.querySelector("#video-peer").srcObject = stream;})
-            .catch((error) => {console.error("Error: ", error);});
-        */
-            /*
 
-        this.capture(".captureFront", "user");
-        this.capture(".captureBack", "environment");
+        navigator.mediaDevices
+            .getUserMedia({ video: { facingMode: 'user' } })
+            .then((stream) => { document.querySelector("#video-self").srcObject = stream; })
+            .catch((error) => { console.error("Error: ", error); });
 
-        fullscreenButton.onclick = function () {
-            if (this.video.webkitEnterFullScreen) {
-                this.video.webkitEnterFullScreen(); // Mobile Safari
-            } else if (this.video.requestFullscreen) {
-                this.video.requestFullscreen();
-            } else if (this.video.webkitRequestFullscreen) {
-                // Regular Safari
-                this.video.webkitRequestFullscreen();
-            } else if (this.video.msRequestFullscreen) {
-                // IE11
-                this.video.msRequestFullscreen();
-            }
-        };
-        */
+        /*
+    navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: 'environment' }})
+        .then((stream) => {document.querySelector("#video-peer").srcObject = stream;})
+        .catch((error) => {console.error("Error: ", error);});
+    */
     }
 
     setCustomHeader() {
 
+        /*
         render(html` \
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
+            */
+        render(html` \
+            <button @click=${_ => this.videoOnOffToggle()}>On/Off</button> \
+            <button @click=${_ => this.fullscreen()}>full</button> \
+            `, document.querySelector('#custom-header'));
 
         render('', document.querySelector('#data-header'));
     }
 
-    handleSuccess(stream) {
-        this.video.srcObject = stream;
+    videoOnOffToggle () {
+        navigator
+            .mediaDevices
+            .getUserMedia({ video: { facingMode: 'user' } })
+            .then((stream) => { 
+                var srcObject = document.querySelector("#video-self").srcObject;
+                if (srcObject == null) {
+                    document.querySelector("#video-self").srcObject = stream; 
+                } else {
+                    document.querySelector("#video-self").srcObject = null;
+                }
+            })
+            .catch((error) => { console.error("Error: ", error); });
     }
-
-    handleError(error) {
-        console.error("Error: ", error);
+    fullscreen() {
+        const video = document.querySelector("#video-self");
+        if (this.video.webkitEnterFullScreen) {
+            this.video.webkitEnterFullScreen(); // Mobile Safari
+        } else if (this.video.requestFullscreen) {
+            this.video.requestFullscreen();
+        } else if (this.video.webkitRequestFullscreen) {
+            // Regular Safari
+            this.video.webkitRequestFullscreen();
+        } else if (this.video.msRequestFullscreen) {
+            // IE11
+            this.video.msRequestFullscreen();
+        }
     }
-
-    capture(elementSelector, facingMode) {
-        const element = document.querySelector(elementSelector);
-
-        const constraints = {
-            video: { facingMode: facingMode },
-        };
-
-        element.onclick = function () {
-            const video = document.querySelector("#video-self");
-            navigator.mediaDevices
-                .getUserMedia(constraints)
-                .then((stream) => {video.srcObject = stream;})
-                .catch((error) => {console.error("Error: ", error);});
-        };
-    }
-
-
-
 }
 
 customElements.define('x-video-view', Video)
