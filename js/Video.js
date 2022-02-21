@@ -24,7 +24,7 @@ class Video extends HTMLElement {
         */
         render(html`
         <div class="video"> \
-                  <video id="video-peer" autoplay></video>
+                  <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
                 <div class="left-space"> \
                     <video id="video-self" autoplay></video>
                 </div> \
@@ -48,11 +48,12 @@ class Video extends HTMLElement {
             .then((stream) => {document.querySelector("#video-self").srcObject = stream;})
             .catch((error) => {console.error("Error: ", error);});
         
+            /*
         navigator.mediaDevices
             .getUserMedia({ video: { facingMode: 'environment' }})
             .then((stream) => {document.querySelector("#video-peer").srcObject = stream;})
             .catch((error) => {console.error("Error: ", error);});
-
+        */
             /*
 
         this.capture(".captureFront", "user");
