@@ -1,15 +1,9 @@
 import { html, render } from './lit-html/lit-html.js';
 
-const video = document.querySelector("video");
-video.setAttribute("autoplay", "");
-video.setAttribute("muted", "");
-video.setAttribute("playsinline", "");
-const fullscreenButton = document.querySelector(".fullscreen");
-
 class Video extends HTMLElement {
 
 
-  constructor() {
+    constructor() {
         super();
     }
 
@@ -17,6 +11,8 @@ class Video extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
+        this.setCustomHeader();
+
         render(html`
           <button class="captureBack">Capture back</button>
           <button class="captureFront">Capture front</button>
@@ -25,52 +21,58 @@ class Video extends HTMLElement {
           <video autoplay></video>
         `, this);
 
-      this.capture(".captureFront", "user");
-      this.capture(".captureBack", "environment");
+        const video = document.querySelector("video");
+        video.setAttribute("autoplay", "");
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        const fullscreenButton = document.querySelector(".fullscreen");
 
-      fullscreenButton.onclick = function () {
-        if (video.webkitEnterFullScreen) {
-          video.webkitEnterFullScreen(); // Mobile Safari
-        } else if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          // Regular Safari
-          video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-          // IE11
-          video.msRequestFullscreen();
-        }
-      };
+        this.capture(".captureFront", "user");
+        this.capture(".captureBack", "environment");
+
+        fullscreenButton.onclick = function () {
+            if (video.webkitEnterFullScreen) {
+                video.webkitEnterFullScreen(); // Mobile Safari
+            } else if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                // Regular Safari
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                // IE11
+                video.msRequestFullscreen();
+            }
+        };
     }
 
     setCustomHeader() {
+
         render(html` \
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
 
         render('', document.querySelector('#data-header'));
-
     }
 
-  handleSuccess(stream) {
-    video.srcObject = stream;
-  }
+    handleSuccess(stream) {
+        video.srcObject = stream;
+    }
 
-  handleError(error) {
-    console.error("Error: ", error);
-  }
+    handleError(error) {
+        console.error("Error: ", error);
+    }
 
-  capture(elementSelector, facingMode) {
-    const element = document.querySelector(elementSelector);
+    capture(elementSelector, facingMode) {
+        const element = document.querySelector(elementSelector);
 
-    const constraints = {
-      video: { facingMode: facingMode },
-    };
+        const constraints = {
+            video: { facingMode: facingMode },
+        };
 
-    element.onclick = function () {
-      navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
-    };
-  }
+        element.onclick = function () {
+            navigator.mediaDevices.getUserMedia(constraints).then(this.handleSuccess).catch(this.handleError);
+        };
+    }
 
 
 
