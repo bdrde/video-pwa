@@ -4,7 +4,7 @@ body {
   width: 100%;
   margin: 0;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;  
 }
 
 #container {
@@ -15,7 +15,7 @@ body {
 }
 
 /* ********************************* 
- * Login Screen
+ * Login Screen(s)
  * *********************************/
 #login-overlay {
   position: absolute;
@@ -167,7 +167,7 @@ body {
 }
 
 /* ********************************* 
- * main screen layout
+ * header bar
  * *********************************/
 header {
    display: flex;
@@ -220,12 +220,31 @@ header > div {
   background-color: transparent;
 }
 
+.header-image {
+  height: 100%;
+  margin: 0;
+  border: 0;
+}
+
 .nav-icon-signout {    
   height: 30pt;
   margin: 0;
   border: 0;
 }
 
+/* ********************************* 
+ * Main content area
+ * *********************************/
+ main {
+  background-color: white;
+  flex-grow : 1;
+  overflow: auto;
+}
+
+
+/* ********************************* 
+ * Bottom navigation bar
+ * *********************************/
 nav {
   height: 60pt;
   min-height: 60pt;
@@ -265,13 +284,6 @@ nav > ul > li {
     */
      
 }
-
-main {
-  background-color: white;
-  flex-grow : 1;
-  overflow: auto;
-}
-
 
 .nav-icon {    
     height: 30pt;
@@ -408,8 +420,8 @@ main {
  * loader aqnimation 
  */
  .loader {
-  border: 5px solid whitesmoke; 
-  border-top: 5px solid cornflowerblue;
+  border: 5px solid; 
+  border-color: whitesmoke transparent whitesmoke transparent;
   border-radius: 50%;
   width: 20px;
   height: 20px;
