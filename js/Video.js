@@ -5,24 +5,6 @@ video.setAttribute("autoplay", "");
 video.setAttribute("muted", "");
 video.setAttribute("playsinline", "");
 const fullscreenButton = document.querySelector(".fullscreen");
-capture(".captureFront", "user");
-capture(".captureBack", "environment");
-
-fullscreenButton.onclick = function () {
-  if (video.webkitEnterFullScreen) {
-    video.webkitEnterFullScreen(); // Mobile Safari
-  } else if (video.requestFullscreen) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen) {
-    // Regular Safari
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen) {
-    // IE11
-    video.msRequestFullscreen();
-  }
-};
-
-
 
 class Video extends HTMLElement {
 
@@ -35,7 +17,6 @@ class Video extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
-        this.setCustomHeader();
         render(html`
           <button class="captureBack">Capture back</button>
           <button class="captureFront">Capture front</button>
@@ -43,6 +24,23 @@ class Video extends HTMLElement {
 
           <video autoplay></video>
         `, this);
+
+      this.capture(".captureFront", "user");
+      this.capture(".captureBack", "environment");
+
+      fullscreenButton.onclick = function () {
+        if (video.webkitEnterFullScreen) {
+          video.webkitEnterFullScreen(); // Mobile Safari
+        } else if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          // Regular Safari
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          // IE11
+          video.msRequestFullscreen();
+        }
+      };
     }
 
     setCustomHeader() {
