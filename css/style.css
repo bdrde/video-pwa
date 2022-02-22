@@ -331,11 +331,46 @@ nav > ul > li {
 }
 
 #video-self {
+
   height: auto;
   /*transform: translateX(100%);*/
 }
 
+.video-controls {
+  position: absolute;
+  top: 75%;  
+  width: 100%;
+}
 
+.video-controls > ul {
+  display: flex; 
+  justify-content: space-around;
+  height:100%;
+  margin: 0;
+  padding: 0;
+
+  /*position: relative;*/
+}
+
+.video-controls > ul > li {
+  display: block;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+
+  overflow: hidden;
+
+  /* centering vertically, see also -nav-icon */
+  position: relative;
+}
+
+.round-button {
+  background-color: whitesmoke;
+  border: 0px white solid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
 /* ********************************* 
  * Rezept
  * *********************************/
