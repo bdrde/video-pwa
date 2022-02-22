@@ -320,6 +320,11 @@ nav > ul > li {
   width: 100%;
 }
 
+#video-peer > img {
+  display: flex;
+  width: 100%;
+}
+
 .left-space {
   display: flex;
   position: absolute;

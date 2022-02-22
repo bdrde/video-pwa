@@ -24,7 +24,7 @@ class Video extends HTMLElement {
         render(html`
             <div class="video">
                 <div id="video-peer">
-                  <img src="./images/patient-cartoon.jpeg" id="video-peer2"></img>
+                  <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
                 <div class="left-space">
                     <video id="video-self" autoplay></video>
@@ -93,6 +93,7 @@ class Video extends HTMLElement {
     end() {
         this.stream.getTracks().forEach((track) => {
             track.stop();
+            this.stream = null;
         });
 
         //
