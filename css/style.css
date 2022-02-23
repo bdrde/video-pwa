@@ -337,10 +337,14 @@ nav > ul > li {
 
 #video-self {
   height: auto;
-  width: fit-content;
+  max-height: min-content;
+  width: min-content;
+  max-width: 50%;
   /*transform: translateX(100%);*/
+  /*
   border: 2px white solid;
   border-radius: 6pt;
+  */
 }
 
 .control-button-group {
