@@ -5,7 +5,6 @@ class Video extends HTMLElement {
 
     constructor() {
         super();
-        this.video = null;
     }
 
     // analog zu @PostConstruct
@@ -23,13 +22,21 @@ class Video extends HTMLElement {
 
         */
         render(html`
-        <div class="video"> \
-                  <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
-                <div class="left-space"> \
+            <div class="video">
+                <div id="video-peer">
+                  <img src="./images/patient-cartoon.jpeg"></img>
+                  </div>
+                <div class="left-space">
                     <video id="video-self" autoplay></video>
-                </div> \
-            </div> \
-
+                </div>
+                <div class="video-controls">
+                    <ul>
+                        <li><button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button> </li>\
+                        <li><button class="round-button" @click=${_ => this.end()}>&#9209;</button> </li>\
+                        <li><button class="round-button" @click=${_ => this.toggleAll()}>&#9205;&#9208;</button> </li>\
+                    </ul>
+                </div>
+            </div>
         `, this);
         //        <video id="video-self" autoplay></video>
 
@@ -45,15 +52,12 @@ class Video extends HTMLElement {
 
         navigator.mediaDevices
             .getUserMedia({ video: { facingMode: 'user' } })
-            .then((stream) => { document.querySelector("#video-self").srcObject = stream; })
+            .then((stream) => {
+                document.querySelector("#video-self").srcObject = stream;
+                this.stream = stream;
+            })
             .catch((error) => { console.error("Error: ", error); });
 
-        /*
-    navigator.mediaDevices
-        .getUserMedia({ video: { facingMode: 'environment' }})
-        .then((stream) => {document.querySelector("#video-peer").srcObject = stream;})
-        .catch((error) => {console.error("Error: ", error);});
-    */
     }
 
     setCustomHeader() {
@@ -63,28 +67,39 @@ class Video extends HTMLElement {
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
             */
-        render(html` \
-            <button @click=${_ => this.videoOnOffToggle()}>On/Off</button> \
-            <button @click=${_ => this.fullscreen()}>full</button> \
-            `, document.querySelector('#custom-header'));
-
         render('', document.querySelector('#data-header'));
     }
 
-    videoOnOffToggle () {
-        navigator
-            .mediaDevices
-            .getUserMedia({ video: { facingMode: 'user' } })
-            .then((stream) => { 
-                var srcObject = document.querySelector("#video-self").srcObject;
-                if (srcObject == null) {
-                    document.querySelector("#video-self").srcObject = stream; 
-                } else {
-                    document.querySelector("#video-self").srcObject = null;
-                }
-            })
-            .catch((error) => { console.error("Error: ", error); });
+
+    toggleAll() {
+        this.toggle('video');
+        this.toggle('audio');
     }
+    /**
+     * 
+     * @param {*} trackType 'audio', 'video'
+     */
+    toggle(trackType) {
+        this.stream.getTracks().forEach((track) => {
+            if (track.readyState == 'live' && track.kind == trackType) {
+                track.enabled = !track.enabled;
+            }
+        });
+    }
+
+    /**
+     * 
+     */
+    end() {
+        this.stream.getTracks().forEach((track) => {
+            track.stop();
+            this.stream = null;
+        });
+
+        //
+        document.querySelector('#video-peer').innerHTML='';
+    }
+
     fullscreen() {
         const video = document.querySelector("#video-self");
         if (this.video.webkitEnterFullScreen) {
