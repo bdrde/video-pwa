@@ -325,10 +325,11 @@ nav > ul > li {
   width: 100%;
 }
 
-.left-space {
+.bottom-overlay-space {
   display: flex;
   position: absolute;
-  height: 15%;
+  bottom: 12%;
+  height: 17%;
   width: 100%;
   justify-content: space-between;
   align-self: flex-end;
@@ -337,12 +338,14 @@ nav > ul > li {
 #video-self {
   height: auto;
   /*transform: translateX(100%);*/
+  border: 2px white solid;
+  border-radius: 6pt;
 }
 
-.control-buttons {
+.control-button-group {
   margin:0pt;
-  padding-left: 40pt;
-  padding-right: 40pt;
+  padding-left: 20pt;
+  padding-right: 20pt;
 }
 
 .video-controls {
@@ -377,8 +380,8 @@ nav > ul > li {
   background-color: lightgray;
   border: 3px green solid;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 /* ********************************* 
  * Rezept

@@ -26,9 +26,9 @@ class Video extends HTMLElement {
                 <div id="video-peer">
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
-                <div class="left-space">
+                <div class="bottom-overlay-space">
                     <div style="width:100%;"></div>
-                    <div class="control-buttons">
+                    <div class="control-button-group">
                       <div style="display:flex;flex-direction:column;">
                         <button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button>
                         </br>
@@ -36,7 +36,7 @@ class Video extends HTMLElement {
                       </div>
                     </div>
                     <video id="video-self" autoplay></video>
-                    <div class="control-buttons">
+                    <div class="control-button-group">
                         <button class="round-button" style="border-color:red;" @click=${_ => this.end()}>&#9209;</button>
                     </div>
                     <div style="width:100%;"></div>
@@ -81,6 +81,7 @@ class Video extends HTMLElement {
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
             */
+        render('', document.querySelector('#custom-header'));
         render('', document.querySelector('#data-header'));
     }
 
