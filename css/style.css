@@ -299,7 +299,18 @@ nav > ul > li {
 /* ********************************* 
  * Info
  * *********************************/
+.info {
+  overflow: hidden;
+  margin: 0pt;
+  padding:20pt;
+}
 
+.card {
+  padding: 5pt;
+  margin: 10pt;
+  border: 1pt whitesmoke solid;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
 /* ********************************* 
  * Video-Chat
  * *********************************/
