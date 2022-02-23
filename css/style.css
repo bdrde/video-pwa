@@ -330,7 +330,7 @@ nav > ul > li {
   position: absolute;
   height: 15%;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-self: flex-end;
 
 }
@@ -370,11 +370,11 @@ nav > ul > li {
 }
 
 .round-button {
-  background-color: whitesmoke;
-  border: 0px white solid;
+  background-color: lightgray;
+  border: 3px green solid;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 /* ********************************* 
  * Rezept
@@ -384,28 +384,29 @@ nav > ul > li {
 {
   /*height: 100%;*/
   background-color: rgb(246, 225, 232);
-  
-  
+
   margin: 0pt;
   padding: 7pt;
 
   border-color: lightcoral;
   border-width: 1pt;
   border-style: solid;
+
 }
 
-.prescription > 
-  #patient, 
-  #med, 
-  #other 
+.prescription >
+  #receipt
 {
   border-color: lightcoral;
   border-width: 1pt;
   border-style: solid;
 
+  background-color: whitesmoke;
+
   padding: 3pt;
   margin: 2pt;
 }
+
 
 #sign-prescription-button {
   width: 70pt;
@@ -413,14 +414,30 @@ nav > ul > li {
 
   border-radius: 8pt;
   border-width: 0pt;
-  background-color: whitesmoke;
 }
-/*
-.prescription > h2, h3
-.prescription > p {
-  margin: 0;
+
+.prescription > #receipt >
+  #receipt-title {
+    margin: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: lightcoral;
+    padding: 10pt 10pt 5pt;
 }
-*/
+
+.prescription > #receipt >
+  #receipt-text {
+    margin: 0;
+    font-weight: bold;
+    padding: 5pt 10pt 5pt;
+}
+
+.prescription > #receipt >
+  img  {
+    margin: 0;
+    height: 100pt;
+    padding: 10pt;
+}
 /* ********************************* */
 
 

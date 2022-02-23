@@ -27,9 +27,21 @@ class Video extends HTMLElement {
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
                 <div class="left-space">
+                    <div style="display:flex;width:100%; justify-content:center">
+                      <div style="display:flex;flex-direction:column;">
+                        <button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button>
+                        </br>
+                        <button class="round-button" @click=${_ => this.toggleAll()}>&#9205;&#9208;</button>
+                      </div>
+                    </div>
                     <video id="video-self" autoplay></video>
+                    <div style="display:flex;width:100%; justify-content:center">                        
+                        <button class="round-button" style="border-color:red;" @click=${_ => this.end()}>&#9209;</button>
+                    </div>
                 </div>
-                <div class="video-controls">
+                
+                <!-- horizontale Buttonleiste. erstmal ausgeblendet -->
+                <div class="video-controls" style="display:none;" >
                     <ul>
                         <li><button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button> </li>\
                         <li><button class="round-button" @click=${_ => this.end()}>&#9209;</button> </li>\
@@ -96,8 +108,8 @@ class Video extends HTMLElement {
             this.stream = null;
         });
 
-        //
-        document.querySelector('#video-peer').innerHTML='';
+
+        document.querySelector('.video').style.display= 'none';
     }
 
     fullscreen() {
