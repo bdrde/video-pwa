@@ -18,16 +18,25 @@ class Prescription extends HTMLElement {
 
         render(html`\
             <div class="prescription"> \
-            <div id="patient"> \
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \
+            <div id="receipt"> \
+                <div id="receipt-title">Datum</div> \
+                <div id="receipt-text">25. September 2019</div> \
+
+                <div id="receipt-title">Krankenkasse bzw. Kostenträger</div> \
+                <div id="receipt-text">AOK Nordost</div> \
+
+                <div id="receipt-title">Vertragsarzt</div> \
+                <div id="receipt-text">Dr. med. Markus Heinze
+                </br>Musterallee 25
+                </br>12976 Musterstadt</div> \
+
+                <div id="receipt-title">Rp.</div> \
+                <div id="receipt-text">Cardio Plus 7000</div> \
+
+                <img src="./images/qr-code.png"></img> \
+
             </div> \
-            <div id="med"> \
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \
             </div> \
-            <div id="other"> \
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \
-            </div> \
-        </div> \
         `, this);
     }
 
