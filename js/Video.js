@@ -30,14 +30,14 @@ class Video extends HTMLElement {
                     <div></div>
                     <div class="control-button-group">
                       <div style="display:flex;flex-direction:column;">
-                        <button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button>
+                        <button class="round-button" @click=${_ => this.fullscreen()}><img src="./images/expand.svg" style="width: 17pt;"/></button>
                         </br>
-                        <button class="round-button" @click=${_ => this.toggleAll()}>&#9205;&#9208;</button>
+                        <button class="round-button" @click=${_ => this.toggleAll()}><img src="./images/pause.svg" style="width: 17pt;"/></button>
                       </div>
                     </div>
                     <video id="video-self" autoplay></video>
                     <div class="control-button-group">
-                        <button class="round-button" style="border-color:red;" @click=${_ => this.end()}>&#9209;</button>
+                        <button class="round-button" style="background-color:red;border-color:red;" @click=${_ => this.end()}><img src="./images/call-missed.svg" style="width: 17pt;"/></button>
                     </div>
                     <div></div>
                 </div>
