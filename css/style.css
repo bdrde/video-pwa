@@ -330,8 +330,9 @@ nav > ul > li {
   position: absolute;
   height: 15%;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-self: flex-end;
+
 
 }
 

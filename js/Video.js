@@ -27,7 +27,8 @@ class Video extends HTMLElement {
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
                 <div class="left-space">
-                    <div style="display:flex;width:100%; justify-content:center">
+                    <div></div>
+                    <div>
                       <div style="display:flex;flex-direction:column;">
                         <button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button>
                         </br>
@@ -35,9 +36,10 @@ class Video extends HTMLElement {
                       </div>
                     </div>
                     <video id="video-self" autoplay></video>
-                    <div style="display:flex;width:100%; justify-content:center">                        
+                    <div>
                         <button class="round-button" style="border-color:red;" @click=${_ => this.end()}>&#9209;</button>
                     </div>
+                    <div></div>
                 </div>
                 
                 <!-- horizontale Buttonleiste. erstmal ausgeblendet -->
