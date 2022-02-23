@@ -328,7 +328,6 @@ nav > ul > li {
 .bottom-overlay-space {
   display: flex;
   position: absolute;
-  bottom: 12%;
   height: 17%;
   width: 100%;
   justify-content: space-between;
