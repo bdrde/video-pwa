@@ -381,7 +381,7 @@ nav > ul > li {
 }
 
 .round-button {
-  background-color: lightgray;
+  background-color: green;
   border: 3px green solid;
   border-radius: 50%;
   width: 50px;
