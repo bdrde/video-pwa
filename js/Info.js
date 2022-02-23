@@ -11,17 +11,27 @@ class Info extends HTMLElement {
     connectedCallback() {
         this.setCustomHeader();
         render(html`
-            <h2>Information</h2> \
-            <h3>Ihr Gesprächspartner</h3> \
-            <p><ul> \
-                <li>Name</li> \
-                <li>Krankenkasse</li> \
-            </ul></p> \
-            <h3>Sie</h3> \
-            <p><ul> \
-                <li>Name</li> \
-                <li>Beruf</li> \
-            </ul></p> \
+            <div class="info">
+            <div class="card">
+                <h3>Ihr Gesprächspartner</h3> \
+                <img src="./images/dak-egk.png" style="width:100%;"/>
+                <h4>Angaben</h4>
+                <p>
+                    <ul>
+                        <li> Kopfschmerzen
+                        <li> Erschöpfung
+                        <li> Ohrenschmerzen (links)
+                    </ul>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Sie</h3> \
+                <p><ul> \
+                    <li>Name</li> \
+                    <li>Beruf</li> \
+                </ul></p> \
+                </div>
+            </div>
         `, this);
     }
 
