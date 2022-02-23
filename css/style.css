@@ -332,14 +332,17 @@ nav > ul > li {
   width: 100%;
   justify-content: space-between;
   align-self: flex-end;
-
-
 }
 
 #video-self {
-
   height: auto;
   /*transform: translateX(100%);*/
+}
+
+.control-buttons {
+  margin:0pt;
+  padding-left: 40pt;
+  padding-right: 40pt;
 }
 
 .video-controls {
