@@ -339,7 +339,7 @@ nav > ul > li {
   /*transform: translateX(100%);*/
 }
 
-.control-buttons {
+.control-button-group {
   margin:0pt;
   padding-left: 40pt;
   padding-right: 40pt;
