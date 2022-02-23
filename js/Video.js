@@ -26,7 +26,7 @@ class Video extends HTMLElement {
                 <div id="video-peer">
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
-                <div class="left-space">
+                <div class="bottom-overlay-space">
                     <div style="width:100%;"></div>
                     <div class="control-button-group">
                       <div style="display:flex;flex-direction:column;">
@@ -81,6 +81,7 @@ class Video extends HTMLElement {
             <span class="blink"></span>`
             , document.querySelector('#custom-header'));
             */
+        render('', document.querySelector('#custom-header'));
         render('', document.querySelector('#data-header'));
     }
 
