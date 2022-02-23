@@ -27,7 +27,7 @@ class Video extends HTMLElement {
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
                 <div class="bottom-overlay-space">
-                    <div style="width:100%;"></div>
+                    <div></div>
                     <div class="control-button-group">
                       <div style="display:flex;flex-direction:column;">
                         <button class="round-button" @click=${_ => this.fullscreen()}>&#8632;</button>
@@ -39,7 +39,7 @@ class Video extends HTMLElement {
                     <div class="control-button-group">
                         <button class="round-button" style="border-color:red;" @click=${_ => this.end()}>&#9209;</button>
                     </div>
-                    <div style="width:100%;"></div>
+                    <div></div>
                 </div>
                 
                 <!-- horizontale Buttonleiste. erstmal ausgeblendet -->
