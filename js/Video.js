@@ -22,7 +22,11 @@ class Video extends HTMLElement {
 
         */
         render(html`
-            <div class="video">
+            <div id="video-other">
+                <p>Es befindet sich ein Gesprächspartner im Warteraum</p>
+                <button class="rounded-button-link green" @click=${_ => this.displayVideo(true)}>Annehmen</button>
+            </div>
+            <div id="video-all">
                 <div id="video-peer">
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
@@ -53,6 +57,11 @@ class Video extends HTMLElement {
             </div>
         `, this);
         //        <video id="video-self" autoplay></video>
+
+        /* Video bereits an aus früherer Aktion */
+        this.videoOn = window.localStorage.getItem('videoOn');
+        this.displayVideo(this.videoOn == null ? false : this.videoOn);
+
 
         this.video = document.querySelector("#video-self");
         this.video.setAttribute("autoplay", "");
@@ -85,6 +94,20 @@ class Video extends HTMLElement {
         render('', document.querySelector('#data-header'));
     }
 
+    displayVideo(show) {
+        if (show) {
+            document.querySelector('#video-other').style.display = 'none';
+            document.querySelector('#video-all').style.display = 'flex';
+        } else {
+            document.querySelector('#video-other').style.display = 'flex';
+            document.querySelector('#video-all').style.display = 'none';
+        }
+
+        /* im lokalen Speicher ablegen, dass das Video an ist */
+        if (show) {
+            window.localStorage.setItem('videoOn', true);
+        }
+    }
 
     toggleAll() {
         this.toggle('video');
@@ -111,8 +134,9 @@ class Video extends HTMLElement {
             this.stream = null;
         });
 
-
-        document.querySelector('.video').style.display= 'none';
+        this.displayVideo(false);
+        /* lokalen Speicher leeren. Default ist damit wieder 'false' */
+        window.localStorage.clear();
     }
 
     fullscreen() {
