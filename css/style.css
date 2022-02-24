@@ -351,10 +351,10 @@ nav > ul > li {
   width: min-content;
   max-width: 50%;
   /*transform: translateX(100%);*/
-  /*
+  
   border: 2px white solid;
   border-radius: 6pt;
-  */
+  
 }
 
 .control-button-group {
