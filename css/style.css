@@ -133,6 +133,11 @@ body {
   border-color: lightgray;
 }
 
+.rounded-button-link.green {
+  background-color: lightgreen; /*rgb(124, 222, 255);*/
+  border-color: lightgreen;
+}
+
 #login-overlay > #qr-code-login-overlay {
   display: none;
 
@@ -314,9 +319,21 @@ nav > ul > li {
 /* ********************************* 
  * Video-Chat
  * *********************************/
-
-.video {
+#video-other {
   display: flex;
+  height: 100%;
+
+  margin: 0pt;
+  padding: 0pt;
+
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#video-all {
+  display: none; /*flex;*/
   height: 100%;
 
   margin: 0pt;
