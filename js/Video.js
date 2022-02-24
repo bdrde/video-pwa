@@ -24,7 +24,7 @@ class Video extends HTMLElement {
         render(html`
             <div id="video-other">
                 <p>Es befindet sich ein Gesprächspartner im Warteraum</p>
-                <button class="rounded-button-link green" @click=${_ => this.displayVideo(true)}>Annehmen</button>
+                <button class="rounded-button-link green" @click=${_ => this.startVideo()}>Annehmen</button>
             </div>
             <div id="video-all">
                 <div id="video-peer">
@@ -60,9 +60,19 @@ class Video extends HTMLElement {
 
         /* Video bereits an aus früherer Aktion */
         this.videoOn = window.localStorage.getItem('videoOn');
-        this.displayVideo(this.videoOn == null ? false : this.videoOn);
+        this.videoOn == null ? false : this.videoOn;
 
+        if (this.videoOn) {
+            this.startVideo();
+        }
+    }
 
+    startVideo() {
+        this.displayVideo(true);
+        this.initCamera();
+    }
+
+    initCamera() {
         this.video = document.querySelector("#video-self");
         this.video.setAttribute("autoplay", "");
         this.video.setAttribute("muted", "");
@@ -98,15 +108,15 @@ class Video extends HTMLElement {
         if (show) {
             document.querySelector('#video-other').style.display = 'none';
             document.querySelector('#video-all').style.display = 'flex';
+            /* im lokalen Speicher ablegen, dass das Video an ist */
+
+            window.localStorage.setItem('videoOn', true);
         } else {
             document.querySelector('#video-other').style.display = 'flex';
             document.querySelector('#video-all').style.display = 'none';
         }
 
-        /* im lokalen Speicher ablegen, dass das Video an ist */
-        if (show) {
-            window.localStorage.setItem('videoOn', true);
-        }
+
     }
 
     toggleAll() {
@@ -131,8 +141,9 @@ class Video extends HTMLElement {
     end() {
         this.stream.getTracks().forEach((track) => {
             track.stop();
-            this.stream = null;
         });
+        this.stream = null;
+
 
         this.displayVideo(false);
         /* lokalen Speicher leeren. Default ist damit wieder 'false' */
