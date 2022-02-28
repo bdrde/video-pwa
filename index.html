@@ -21,42 +21,39 @@
 
 <body>
     <div id="login-overlay">
-        <div id="blurred">
+        <div class="logo">
+            <img src="./images/icon-128.png" style="width: 50pt;" />
+            <img src="./images/h-icon.svg" style="width: 50pt;" />
         </div>
-        <div id="clear">
-            <h2>Bitte identifizieren sie sich als</h2>
-            <div class="login-box">
-                <p>Versicherter einer gesetzlichen Krankenversicherung</p>
-                <a class="rounded-button-link default" href="openid://">mit bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
-                        style="height: 20pt;" /></button>
+
+        <div id="logins" class="responsive">
+            <div id="login-1" class="responsive-left">
+                <div id="inner">
+                    <h3>Ich bin Patient</h3>
+                    <p>Connect to your doctor with your Digital Health Identity</p>
+                    <a class="login-button dark" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                        <img src="./images/icon-128.png" style="width: 20pt;" />
+                        Login
+                    </a>
+                </div>
             </div>
-            <div class="login-box">
-                <p>als Angehöriger eines Heilberufes</p>
-                <a class="rounded-button-link default"
-                    href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">mit
-                    bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
-                        style="height: 20pt;" /></button>
+            <div id="login-2" class="responsive-right">
+                <div id="inner">
+                    <h3>Ich bin Arzt</h3>
+                    <p>Connect to your patient with your Digital Health Identity</p>
+                    <a class="login-button light" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                        <img src="./images/icon-128.png" style="width: 20pt;" />
+                        Login
+                    </a>
+                </div>
             </div>
-        </div>
-        <div id="qr-code-login-overlay">
-            <p>
-                Scannen Sie den angezeigten QR-Code mir Ihrer Wallet.
-                Nach erfolgreicher Identifizierung werden Sie eingeloggt.
-            </p>
-            <img src="./images/qrcode.png"></img>
-            <div> <!-- wrapper for placement-->
-                <div class="loader" style="display:inline-block"></div> 
-            </div>
-            <button class="rounded-button-link alt" onclick="hideLoginQrCode();">Zurück</button>
         </div>
     </div>
 
     <div id="container">
         <header>
             <div id="custom-header">
-                <img src="./images/icon-128.png" style="height: 60%; margin: auto;"/> 
+                <img src="./images/icon-128.png" style="height: 60%; margin: auto;" />
             </div>
             <div id="data-header"></div>
             <div id="signout-header">

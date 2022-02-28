@@ -23,7 +23,124 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1
+  z-index: 1;
+
+  background-color: #bfebfb;
+
+  text-align: center;
+}
+
+/*
+ *
+ */
+.logo {  
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: none;
+  height: 30%;
+}
+.logo > img {
+}
+
+/*
+ *
+ */
+.responsive {
+  display: flex;
+  flex-wrap: wrap;
+
+  height: 70%;
+}
+
+.responsive-left {
+  flex: 50%;
+  min-width: fit-content;
+  max-width: 350pt;
+}
+
+.responsive-right {
+  flex: 50%;
+  min-width: fit-content;
+  max-width: 350pt;
+}
+
+
+@media (max-width: 500px) {
+  .responsive-right, .responsive-left {
+    flex-direction: 100%;
+  }
+}
+
+#login-1 {
+  margin: 10pt;
+  align-self: flex-start;
+}
+
+#login-1 > #inner {
+  background-color: white;
+  border-radius: 10pt;
+
+  color: #030045;
+  padding: 15px 15px 15px 15px;
+}
+
+/*#login-1 > #inner > a {*/
+.login-button {
+
+  margin: 5pt;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  /*width: 120px;*/
+ 
+  text-decoration: none;
+
+  font-weight: bold;
+  padding: 7px;  
+  width: 330px;
+  height: 30pt;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.login-button > img {
+  justify-content: left;
+}
+
+.dark {
+  background-color: #030045;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: #030045;
+}
+
+/**********************/
+
+#login-2 {
+  margin: 0pt;
+  align-self: flex-end;
+}
+
+#login-2 > #inner {
+  color: white;
+  background-color: #030045;
+  padding: 15px 15px 15px 15px;
+}
+
+#login-2 > #inner > button {
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+  padding: 7px;  
+  width: 330px;
+  height: 30pt;
+  border-radius: 5px;
+  border-style: none;
 }
 
 #login-overlay > #blurred {
@@ -96,6 +213,7 @@ body {
   /*width: 20%;*/
   
 }
+
 
 .rounded-button-link {
   margin: 5pt;
