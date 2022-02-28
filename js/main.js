@@ -15,6 +15,7 @@ router.setRoutes([
   //{path: '(.*)', component: 'x-login-view'},
 ]);
 
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idToken = urlParams.get('id_token')
@@ -38,6 +39,7 @@ if (null == idToken) {
     tag.style.display = 'none';
   })
 
+  Router.go('/video-pwa/video');
   // show this text only after 'login'
 /*  
   document.querySelector('#data-header').innerHTML=' \
