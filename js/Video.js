@@ -42,7 +42,7 @@ class Video extends HTMLElement {
                     </div>
                     <video id="video-self" autoplay></video>
                     <div class="control-button-group">
-                        <button class="round-button" style="background-color:red; background-image: url('./images/phone.svg');background-repeat: no-repeat;background-position: center;" @click=${_ => this.end()}></button>
+                        <button class="round-button" style="background-color: red; background-image: url('./images/phone.svg');background-repeat: no-repeat;background-position: center;" @click=${_ => this.end()}></button>
                     </div>
                 </div>
                 

@@ -190,10 +190,13 @@ header {
  
 }
 
+
 header > div {
+  /*
   margin: 0pt;
   display: inline-block;
   overflow: hidden;
+  */
   /*
   border-right: 2pt;
   border-right-color: gray;
@@ -203,13 +206,13 @@ header > div {
 
 #custom-header {
   display: flex;
-  width: 25%; 
+  width: 20%; 
   justify-content: center;
 }
 
 
 #data-header {
-  width: 65%; 
+  width: 60%;
   text-align: center;
   align-content: center;
   color: cornflowerblue;
@@ -219,10 +222,11 @@ header > div {
 #signout-header {
   display: flex;
   justify-content: center;
-
-  width: 10%;
+  width: 20%;
+  /*
   align-content: center; 
   text-align: center;
+  */
 }
 
 .nav-button-signout {
@@ -230,8 +234,8 @@ header > div {
 
   border: 0px lightgray solid;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   color: white;
   font-weight: bolder;
 
@@ -281,7 +285,7 @@ nav {
 
 nav > ul {
     display: flex; 
-    justify-content: space-around;
+    /*justify-content: space-evenly;*/
     height:100%;
     margin: 0;
     padding: 0;
@@ -292,9 +296,15 @@ nav > ul {
 /* navigational item (menu item)*/
 nav > ul > li {
     display: block;
+    /*
     text-align: center;
     align-items: center;
+    */
     width: 100%;
+
+    padding-top: 7pt;
+    padding-left: 15pt;
+    padding-right: 15pt;
 
     overflow: hidden;
 
@@ -303,6 +313,7 @@ nav > ul > li {
     border-color: lightgray;
     border-top-width: 1pt;
     border-top-style: solid;
+    
 
     /*
     border-right-width: 1pt;
@@ -312,7 +323,7 @@ nav > ul > li {
 }
 
 .nav-icon {    
-    height: 30pt;
+    height: 13pt;
 }
 
 .center-vertically {
@@ -377,7 +388,7 @@ nav > ul > li {
 .bottom-overlay-space {
   display: flex;
   position: absolute;
-  height: 17%;
+  height: 20%;
   width: 100%;
   background-color: #bfebfb7f;
   justify-content: baseline; /*space-between;*/
