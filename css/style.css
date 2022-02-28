@@ -49,19 +49,18 @@ body {
 .responsive {
   display: flex;
   flex-wrap: wrap;
-
-  height: 70%;
+/*  height: 70%;*/
 }
 
 .responsive-left {
   flex: 50%;
-  min-width: fit-content;
+  /*min-width: fit-content;*/
   max-width: 350pt;
 }
 
 .responsive-right {
   flex: 50%;
-  min-width: fit-content;
+  /*min-width: fit-content;*/
   max-width: 350pt;
 }
 
@@ -86,7 +85,7 @@ body {
 }
 
 /*#login-1 > #inner > a {*/
-.login-button {
+.login-button, .button {
 
   margin: 5pt;
   display: inline-flex;
@@ -480,6 +479,9 @@ nav > ul > li {
   justify-content: center;
   text-align: center;
   align-items: center;
+
+  background-color: #bfebfb;
+  color: #030045;
 }
 
 #video-all {
@@ -533,7 +535,7 @@ nav > ul > li {
   padding-right: 20pt;
   */
   width: 100%;
-  align-self: flex-end;
+  align-self: center; /*flex-end;*/
   text-align: center;
 }
 

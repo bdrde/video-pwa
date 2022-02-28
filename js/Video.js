@@ -23,9 +23,15 @@ class Video extends HTMLElement {
         */
         render(html`
             <div id="video-other">
-                <p>Es befindet sich ein Gesprächspartner im Warteraum</p>
-                <button class="rounded-button-link green" @click=${_ => this.startVideo()}>Annehmen</button>
+                <h1>Willkommen</h1>
+                <div class="logo">
+                    <img src="./images/icon-128.png" style="width: 50pt;" />
+                    <img src="./images/h-icon.svg" style="width: 50pt;" />
+                </div>
+                <h2>Es befindet sich ein Patient im Warteraum</h2>
+                <button class="button light" @click=${_ => this.startVideo()} style="font-size: 15px;">Video starten</button>
             </div>
+
             <div id="video-all">
                 <div id="video-peer">
                   <img src="./images/patient-cartoon.jpeg"></img>
