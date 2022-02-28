@@ -180,12 +180,13 @@ header {
    width: 100%;
    max-height: 35pt;
    min-height: 35pt;
-   background-color: whitesmoke;/*lightgray;*/
+   background-color: #bfebfb;/*lightgray;*/
    overflow: auto;
    flex-direction: row;
-   border: 0 solid lightgray;
+   
+   /*border: 0 solid lightgray;*/
    /*border-top-width: 1pt;*/
-   border-bottom-width: 1pt;
+   /*border-bottom-width: 1pt;*/
  
 }
 
@@ -201,10 +202,12 @@ header > div {
 }
 
 #custom-header {
+  display: flex;
   width: 25%; 
-  text-align: left;
-  align-content: left;
+  justify-content: center;
 }
+
+
 #data-header {
   width: 65%; 
   text-align: center;
@@ -212,30 +215,48 @@ header > div {
   color: cornflowerblue;
   font-weight: bold;
 }
+
 #signout-header {
+  display: flex;
+  justify-content: center;
+
   width: 10%;
-  align-content: right; 
-  text-align: right;
+  align-content: center; 
+  text-align: center;
 }
 
 .nav-button-signout {
+  background-color: #191962; 
+
+  border: 0px lightgray solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-weight: bolder;
+
+  /*
   border: 0;
   padding: 0;
   margin: 0;
   background-color: transparent;
+  */
 }
 
+/*
 .header-image {
   height: 100%;
   margin: 0;
   border: 0;
 }
-
+*/
+/*
 .nav-icon-signout {    
   height: 30pt;
   margin: 0;
   border: 0;
 }
+*/
 
 /* ********************************* 
  * Main content area
@@ -254,7 +275,7 @@ nav {
   height: 60pt;
   min-height: 60pt;
   max-height: 60pt;
-  background-color: whitesmoke;
+  background-color: #F9F9F9;
 
 }
 
@@ -358,26 +379,33 @@ nav > ul > li {
   position: absolute;
   height: 17%;
   width: 100%;
-  justify-content: space-between;
+  background-color: #bfebfb7f;
+  justify-content: baseline; /*space-between;*/
   align-self: flex-end;
 }
 
 #video-self {
-  height: auto;
+  height: 90%;
   max-height: min-content;
   width: min-content;
   max-width: 50%;
-  /*transform: translateX(100%);*/
+  /*transform: translateY(100%);*/
+  align-self: center;
   
-  border: 2px white solid;
+  border: 0px white solid;
   border-radius: 6pt;
   
 }
 
 .control-button-group {
   margin:0pt;
+/*
   padding-left: 20pt;
   padding-right: 20pt;
+  */
+  width: 100%;
+  align-self: flex-end;
+  text-align: center;
 }
 
 .video-controls {
@@ -388,7 +416,7 @@ nav > ul > li {
 
 .video-controls > ul {
   display: flex; 
-  justify-content: space-around;
+  justify-content: flex-start;
   height:100%;
   margin: 0;
   padding: 0;
@@ -409,11 +437,12 @@ nav > ul > li {
 }
 
 .round-button {
-  background-color: rgba(130, 130, 130, 0.4);
-  border: 3px lightgray solid;
+  background-color: white;
+  /*background-image: url('../images/microphone.svg');*/
+  border: 0px lightgray solid;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 51px;
+  height: 51px;
 }
 /* ********************************* 
  * Rezept

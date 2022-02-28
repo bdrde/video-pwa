@@ -31,19 +31,19 @@ class Video extends HTMLElement {
                   <img src="./images/patient-cartoon.jpeg"></img>
                   </div>
                 <div class="bottom-overlay-space">
-                    <div></div>
                     <div class="control-button-group">
+                    <!--
                       <div style="display:flex;flex-direction:column;">
-                        <button class="round-button" @click=${_ => this.fullscreen()}><img src="./images/fullscreen-svgrepo-com.svg" style="width: 17pt;"/></button>
-                        </br>
-                        <button class="round-button" @click=${_ => this.toggleAll()}><img src="./images/muted-filled-svgrepo-com.svg" style="width: 17pt;"/></button>
-                      </div>
+                      -->
+                        <button class="round-button" style="background-image: url('./images/microphone.svg');" @click=${_ => this.toggleAll()}></button>
+                        <!--
+                        </div>
+                        -->
                     </div>
                     <video id="video-self" autoplay></video>
                     <div class="control-button-group">
-                        <button class="round-button" style="background-color:red;" @click=${_ => this.end()}><img src="./images/call-end-svgrepo-com.svg" style="width: 17pt;"/></button>
+                        <button class="round-button" style="background-color:red; background-image: url('./images/phone.svg');background-repeat: no-repeat;background-position: center;" @click=${_ => this.end()}></button>
                     </div>
-                    <div></div>
                 </div>
                 
                 <!-- horizontale Buttonleiste. erstmal ausgeblendet -->
@@ -150,6 +150,7 @@ class Video extends HTMLElement {
         window.localStorage.clear();
     }
 
+    /*
     fullscreen() {
         const video = document.querySelector("#video-self");
         if (this.video.webkitEnterFullScreen) {
@@ -164,6 +165,7 @@ class Video extends HTMLElement {
             this.video.msRequestFullscreen();
         }
     }
+    */
 }
 
 customElements.define('x-video-view', Video)
