@@ -6,13 +6,13 @@
     <title>Hello World</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/hello-icon-152.png">
+    <link rel="apple-touch-icon" href="images/icon-152.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="whitesmoke" />
+    <meta name="theme-color" content="#bfebfb" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Hello World">
-    <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+    <meta name="msapplication-TileImage" content="images/icon-144.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
     <link rel="canonical" href="https://bdrde.github.io/video-pwa/">
@@ -21,46 +21,43 @@
 
 <body>
     <div id="login-overlay">
-        <div id="blurred">
+        <div class="logo">
+            <img src="./images/icon-128.png" style="width: 50pt;" />
+            <img src="./images/h-icon.svg" style="width: 50pt;" />
         </div>
-        <div id="clear">
-            <h2>Bitte identifizieren sie sich als</h2>
-            <div class="login-box">
-                <p>Versicherter einer gesetzlichen Krankenversicherung</p>
-                <a class="rounded-button-link default" href="openid://">mit bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
-                        style="height: 20pt;" /></button>
+
+        <div id="logins" class="responsive">
+            <div id="login-1" class="responsive-left">
+                <div id="inner">
+                    <h3>Ich bin Patient</h3>
+                    <p>Connect to your doctor with your Digital Health Identity</p>
+                    <a class="login-button dark" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                        <img src="./images/icon-128.png" style="width: 20pt;" />
+                        Login
+                    </a>
+                </div>
             </div>
-            <div class="login-box">
-                <p>als Angehöriger eines Heilberufes</p>
-                <a class="rounded-button-link default"
-                    href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">mit
-                    bdr-wallet</a>
-                <button class="rounded-button-link alt" onclick="showLoginQrCode();"><img src="./images/qrcode.svg"
-                        style="height: 20pt;" /></button>
+            <div id="login-2" class="responsive-right">
+                <div id="inner">
+                    <h3>Ich bin Arzt</h3>
+                    <p>Connect to your patient with your Digital Health Identity</p>
+                    <a class="login-button light" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                        <img src="./images/icon-128.png" style="width: 20pt;" />
+                        Login
+                    </a>
+                </div>
             </div>
-        </div>
-        <div id="qr-code-login-overlay">
-            <p>
-                Scannen Sie den angezeigten QR-Code mir Ihrer Wallet.
-                Nach erfolgreicher Identifizierung werden Sie eingeloggt.
-            </p>
-            <img src="./images/qrcode.png"></img>
-            <div> <!-- wrapper for placement-->
-                <div class="loader" style="display:inline-block"></div> 
-            </div>
-            <button class="rounded-button-link alt" onclick="hideLoginQrCode();">Zurück</button>
         </div>
     </div>
 
     <div id="container">
         <header>
-            <div id="custom-header"></div>
+            <div id="custom-header">
+                <img src="./images/icon-128.png" style="height: 60%; margin: auto;" />
+            </div>
             <div id="data-header"></div>
             <div id="signout-header">
-                <button onclick="logout()" class="nav-button-signout">
-                    <img src="./images/sign-out.svg" class="nav-icon-signout" />
-                </button>
+                <button onclick="logout()" class="nav-button-signout" style="margin: auto;">X</button>
             </div>
         </header>
 
@@ -69,20 +66,20 @@
 
         <nav>
             <ul>
-                <li>
+                <li style="text-align: left;">
                     <a href="/video-pwa/info">
-                        <img src="./images/info-filled.svg" class="nav-icon center-vertically" />
+                        <img src="./images/info-filled.svg" class="nav-icon" />
                     </a>
                 </li>
-                <li>
+                <li style="text-align: center;">
                     <a href="/video-pwa/video">
-                        <img src="./images/camera-filled.svg" class="nav-icon center-vertically" />
+                        <img src="./images/camera-filled.svg" class="nav-icon" />
                     </a>
                 </li>
-                <li>
+                <li style="text-align: right;">
                     <a href="/video-pwa/prescription">
 
-                        <img src="./images/document-signed-filled.svg" class="nav-icon center-vertically" />
+                        <img src="./images/document-signed-filled.svg" class="nav-icon" />
                     </a>
                 </li>
             </ul>
