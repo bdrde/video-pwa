@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.82 134.63">
+    <title>letter1Element 1</title>
+    <g id="Ebene_2" data-name="Ebene 2">
+        <g id="Ebene_1-2" data-name="Ebene 1">
+            <polyline fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.34px" points="30.19 5.67 5.67 5.67 5.67 30.19"/>
+            <polyline fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.34px" points="5.67 104.43 5.67 128.96 30.19 128.96"/>
+            <polyline fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.34px" points="104.62 128.96 129.15 128.96 129.15 104.43"/>
+            <polyline fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.34px" points="129.15 30.19 129.15 5.67 104.62 5.67"/>
+            <path fill="#fff" d="M92.34,104H40.85a7.51,7.51,0,0,1,0-15H92.34a7.51,7.51,0,0,1,0,15"/>
+            <path fill="#fff" d="M61.7,43.61a2.89,2.89,0,0,0-2.89,2.89V60.69a2.89,2.89,0,0,0,2.89,2.89h9.78a2.89,2.89,0,0,0,2.89-2.89V46.5a2.89,2.89,0,0,0-2.89-2.89Zm9.78,33.74H61.7A16.68,16.68,0,0,1,45.05,60.69V46.5A16.67,16.67,0,0,1,61.7,29.85h9.78A16.68,16.68,0,0,1,88.14,46.5V60.69A16.69,16.69,0,0,1,71.48,77.35"/>
+        </g>
+    </g>
+</svg>

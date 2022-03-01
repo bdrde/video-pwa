@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="doubleSlash GmbH">
+  <meta name="copyright" content="Bundesdruckerei GmbH">
+  <meta name="theme-color" content="#049080">
+  <meta name="msapplication-navbutton-color" content="#049080">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#049080">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+
+
+
+  <meta http-equiv="refresh" content="1497">
+  <title>sign-me | D-Trust GmbH</title>
+
+  <link href="https://cloud.sign-me.de/signature/static/resources/src/img/favicon.ico" type="image/vnd.microsoft.icon"
+    rel="shortcut icon">
+  <link href="https://cloud.sign-me.de/signature/static/resources/src/img/favicon.ico" type="image/vnd.microsoft.icon"
+    rel="icon">
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/sign-me-responsive.css">
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/pdf-viewer.css">
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="static/resources/src/css/internal/noscript.css">
+  </noscript>
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/nodep-date-input-polyfill.css">
+
+  <script src="./sign-me _ D-Trust GmbH_files/jquery-3.5.1.min.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/bootstrap.min.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/nodep-date-input-polyfill.dist.js"></script>
+
+  <script src="./sign-me _ D-Trust GmbH_files/core.enum.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.store.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.router.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.plugins.js"></script>
+
+  <script>
+    function sign() {
+        setInterval(() => done(), 2000);
+    }
+
+    function done() {
+        window.opener.postMessage("test", "http://localhost:5500");
+        //window.opener.postMessage("test", "https://bdrde.github.io");
+    }
+</script>
+
+</head>
+
+<body ontouchstart="" class="pb-4 pb-sm-0  ">
+  <script src="./sign-me _ D-Trust GmbH_files/start.js"></script>
+  <section id="start-html" class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-xl-3 left-side-content text-right d-none d-md-block">
+        <div class="lsc-fixed">
+          <!-- lsc-header -->
+          <h2 class="mt-4">sign-me. How remote signing works</h2>
+          <ul>
+            <ul>
+              <li>Signing documents online</li>
+              <li>As legally secure as a handwritten signature</li>
+              <li>A D-Trust GmbH service</li>
+            </ul>
+          </ul>
+
+
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.bundesdruckerei.de/en/sign-me">More information</a><br><br>
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.youtube.com/watch?v=eVzz-7DmP8k">sign-me demo | registration and
+            identification</a><br><br>
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.bundesdruckerei.de/system/files/dokumente/pdf/Quick-reference-guide_sign-me.pdf">sign-me
+            quick guide</a>
+        </div>
+      </div>
+      <div class=" col-md-8 col-xl-9 mb-3">
+        <div class="row">
+          <div class="col d-block header-logo">
+            <a href="https://cloud.sign-me.de/signature/start" target="_self">
+              <img alt="signme logo" src="./sign-me _ D-Trust GmbH_files/signme_logo_color.svg">
+            </a>
+          </div>
+          <div class="col text-right header-logo textright mb-xl-2 mt-xl-2">
+            <a href="https://cloud.sign-me.de/signature/start?ct=8d5d0b2#" target="_blank">
+              <img alt="dtrust logo de" src="./sign-me _ D-Trust GmbH_files/dtr_logo.svg">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <h2 class="mb-4 mt-4" id="form_heading">Your digital signature</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">Already registered with sign-me</h4>
+                <a id="btn_login" href="https://cloud.sign-me.de/signature/start?btn_login=true"
+                  class="mt-2 col-12 offset-sm-6 col-sm-6 btn bdr-blue" target="_self">Login</a>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">Have a Wallet?</h4>
+                <a id="btn_login" href="#" onclick="sign();"
+                  class="mt-2 col-12 offset-sm-6 col-sm-6 btn bdr-green" target="_self">Identify with Wallet</a>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">Sign-up now free of charge</h4>
+                <a id="btn_register" href="https://cloud.sign-me.de/signature/start?btn_register=true" target="_self"
+                  class="mt-2 col-12 offset-sm-6 col-sm-6 btn bdr-pink">Register</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <noscript>
+              <div class="card bg-warning mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript is not active</h5>
+                  <p class="card-text">You have deactivated JavaScript for this website. For an enhanced user
+                    experience, please, allow 'JavaScript' in your browser or contact your administrator.</p>
+                </div>
+              </div>
+            </noscript>
+            <div class="accordion mt-2 mb-2 mt-lg-0" id="accordion-faq" style="">
+              <div class="card mb-2">
+                <div class="card-header" id="heading-1">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1"
+                      aria-controls="collapse-1" aria-expanded="false">
+                      What is a digital signature?<span class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordion-faq" style="">
+                  <div class="card-body">
+                    You can use a digital signature to sign a document (e.g. a loan agreement) online and without paper.
+                    This accelerates processes and saves costs. The EU-wide eIDAS Regulation provides the legal
+                    framework for this It defines the legal effect of electronically signed documents and their
+                    probative value in court.<br><br>You can use sign-me for simple, advanced and qualified signatures.
+                    The qualified electronic signature has the highest level. Contracts, such as employee leasing,
+                    consumer loans or disposal certificates, are typical cases in which the qualified signature is used.
+                    The qualified signature has the same legal effect as a handwritten signature and thus replaces the
+                    written form on paper. Simple and/or advanced signatures are used for most company form and approval
+                    processes as well as for formless agreements.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-header" id="heading-2">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-2"
+                      aria-controls="collapse-2" aria-expanded="false">
+                      What can I use sign-me for?<span class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-faq" style="">
+                  <div class="card-body">
+                    Sign-me allows you to trigger an electronic signature without a signature card or card reader. All
+                    you need is an Internet-enabled device. sign-me can be used in many different way - be it for
+                    contract management or online loans, digital insurance services or even for electronic public
+                    tendering or to promote the electronic patient file. The sign-me service cannot be used to sign
+                    e-mails.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-header" id="heading-3">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-3"
+                      aria-controls="collapse-3" aria-expanded="false">
+                      As a private company or public authority, how can I use sign-me?<span
+                        class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-faq" style="">
+                  <div class="card-body">
+                    Would you like to use digital signatures at your company or public authority? If so, contact us
+                    directly or send an e-mail to <a class="external-link"
+                      href="mailto:sales@d-trust.net">sales@d-trust.net</a>. Once a contract has been concluded, your
+                    application will be connected to sign-me. Instead of your own application, you can also use a
+                    workflow/document management system from one of our partners in which sign-me is already integrated.
+                    After your employees, partners and customers have been identified once, they too can sign documents
+                    directly using this system.<br><br>Interested in trying out our product directly? Create a sign-me
+                    account today and get to know the functions provided by our solution. Find out how identification
+                    and registration with sign-me works, for instance, in our <a class="external-link"
+                      href="https://www.youtube.com/watch?v=eVzz-7DmP8k" target="_blank"
+                      rel="noopener noreferrer">demonstration video</a>.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-header" id="heading-4">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-4"
+                      aria-controls="collapse-4" aria-expanded="false">
+                      As a self-employed or private individual, how can I use sign-me?<span
+                        class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion-faq" style="">
+                  <div class="card-body">
+                    Register and identify yourself once directly on our portal: <a id="link"
+                      href="https://cloud.sign-me.de/signature/start">www.sign-me.de</a>. After you have registered and
+                    confirmed your registration e-mail, you will receive a start credit of 10 coins which you can use to
+                    create two qualified signatures. You must first identify yourself in order to be able to use this
+                    start credit. You can currently do this free of charge on the portal using the online ID function of
+                    your ID card. All other identification methods via our service provider identityTM require a
+                    signature credit of 50 coins. You can top up your coin credit through our partner <a
+                      class="external-link" href="https://www.chipkartenleser-shop.de/cert_bdr" target="_blank"
+                      rel="noopener noreferrer">ReinerSCT</a>. Different packages are available to meet different
+                    signature needs. Once you have identified yourself, you can upload a document on the portal for
+                    signing. After confirmation using a second factor, an SMS-TAN, you can download the signed document
+                    again and send it to your business partners. After you have used up your signature credit (coins),
+                    you can purchase new credit at any time in the online shop of our partner <a class="external-link"
+                      href="https://www.chipkartenleser-shop.de/cert_bdr" target="_blank"
+                      rel="noopener noreferrer">ReinerSCT</a>.
+                  </div>
+                </div>
+              </div>
+              <a class="mt-3 d-block external-link text-right" href="https://www.bundesdruckerei.de/en/sign-me"
+                target="_blank" rel="noopener noreferrer">More FAQs </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col pb-5 mt-3 left-side-content lsc-mobile d-md-none d-lg-none">
+        <h2 class="mt-4">sign-me. How remote signing works</h2>
+        <ul>
+          <ul>
+            <li>Signing documents online</li>
+            <li>As legally secure as a handwritten signature</li>
+            <li>A D-Trust GmbH service</li>
+          </ul>
+        </ul>
+
+
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.bundesdruckerei.de/en/sign-me">More information</a><br><br>
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.youtube.com/watch?v=eVzz-7DmP8k">sign-me demo | registration and identification</a><br><br>
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.bundesdruckerei.de/system/files/dokumente/pdf/Quick-reference-guide_sign-me.pdf">sign-me
+          quick guide</a>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    START_FRAGMENT.init();
+  </script>
+  <footer class="footer container-fluid unselectable">
+    <div class="row">
+      <div class="col text-center mb-5 mb-xl-0">
+        <a class="footer-link" href="https://d-trust.net/en/privacy-policy-sign-me.html" target="_blank"
+          rel="noopener noreferrer">Privacy Policy</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/impressum.html" target="_blank"
+          rel="noopener noreferrer">Legal Notice</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/kontakt.html" target="_blank"
+          rel="noopener noreferrer">Contact</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/barrierefreiheit.html" target="_blank"
+          rel="noopener noreferrer">Accessibility</a>
+      </div>
+      <a class="eidas-logo" alt="eidas logo" target="_blank" rel="noopener noreferrer"
+        href="https://www.elektronische-vertrauensdienste.de/EVD/DE/Verbraucher/Anbieterliste/Anbieterliste-start.html">
+        <img alt="eidas logo" src="./sign-me _ D-Trust GmbH_files/eidas.jpg">
+      </a>
+      <a class="bdr-logo" href="https://bundesdruckerei.de/" alt="bdr logo" target="_blank" rel="noopener noreferrer">
+        <img class="img-fluid" alt="bdr logo" src="./sign-me _ D-Trust GmbH_files/bdr_logo_color_en.svg">
+      </a>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

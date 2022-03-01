@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.34 148.59">
+	<title>Element 1</title>
+	<g id="Ebene_2" data-name="Ebene 2">
+		<g id="Ebene_1-2" data-name="Ebene 1">
+			<path fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.34px" d="M177.67,96.05A46.25,46.25,0,1,1,131.42,49.8,46.25,46.25,0,0,1,177.67,96.05Z"/>
+			<path fill="none" stroke="#0046b9" stroke-miterlimit="10" stroke-width="9.92px" fill-rule="evenodd" d="M110.73,28.29c0,12.89-23.23,23.34-51.89,23.34S7,41.18,7,28.29,30.19,5,58.84,5,110.73,15.41,110.73,28.29Z"/>
+			<path fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.92px" fill-rule="evenodd" class="cls-3" d="M69.72,96.91a113.8,113.8,0,0,1-12.88.72C28.19,97.63,5,87.18,5,74.29"/>
+			<path fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.92px" fill-rule="evenodd" d="M73,72.47a111.66,111.66,0,0,1-16.2,1.16C28.19,73.63,5,63.18,5,50.29"/>
+			<path fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.92px" fill-rule="evenodd" d="M73,120.47a111.66,111.66,0,0,1-16.2,1.16C28.19,121.63,5,111.18,5,98.29"/>
+			<path fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.92px" fill-rule="evenodd" d="M86.24,139.52a100.81,100.81,0,0,1-29.4,4.11c-25.76,0-47.14-8.45-51.19-19.52"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#32d7f5" stroke-width="3.22px" x1="111.96" y1="122.22" x2="152.79" y2="122.22"/>
+			<polyline fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.22px" points="131.14 66.1 124.81 64.4 114.92 101.31"/>
+			<line fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.22px" x1="126.89" y1="104.52" x2="136.78" y2="67.61"/>
+			<polygon fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#32d7f5" stroke-width="3.22px" points="113.6 106.24 125.57 109.45 117.75 114.7 113.6 106.24"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#32d7f5" stroke-width="2.17px" x1="39.33" y1="40.07" x2="80.16" y2="40.07"/>
+			<polyline fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.17px" points="58.51 14.52 52.18 13.75 42.29 30.55"/>
+			<line fill="none" stroke="#0046b9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.17px" x1="54.27" y1="32.01" x2="64.16" y2="15.21"/>
+			<polygon fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#32d7f5" stroke-width="2.17px" points="40.97 32.8 52.95 34.26 45.12 36.65 40.97 32.8"/>
+		</g>
+	</g>
+</svg>
