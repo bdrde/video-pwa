@@ -42,7 +42,11 @@ class Prescription extends HTMLElement {
                 <div id="space"> </div> \
             </div> \
             <div id="receipt"> \
-                <div id="receipt-title"><img src="./images/sign-me.svg" style="width: 100pt"></img></div> \
+                <div id="receipt-title">
+                    <button id="sign-prescription-button" @click=${_ => this.sign()}> \
+                        <img src="./images/sign-me.svg"></img> \
+                    </button> \
+                </div> \
 
                 <div id="space"> </div> \
 
@@ -70,11 +74,6 @@ class Prescription extends HTMLElement {
     }
 
     setCustomHeader() {
-        render(html`\
-            <button id="sign-prescription-button" @click=${_ => this.sign()}> \
-                <img src="./images/sign-me.svg"></img> \
-            </button> \
-        `, document.querySelector('#custom-header'));
     }
 
     sign() {

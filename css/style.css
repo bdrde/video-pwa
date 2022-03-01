@@ -630,7 +630,7 @@ nav > ul > li > a {
 .prescription >
   #receipt
 {
-  background-color: mistyrose;
+  background-color: #FEE8EB;
   padding: 3pt;
   margin: 2pt;
   border-radius: 18pt;
@@ -642,13 +642,14 @@ nav > ul > li > a {
   width: 70pt;
   height: 34pt;
   border-width: 0pt;
+  background-color: #FEE8EB;
 }
 
 .prescription > #receipt >
   #receipt-element {
     margin: 0;
     font-size: 80%;
-    background-color: whitesmoke;
+    background-color: #FDF6F7;
     padding: 10pt 10pt 5pt;
     border-radius: 10pt;
 }
@@ -657,7 +658,7 @@ nav > ul > li > a {
   #receipt-title {
     margin: 0;
     font-size: 80%;
-    background-color: whitesmoke;
+    background-color: #FDF6F7;
     padding: 10pt 10pt 5pt;
 }
 
@@ -665,7 +666,7 @@ nav > ul > li > a {
   #receipt-text {
     margin: 0;
     font-weight: bold;
-    background-color: whitesmoke;
+    background-color: #FDF6F7;
     padding: 5pt 10pt 5pt;
 }
 
@@ -674,7 +675,7 @@ nav > ul > li > a {
     margin: 0;
     font-size: 80%;
     height: 10pt;
-    background-color: mistyrose;
+    background-color: #FEE8EB;
     border-radius: 1pt;
 }
 
@@ -682,7 +683,7 @@ nav > ul > li > a {
   #data-element {
     margin: 0;
     font-size: 80%;
-    background-color: lightcyan;
+    background-color: #E9F9FF;
     padding: 10pt 10pt 5pt;
     border-radius: 18pt;
 }
@@ -691,7 +692,7 @@ nav > ul > li > a {
   #data-title {
     margin: 0;
     font-size: 80%;
-    background-color: lightcyan;
+    background-color: #E9F9FF;
     padding: 10pt 10pt 5pt;
 }
 
@@ -700,7 +701,7 @@ nav > ul > li > a {
     margin: 0;
     font-weight: bold;
     padding: 5pt 10pt 5pt;
-    background-color: lightcyan;
+    background-color: #E9F9FF;
 }
 
 .prescription > #data >
