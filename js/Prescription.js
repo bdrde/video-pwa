@@ -79,8 +79,8 @@ class Prescription extends HTMLElement {
 
     sign() {
         //alert('TODO: sign with sign-me');
-        const w=100;
-        const h=300;
+        const w=300;
+        const h=600;
 
         const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
         const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
@@ -91,8 +91,8 @@ class Prescription extends HTMLElement {
 
 
         signPopupRef = window.open(
-            domain + '/video-pwa/sign-me.html'
-            //domain + '/sign-me.html'
+            domain + '/video-pwa/sign-me/start.html'
+            //domain + '/sign-me/start.html'
             ,'Signieren'
             ,`
             popup

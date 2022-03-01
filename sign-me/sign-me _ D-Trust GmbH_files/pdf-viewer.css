@@ -1,0 +1,279 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("./OpenSans-Regular.ttf") format("truetype");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("./OpenSans-Regular.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.pdf-page-wrapper {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  height: 1.2rem;
+}
+
+#accordion-unit .custom-control-label {
+  color: #cecece;
+}
+
+#accordion-unit .custom-control-label::before {
+  border: #adb5bd solid 2px;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0;
+  left: -2rem;
+}
+
+#accordion-unit .custom-control-label::after {
+  border-radius: 50%;
+  left: -1.75rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+#accordion-unit span {
+  color: #cecece;
+}
+
+#accordion-unit .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background: #0045b9 no-repeat 90%/90% 78%;
+}
+
+#accordion-unit .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+#accordion-unit .card {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+#accordion-unit .card-header .btn-link {
+  width: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3rem 1.3rem 1.3rem 0.3rem;
+}
+
+#accordion-unit .card-header .btn-link .collapse-icon-plus::after {
+  top: 5%;
+  right: 3%;
+}
+
+#accordion-unit .card-header .list-item {
+  width: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3rem 1.3rem 1.3rem 0.3rem;
+}
+
+.font-gray {
+  color: #cecece;
+}
+
+#accordion-documents-viewer .nav-tabs .nav-link:focus:not(.active) {
+  border-color: #fff !important;
+}
+
+#accordion-documents-viewer .nav-tabs .nav-link:hover:not(.active) {
+  border-color: #fff !important;
+}
+
+#accordion-documents-viewer button:disabled {
+  opacity: 0.5;
+}
+
+#accordion-documents-viewer .icon-caution {
+  content: "";
+  position: absolute;
+  background: #fff url(../../img/caution.svg) center/contain no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+#accordion-documents-viewer .input-mw-46 {
+  max-width: 46px;
+}
+
+.pdf-control-icon {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.pdf-control-icon.icon-straighten {
+  background-image: url(../../img/straighten-gray.svg);
+  left: 0;
+}
+
+.pdf-control-icon.icon-straighten.active {
+  background-image: url(../../img/straighten-blue.svg);
+}
+
+.pdf-control-icon.icon-page-up {
+  background-image: url(../../img/pageUp.svg);
+  right: 2.5rem;
+}
+
+.pdf-control-icon.icon-page-down {
+  background-image: url(../../img/pageDown.svg);
+  right: 0;
+}
+
+.pdf-control-icon.icon-page-up.static {
+  left: 2.5rem;
+}
+
+.pdf-control-icon.icon-page-down.static {
+  left: 0;
+}
+
+.pdf-control-icon.icon-zoom-in {
+  background-image: url(../../img/zoomIn.svg);
+  right: 0;
+}
+
+.pdf-control-icon.icon-zoom-out {
+  background-image: url(../../img/zoomOut.svg);
+  right: 2.5rem;
+}
+
+.pdf-control-icon.icon-page-up.disabled {
+  opacity: 0.2;
+}
+
+.pdf-control-icon.icon-page-down.disabled {
+  opacity: 0.2;
+}
+
+.pdf-control-icon.icon-zoom-in.disabled {
+  opacity: 0.2;
+}
+
+.pdf-control-icon.icon-zoom-out.disabled {
+  opacity: 0.2;
+}
+
+.pdf-dummy-mw {
+  max-width: 470px;
+}
+
+.pdf-indicator {
+  width: 100%;
+  max-width: 500px;
+  height: 0;
+  padding-bottom: 140%;
+  background-size: 100%;
+  display: block;
+  background-image: url(../../img/signaturvorschau-sprite.png);
+  background-repeat: no-repeat;
+  background-position-y: 59.95%;
+}
+
+.pdf-indicator[data-position="1"] {
+  background-position-y: 79.95%;
+}
+
+.pdf-indicator[data-position="2"] {
+  background-position-y: 39.95%;
+}
+
+.pdf-indicator[data-position="3"] {
+  background-position-y: 20%;
+}
+
+.pdf-indicator[data-position="4"] {
+  background-position-y: 0%;
+}
+
+.pdf-indicator[data-position="5"] {
+  background-position-y: 99.95%;
+}
+
+@media (max-width: 576px) {
+  #accordion-unit .custom-unit-radio-inline {
+    display: inline-flex;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .pdf-control-icon.icon-straighten {
+    left: 2.5rem;
+  }
+
+  .pdf-control-icon.icon-zoom-in {
+    background-image: url(../../img/zoomIn.svg);
+    right: 2.5rem;
+  }
+
+  .pdf-control-icon.icon-zoom-out {
+    background-image: url(../../img/zoomOut.svg);
+    right: 5rem;
+  }
+
+  .pdf-control-icon.icon-page-up.static {
+    left: 2.5rem;
+  }
+
+  .pdf-control-icon.icon-page-down.static {
+    left: 5rem;
+  }
+
+  #accordion-unit .custom-unit-input {
+    left: -3rem;
+  }
+
+  #accordion-unit .custom-unit-wrapper {
+    margin-left: 3rem;
+  }
+}
+
+@media (hover: hover) {
+  .pdf-control-icon.icon-straighten:hover {
+    background-image: url(../../img/straighten-blue.svg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .pdf-control-icon.icon-page-down:not(.disabled):hover {
+    background-image: url(../../img/pageDown_hover.svg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .pdf-control-icon.icon-page-up:not(.disabled):hover {
+    background-image: url(../../img/pageUp_hover.svg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .pdf-control-icon.icon-zoom-in:not(.disabled):hover {
+    background-image: url(../../img/zoomIn_hover.svg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .pdf-control-icon.icon-zoom-out:not(.disabled):hover {
+    background-image: url(../../img/zoomOut_hover.svg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+}

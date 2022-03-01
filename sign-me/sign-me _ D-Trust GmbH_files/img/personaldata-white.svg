@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.71 66.92">
+    <title>letter1Element 1</title>
+    <g id="Ebene_2" data-name="Ebene 2">
+        <g id="Ebene_1-2" data-name="Ebene 1">
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#fff" stroke-width="8.5px" x1="84.25" y1="5.13" x2="113.46" y2="5.13"/>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#fff" stroke-width="8.5px" x1="84.25" y1="23.13" x2="113.46" y2="23.13"/>
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#fff" stroke-width="8.5px" x1="84.25" y1="41.13" x2="113.46" y2="41.13"/>
+            <line  fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#fff" stroke-width="11.34px" x1="5.67" y1="61.25" x2="58.92" y2="61.25"/>
+            <path fill="#fff" d="M28.06,11.91a2.51,2.51,0,0,0-2.5,2.5V26.69a2.51,2.51,0,0,0,2.5,2.51h8.46A2.52,2.52,0,0,0,39,26.69V14.41a2.52,2.52,0,0,0-2.51-2.5Zm8.46,29.2H28.06A14.44,14.44,0,0,1,13.65,26.69V14.41A14.43,14.43,0,0,1,28.06,0h8.46A14.43,14.43,0,0,1,50.94,14.41V26.69A14.44,14.44,0,0,1,36.52,41.11"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.98 149.43">
+	<title>Element 1</title>
+	<g id="Ebene_2" data-name="Ebene 2">
+		<g id="Ebene_1-2" data-name="Ebene 1">
+			<polygon fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#32d7f5" stroke-width="5.67px" points="105.74 91.1 58.24 91.1 58.24 24.46 91.71 24.46 105.74 38.49 105.74 91.1"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="4.95px" x1="94.79" y1="43.64" x2="70.13" y2="43.64"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="4.95px" x1="94.79" y1="52.8" x2="70.13" y2="52.8"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="4.95px" x1="94.79" y1="61.98" x2="70.13" y2="61.98"/>
+			<polyline fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="4.95px" points="70.13 79.83 73.4 75.33 77.13 79.83 82.46 76.33 88.15 79.83 93.65 73.83"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="11.34px" x1="81.99" y1="129.17" x2="81.99" y2="142.34"/>
+			<line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="11.34px" x1="114.29" y1="143.76" x2="49.68" y2="143.76"/>
+			<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0046b9" stroke-width="11.34px" d="M5.67,89.12V5.67m0,0H158.31v106H5.67"/>
+		</g>
+	</g>
+</svg>
