@@ -14,6 +14,8 @@ var URLS = [
   `${GHPATH}/js/vaadin-router.js`,
   `${GHPATH}/favicon.ico`,
   `${GHPATH}/images/icon-144.png`,
+  `${GHPATH}/images/cloud-icon-144.png`,
+  `${GHPATH}/images/cloud-icon-152.png`,
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
