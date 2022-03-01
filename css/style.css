@@ -474,6 +474,12 @@ nav > ul > li {
      
 }
 
+/* make link (<a>) area larger, for easier clicking */
+nav > ul > li > a {
+  display: block;
+  height: 100%;
+}
+
 .nav-icon {    
     height: 13pt;
 }
