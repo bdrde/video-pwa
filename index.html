@@ -41,13 +41,21 @@
                 <div id="inner">
                     <h3>Ich bin Arzt</h3>
                     <p>Connect to your patient with your Digital Health Identity</p>
-                    <a class="login-button light" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                    <a class="login-button light" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/" onclick="showWaitingScreen();">
                         <img src="./images/icon-128.png" style="width: 20pt;" />
                         Login
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="login-waiting-overlay">
+        <div class="logo">
+            <img class="bounce" src="./images/icon-128.png" style="width: 50pt;" />
+            <img src="./images/h-icon.svg" style="width: 50pt;" />
+        </div>
+        <h2>Please approve in your bdr wallet</h2>
     </div>
 
     <div id="container">
@@ -57,7 +65,9 @@
             </div>
             <div id="data-header"></div>
             <div id="signout-header">
-                <button onclick="logout()" class="nav-button-signout" style="margin: auto;">X</button>
+                <button onclick="logout()" class="nav-button-signout" style="margin: auto;">
+                    <img src="./images/flat_cross_icon.svg" style="width: 20px;" />
+                </button>
             </div>
         </header>
 
@@ -99,6 +109,13 @@
         function logout() {
             window.localStorage.clear();
             window.location.href = 'https://bdrde.github.io/video-pwa/';
+        }
+
+        function showWaitingScreen() {
+            document.querySelectorAll("#login-waiting-overlay").forEach((tag) => {
+                tag.style.display = 'flex';
+                //tag.style.display = 'none'
+            })
         }
 
         function showLoginQrCode() {

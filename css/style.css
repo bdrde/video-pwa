@@ -30,6 +30,30 @@ body {
   text-align: center;
 }
 
+#login-waiting-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  display: none;
+  height: 100%;
+  width: 100%;
+
+  margin: 0pt;
+  padding: 0pt;
+
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  background-color: #bfebfb;
+  color: #030045;
+}
+
 /*
  *
  */
@@ -38,9 +62,31 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: none;
+  justify-content: space-around;
   height: 30%;
 }
 .logo > img {
+}
+
+.bounce {
+  animation: bounce 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
 }
 
 /*
@@ -347,21 +393,10 @@ header > div {
 }
 
 .nav-button-signout {
-  background-color: #191962; 
-
-  border: 0px lightgray solid;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  color: white;
-  font-weight: bolder;
-
-  /*
   border: 0;
   padding: 0;
   margin: 0;
   background-color: transparent;
-  */
 }
 
 /*
