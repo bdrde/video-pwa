@@ -17,26 +17,55 @@ class Prescription extends HTMLElement {
         this.setCustomHeader();
 
         render(html`\
-            <div class="prescription"> \
+         <div class="prescription"> \
+            <div id="data"> \
+                <div id="data-element">
+                    <div id="data-title">Name, Vorname</div> \
+                    <div id="data-text">Maximann, Max</div> \
+                </div>
+
+                <div id="space"> </div> \
+
+                <div id="data-element">
+                    <div id="data-title">Krankenkasse bzw. Kostenträger</div> \
+                    <div id="data-text">AOK Nordost</div> \
+                </div>
+
+                <div id="space"> </div> \
+
+                <div id="data-element">
+                    <div id="data-title">Vertragsarzt</div> \
+                    <div id="data-text">Dr. med. Markus Heinze
+                    </br>Musterallee 25
+                    </br>12976 Musterstadt</div> \
+                </div>
+                <div id="space"> </div> \
+            </div> \
             <div id="receipt"> \
-                <div id="receipt-title">Datum</div> \
-                <div id="receipt-text">25. September 2019</div> \
+                <div id="receipt-title"><img src="./images/sign-me.svg" style="width: 100pt"></img></div> \
 
-                <div id="receipt-title">Krankenkasse bzw. Kostenträger</div> \
-                <div id="receipt-text">AOK Nordost</div> \
+                <div id="space"> </div> \
 
-                <div id="receipt-title">Vertragsarzt</div> \
-                <div id="receipt-text">Dr. med. Markus Heinze
-                </br>Musterallee 25
-                </br>12976 Musterstadt</div> \
+                <div id="receipt-element">
+                    <div id="receipt-title">Datum</div> \
+                    <div id="receipt-text">25. September 2019</div> \
+                </div>
 
-                <div id="receipt-title">Rp.</div> \
-                <div id="receipt-text">Cardio Plus 7000</div> \
+                <div id="space"> </div> \
 
-                <img src="./images/qr-code.png"></img> \
+                <div id="receipt-element">
+                    <div id="receipt-title">Rp.</div> \
+                    <div id="receipt-text">Cardio Plus 7000</div> \
+                </div>
+
+                <div id="space"> </div> \
+
+                <div id="receipt-element">
+                    <div id="receipt-text">ASS 100</div> \
+                </div>
 
             </div> \
-            </div> \
+         </div> \
         `, this);
     }
 

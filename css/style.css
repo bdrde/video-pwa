@@ -616,54 +616,93 @@ nav > ul > li {
 /*x-prescription-view*/
 .prescription
 {
-  /*height: 100%;*/
-  background-color: rgb(246, 225, 232);
-
+  height: 100%;
   margin: 0pt;
   padding: 7pt;
-
-  border-color: lightcoral;
-  border-width: 1pt;
-  border-style: solid;
-
 }
 
 .prescription >
   #receipt
 {
-  border-color: lightcoral;
-  border-width: 1pt;
-  border-style: solid;
-
-  background-color: whitesmoke;
-
+  background-color: mistyrose;
   padding: 3pt;
   margin: 2pt;
+  border-radius: 18pt;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 
 #sign-prescription-button {
   width: 70pt;
   height: 34pt;
-
-  border-radius: 8pt;
   border-width: 0pt;
 }
 
 .prescription > #receipt >
+  #receipt-element {
+    margin: 0;
+    font-size: 80%;
+    background-color: whitesmoke;
+    padding: 10pt 10pt 5pt;
+    border-radius: 10pt;
+}
+
+.prescription > #receipt > #receipt-element >
   #receipt-title {
     margin: 0;
     font-size: 80%;
-    font-weight: bold;
-    color: lightcoral;
+    background-color: whitesmoke;
     padding: 10pt 10pt 5pt;
 }
 
-.prescription > #receipt >
+.prescription > #receipt > #receipt-element >
   #receipt-text {
     margin: 0;
     font-weight: bold;
+    background-color: whitesmoke;
     padding: 5pt 10pt 5pt;
+}
+
+.prescription > #receipt >
+  #space {
+    margin: 0;
+    font-size: 80%;
+    height: 10pt;
+    background-color: mistyrose;
+    border-radius: 1pt;
+}
+
+.prescription > #data >
+  #data-element {
+    margin: 0;
+    font-size: 80%;
+    background-color: lightcyan;
+    padding: 10pt 10pt 5pt;
+    border-radius: 18pt;
+}
+
+.prescription > #data > #data-element >
+  #data-title {
+    margin: 0;
+    font-size: 80%;
+    background-color: lightcyan;
+    padding: 10pt 10pt 5pt;
+}
+
+.prescription > #data > #data-element >
+  #data-text {
+    margin: 0;
+    font-weight: bold;
+    padding: 5pt 10pt 5pt;
+    background-color: lightcyan;
+}
+
+.prescription > #data >
+  #space {
+    margin: 0;
+    font-size: 80%;
+    height: 10pt;
+    background-color: whitesmoke;
 }
 
 .prescription > #receipt >
