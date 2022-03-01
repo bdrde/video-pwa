@@ -25,7 +25,7 @@ class Video extends HTMLElement {
             <div id="video-other">
                 <h1>Willkommen</h1>
                 <div class="logo">
-                    <img class="bounce" src="./images/icon-128.png" style="width: 50pt;" />
+                    <img class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
                     <img src="./images/h-icon.svg" style="width: 50pt;" />
                 </div>
                 <h2>Es befindet sich ein Patient im Warteraum</h2>
