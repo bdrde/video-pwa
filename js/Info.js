@@ -11,27 +11,15 @@ class Info extends HTMLElement {
     connectedCallback() {
         this.setCustomHeader();
         render(html`
-            <div class="info">
-            <div class="card">
-                <h3>Ihr Gesprächspartner</h3> \
-                <img src="./images/dak-egk.png" style="width:100%;"/>
-                <h4>Angaben</h4>
-                <p>
-                    <ul>
-                        <li> Kopfschmerzen
-                        <li> Erschöpfung
-                        <li> Ohrenschmerzen (links)
-                    </ul>
-                </p>
+        <div class="info">
+            <div class="logo">
+                <img src="./images/cloud-icon-128.png" style="width: 50pt;" />
+                <img src="./images/h-icon.svg" style="width: 50pt;" />
             </div>
-            <div class="card">
-                <h3>Sie</h3> \
-                <p><ul> \
-                    <li>Name</li> \
-                    <li>Beruf</li> \
-                </ul></p> \
-                </div>
-            </div>
+
+            <h2>Teleclinic</h2>
+            <h3>Online Health Consultation</h3>
+        </div>
         `, this);
     }
 
