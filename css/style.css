@@ -495,9 +495,19 @@ nav > ul > li > a {
  * Info
  * *********************************/
 .info {
+  display: flex;
   overflow: hidden;
   margin: 0pt;
   padding:20pt;
+  background-color: #bfebfb;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  margin: 0pt;
+  padding: 0pt;
 }
 
 .card {
@@ -624,15 +634,24 @@ nav > ul > li > a {
 {
   height: 100%;
   margin: 0pt;
+  padding: 0pt;
+  background-color: #BFEBFB;
+}
+
+.prescription > #data
+{
   padding: 7pt;
+  margin: 0pt;
 }
 
 .prescription >
   #receipt
 {
   background-color: #FEE8EB;
-  padding: 3pt;
-  margin: 2pt;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0pt;
   border-radius: 18pt;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -683,7 +702,7 @@ nav > ul > li > a {
   #data-element {
     margin: 0;
     font-size: 80%;
-    background-color: #E9F9FF;
+    background-color: white;
     padding: 10pt 10pt 5pt;
     border-radius: 18pt;
 }
@@ -692,7 +711,7 @@ nav > ul > li > a {
   #data-title {
     margin: 0;
     font-size: 80%;
-    background-color: #E9F9FF;
+    background-color: white;
     padding: 10pt 10pt 5pt;
 }
 
@@ -701,7 +720,7 @@ nav > ul > li > a {
     margin: 0;
     font-weight: bold;
     padding: 5pt 10pt 5pt;
-    background-color: #E9F9FF;
+    background-color: white;
 }
 
 .prescription > #data >

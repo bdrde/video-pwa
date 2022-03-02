@@ -42,7 +42,7 @@ class Prescription extends HTMLElement {
                 <div id="space"> </div> \
             </div> \
             <div id="receipt"> \
-                <div id="receipt-title">
+                <div id="receipt-title" style="padding-left: 10px;">
                     <button id="sign-prescription-button" @click=${_ => this.sign()}> \
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
