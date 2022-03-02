@@ -52,7 +52,7 @@ class Prescription extends HTMLElement {
 
                 <div id="receipt-element">
                     <div id="receipt-title">Datum</div> \
-                    <div id="receipt-text">25. September 2019</div> \
+                    <div id="receipt-text" class="datum"><p></p></div> \
                 </div>
 
                 <div id="space"> </div> \
@@ -71,6 +71,20 @@ class Prescription extends HTMLElement {
             </div> \
          </div> \
         `, this);
+
+        this.setToDay();
+    }
+
+    setToDay() {
+        var dt = new Date ();
+        var month = "" + (dt.getMonth() + 1);
+        var day = "" + dt.getDate();
+        var year = dt.getFullYear();
+        if (month.length < 2) month = "0" + month;
+        if (day.length < 2) day = "0" + day;
+        const dateF = [day, month, year].join(".");
+        var x = document.getElementById("receipt-element");
+        x.querySelector(".datum").innerHTML = dateF;
     }
 
     setCustomHeader() {
