@@ -105,7 +105,7 @@ class Prescription extends HTMLElement {
 
         signPopupRef = window.open(
             //domain + '/video-pwa/sign-me/start.html'
-            domain + '/sign-me/start.html'
+            domain + '/sign-me/start.html?doc_id=1'
             ,'Signieren'
             ,`
             popup
