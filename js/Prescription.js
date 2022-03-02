@@ -47,7 +47,7 @@ class Prescription extends HTMLElement {
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
 
-                    <span id="signing_done"><img style="width: 32px;"src="./images/checkmark_boxed.png"></img></span>
+                    <span id="signing_done" style="display:none;"><img style="width: 32px;"src="./images/checkmark_boxed.png"></img></span>
                 </div> \
 
                 <div id="space"> </div> \
@@ -128,6 +128,9 @@ class Prescription extends HTMLElement {
 
         console.log(event);
         console.log('Signing done...');
+
+
+        document.querySelector('#signing_done').style.display = 'inline';
 
         /*
         render(html`\
