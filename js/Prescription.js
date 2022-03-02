@@ -42,12 +42,14 @@ class Prescription extends HTMLElement {
                 <div id="space"> </div> \
             </div> \
             <div id="receipt"> \
-                <div id="receipt-title" style="padding-left: 10px;">
-                    <button id="sign-prescription-button" @click=${_ => this.sign()}> \
+                <div id="receipt-title" style="padding-left: 10px; display:flex;">
+                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:80pt;"> \
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
 
-                    <span id="signing_done" style="display:none;"><img style="width: 32px;"src="./images/checkmark_boxed.png"></img></span>
+                    <div id="signing_done" style="display:none; width:100%; text-align:right;">
+                        <img style="width: 48px;"src="./images/checkmark_boxed.png"></img>
+                        </div>
                 </div> \
 
                 <div id="space"> </div> \
@@ -126,11 +128,8 @@ class Prescription extends HTMLElement {
     onSignDone(event) {
         if (event.origin !== domain) return;
 
-        console.log(event);
-        console.log('Signing done...');
-
-
-        document.querySelector('#signing_done').style.display = 'inline';
+        document.querySelector('#signing_done').style.display = 'block';
+        document.querySelector('#sign-prescription-button').style.display = 'none';
 
         /*
         render(html`\
