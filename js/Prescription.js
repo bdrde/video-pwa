@@ -46,6 +46,8 @@ class Prescription extends HTMLElement {
                     <button id="sign-prescription-button" @click=${_ => this.sign()}> \
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
+
+                    <span id="signing_done"><img style="width: 32px;"src="./images/checkmark_boxed.png"></img></span>
                 </div> \
 
                 <div id="space"> </div> \
@@ -127,6 +129,7 @@ class Prescription extends HTMLElement {
         console.log(event);
         console.log('Signing done...');
 
+        /*
         render(html`\
            <img class="header-image" src="./images/checkmark_boxed.png"></img>\
         `, document.querySelector('#custom-header'));
@@ -134,7 +137,7 @@ class Prescription extends HTMLElement {
         render(html`\
            signiert am ${new Date().toLocaleString()}\
         `, document.querySelector('#data-header'));
-
+*/
         signPopupRef.close();
     }
 }
