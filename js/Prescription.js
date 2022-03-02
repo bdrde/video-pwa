@@ -19,64 +19,94 @@ class Prescription extends HTMLElement {
         render(html`\
          <div class="prescription"> \
             <div id="data"> \
-                <div id="data-element">
+                <div id="data-element"> \
                     <div id="data-title">Name, Vorname</div> \
                     <div id="data-text">Maximann, Max</div> \
-                </div>
+                </div> \
 
                 <div id="space"> </div> \
 
-                <div id="data-element">
+                <div id="data-element"> \
                     <div id="data-title">Krankenkasse bzw. Kostenträger</div> \
                     <div id="data-text">AOK Nordost</div> \
-                </div>
+                </div> \
 
                 <div id="space"> </div> \
 
-                <div id="data-element">
+                <div id="data-element"> \
                     <div id="data-title">Vertragsarzt</div> \
                     <div id="data-text">Dr. med. Markus Heinze
                     </br>Musterallee 25
                     </br>12976 Musterstadt</div> \
-                </div>
+                </div> \
                 <div id="space"> </div> \
             </div> \
             <div id="receipt"> \
                 <div id="receipt-title" style="padding-left: 10px; display:flex;">
                     <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:80pt;"> \
                         <img src="./images/sign-me.svg"></img> \
-                    </button> \
+                        </button> \
 
                     <div id="signing_done" style="display:none; width:100%; text-align:right;">
                         <img style="width: 48px;"src="./images/checkmark_boxed.png"></img>
-                        </div>
+                    </div>
                 </div> \
 
                 <div id="space"> </div> \
 
-                <div id="receipt-element">
+                <div id="receipt-data"> \
                     <div id="receipt-title">Datum</div> \
                     <div id="receipt-text" class="datum"><p></p></div> \
-                </div>
+                </div> \
 
                 <div id="space"> </div> \
 
-                <div id="receipt-element">
-                    <div id="receipt-title">Rp.</div> \
-                    <div id="receipt-text">Cardio Plus 7000</div> \
-                </div>
+                <div id="receipt-data"> \
+                    <div id="receipt-title">Rp. \
+                       <button id="addRp" @click=${_ => this.addRp()} style="background-color: #FDF6F7; "> \
+                         <img id="addRp" src="./images/plus.png" style="height: 10pt; background-color: #FDF6F7; "></img> \
+                      </button> \
+                   </div> \
+               </div> \
 
                 <div id="space"> </div> \
 
-                <div id="receipt-element">
-                    <div id="receipt-text">ASS 100</div> \
-                </div>
+                <div id="receipt-element"> \
+                    <div id="receipt-text" contentEditable="true">Cardio Plus 7000</div> \
+                </div> \
 
+                <div id="space"> </div> \
+
+                <div id="receipt-element"> \
+                    <div id="receipt-text" contentEditable="true">ASS 100</div> \
             </div> \
+
+         </div> \
          </div> \
         `, this);
 
         this.setToDay();
+    }
+
+    insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode);
+    }
+
+    addRp(){
+        var elSpace = document.createElement("div");
+        elSpace.id = "space";
+        var el = document.createElement("div");
+        el.id = "receipt-element";
+        var el2 = document.createElement("div");
+        el2.id = "receipt-text";
+        el2.innerHTML = "";
+        el2.contentEditable = true;
+        el.appendChild(el2);
+
+        var div = document.getElementById("receipt-element");
+        this.insertAfter(div, elSpace);
+        this.insertAfter(div, el);
+        this.insertAfter(div, elSpace);
     }
 
     setToDay() {
@@ -87,7 +117,7 @@ class Prescription extends HTMLElement {
         if (month.length < 2) month = "0" + month;
         if (day.length < 2) day = "0" + day;
         const dateF = [day, month, year].join(".");
-        var x = document.getElementById("receipt-element");
+        var x = document.getElementById("receipt-data");
         x.querySelector(".datum").innerHTML = dateF;
     }
 

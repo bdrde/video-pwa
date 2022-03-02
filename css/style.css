@@ -673,6 +673,15 @@ nav > ul > li > a {
     border-radius: 10pt;
 }
 
+.prescription > #receipt >
+  #receipt-data {
+    margin: 0;
+    font-size: 80%;
+    background-color: #FDF6F7;
+    padding: 10pt 10pt 5pt;
+    border-radius: 10pt;
+}
+
 .prescription > #receipt > #receipt-element >
   #receipt-title {
     margin: 0;
@@ -689,6 +698,21 @@ nav > ul > li > a {
     padding: 5pt 10pt 5pt;
 }
 
+.prescription > #receipt > #receipt-data >
+  #receipt-title {
+    margin: 0;
+    font-size: 80%;
+    background-color: #FDF6F7;
+    padding: 10pt 10pt 5pt;
+}
+
+.prescription > #receipt > #receipt-data >
+  #receipt-text {
+    margin: 0;
+    font-weight: bold;
+    background-color: #FDF6F7;
+    padding: 10pt 10pt 5pt;
+}
 .prescription > #receipt >
   #space {
     margin: 0;
@@ -728,7 +752,7 @@ nav > ul > li > a {
     margin: 0;
     font-size: 80%;
     height: 10pt;
-    background-color: whitesmoke;
+    background-color: #BFEBFB;
 }
 
 .prescription > #receipt >
