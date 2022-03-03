@@ -18,68 +18,79 @@ class Prescription extends HTMLElement {
 
         render(html`\
          <div class="prescription"> \
-            <div id="data"> \
-                <div id="data-element">
-                    <div id="data-title">Name, Vorname</div> \
-                    <div id="data-text">Maximann, Max</div> \
+            <div id="prescription-header">
+                <div class="data-bubble">
+                    <div class="data-bubble-title">Name, Vorname</div>
+                    <div class="data-bubble-content">Maximann, Max</div>
                 </div>
-
-                <div id="space"> </div> \
-
-                <div id="data-element">
-                    <div id="data-title">Krankenkasse bzw. Kostenträger</div> \
-                    <div id="data-text">AOK Nordost</div> \
+                <div class="data-bubble">
+                    <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
+                    <div class="data-bubble-content">DAK-Gesundheit</div>
                 </div>
-
-                <div id="space"> </div> \
-
-                <div id="data-element">
-                    <div id="data-title">Vertragsarzt</div> \
-                    <div id="data-text">Dr. med. Markus Heinze
+                <div class="data-bubble">
+                    <div class="data-bubble-title">Vertragsarzt</div>
+                    <div class="data-bubble-content">
+                    Dr. med. Markus Heinze
                     </br>Musterallee 25
-                    </br>12976 Musterstadt</div> \
+                    </br>12976 Musterstadt
+                    </div>
                 </div>
-                <div id="space"> </div> \
-            </div> \
-            <div id="receipt"> \
-                <div id="receipt-title" style="padding-left: 10px; display:flex;">
-                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:80pt;"> \
+            </div>
+            
+            <div id="presc-1" class="presc">
+                <div class="presc-header">
+                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:100pt;"> \
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
-
                     <div id="signing_done" style="display:none; width:100%; text-align:right;">
-                        <img style="width: 48px;"src="./images/checkmark_boxed.png"></img>
+                        <img style="height:100%;"src="./images/Elektronisches Siegel blau grün.png"></img>
+                    </div>
+                </div>
+
+                <div class="presc-body">
+                    <div class="data-bubble">
+                        <div class="data-bubble-title">Datum</div>
+                        <div class="data-bubble-content datum">${this.currentDateFormatted()}</div>
+                    </div>
+                    <div class="data-bubble">
+                        <div class="data-bubble-title">
+                            Medikament
                         </div>
-                </div> \
+                        <div class="data-bubble-content">
+                            <textarea class="data-bubble-input" rows="3" >Cardio Plus 7000\n(2x täglich)</textarea>
+                        </div>
+                    </div>
 
-                <div id="space"> </div> \
+                    <div id="bubble-template" class="data-bubble" style="display:block;">
+                        <div class="data-bubble-title">
+                            Medikament
+                        </div>
+                        <div class="data-bubble-content">
+                            <textarea class="data-bubble-input" rows="3" ></textarea>
+                        </div>
+                    </div>
 
-                <div id="receipt-element">
-                    <div id="receipt-title">Datum</div> \
-                    <div id="receipt-text" class="datum"><p></p></div> \
+                    <div id="last-element" style="width:100%; text-align:right; margin-top:10px;">
+                        <button @click=${_ => this.addNew(_)} style="background-color: #FEE8EB; border:none;">
+                            <img src="./images/plus.png" style="height: 25px; background-color: #FEE8EB; "></img>
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-                <div id="space"> </div> \
-
-                <div id="receipt-element">
-                    <div id="receipt-title">Rp.</div> \
-                    <div id="receipt-text">Cardio Plus 7000</div> \
-                </div>
-
-                <div id="space"> </div> \
-
-                <div id="receipt-element">
-                    <div id="receipt-text">ASS 100</div> \
-                </div>
-
-            </div> \
          </div> \
         `, this);
-
-        this.setToDay();
     }
 
-    setToDay() {
+    addNew(){
+        const template = this.querySelector("#bubble-template");
+        const newBubble = template.cloneNode(true);
+
+        const last = this.querySelector("#last-element");
+        template.parentElement.insertBefore(newBubble, last);
+    }
+
+    currentDateFormatted() {
         var dt = new Date ();
         var month = "" + (dt.getMonth() + 1);
         var day = "" + dt.getDate();
@@ -87,9 +98,10 @@ class Prescription extends HTMLElement {
         if (month.length < 2) month = "0" + month;
         if (day.length < 2) day = "0" + day;
         const dateF = [day, month, year].join(".");
-        var x = document.getElementById("receipt-element");
-        x.querySelector(".datum").innerHTML = dateF;
+        
+        return dateF;
     }
+
 
     setCustomHeader() {
     }

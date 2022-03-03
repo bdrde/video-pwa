@@ -133,19 +133,21 @@ body {
 /*#login-1 > #inner > a {*/
 .login-button, .button {
 
+  font-size: 13pt;
   margin: 5pt;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex;/*inline-flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
   
   /*width: 120px;*/
  
   text-decoration: none;
 
   font-weight: bold;
-  padding: 7px;  
+  padding: 7px;
+  padding-top:10px;
   width: 330px;
-  height: 30pt;
+  height: 25pt;
   border-radius: 5px;
   border-style: none;
 }
@@ -638,106 +640,79 @@ nav > ul > li > a {
   background-color: #BFEBFB;
 }
 
-.prescription > #data
-{
+#prescription-header {
   padding: 7pt;
   margin: 0pt;
 }
 
-.prescription >
-  #receipt
-{
-  background-color: #FEE8EB;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0pt;
-  border-radius: 18pt;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+#prescription-header {
+  background-color: none;
+  margin-bottom: 20px;;
+}
+.data-bubble {
+  margin-top: 10px;
 }
 
+.data-bubble-title {
+  margin: 0;
+  font-size: 80%;
+  background-color: white;
+  padding: 10px 20px 10px;
+  border-radius: 13px 13px 0px 0px;
+}
+.data-bubble-content {
+  margin: 0;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 10px 20px 10px;
+  background-color: white;
+  border-radius: 0pt 0pt 13pt 13pt;
+}
+
+.data-bubble-input {
+  border : 1px solid #FEE8EB;
+  width: 100%;
+}
+
+.presc-header {
+  display:flex;
+  background-color: #FDF6F7;
+  padding: 10px 20px 10px;
+  border-radius: 20px 20px 0px 0px;
+  height: 50px;
+  margin: 0;
+}
+
+.presc-body {
+  background-color: #FEE8EB;
+  margin: 0;
+/*  padding: 10px 20px 10px;*/
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* background of bubles in header */
+#prescription-header > .data-bubble > .data-bubble-title
+, #prescription-header > .data-bubble > .data-bubble-content {
+  background-color: white;
+}
+
+/* background of bubles in prescription */
+.presc-body > .data-bubble > 
+.data-bubble-title,
+.data-bubble-content {
+  background-color: #FDF6F7;
+}
 
 #sign-prescription-button {
   width: 70pt;
   height: 34pt;
   border-width: 0pt;
-  background-color: #FEE8EB;
+  background-color: #FDF6F7; /*#FEE8EB;*/
 }
-
-.prescription > #receipt >
-  #receipt-element {
-    margin: 0;
-    font-size: 80%;
-    background-color: #FDF6F7;
-    padding: 10pt 10pt 5pt;
-    border-radius: 10pt;
-}
-
-.prescription > #receipt > #receipt-element >
-  #receipt-title {
-    margin: 0;
-    font-size: 80%;
-    background-color: #FDF6F7;
-    padding: 10pt 10pt 5pt;
-}
-
-.prescription > #receipt > #receipt-element >
-  #receipt-text {
-    margin: 0;
-    font-weight: bold;
-    background-color: #FDF6F7;
-    padding: 5pt 10pt 5pt;
-}
-
-.prescription > #receipt >
-  #space {
-    margin: 0;
-    font-size: 80%;
-    height: 10pt;
-    background-color: #FEE8EB;
-    border-radius: 1pt;
-}
-
-.prescription > #data >
-  #data-element {
-    margin: 0;
-    font-size: 80%;
-    background-color: white;
-    padding: 10pt 10pt 5pt;
-    border-radius: 18pt;
-}
-
-.prescription > #data > #data-element >
-  #data-title {
-    margin: 0;
-    font-size: 80%;
-    background-color: white;
-    padding: 10pt 10pt 5pt;
-}
-
-.prescription > #data > #data-element >
-  #data-text {
-    margin: 0;
-    font-weight: bold;
-    padding: 5pt 10pt 5pt;
-    background-color: white;
-}
-
-.prescription > #data >
-  #space {
-    margin: 0;
-    font-size: 80%;
-    height: 10pt;
-    background-color: whitesmoke;
-}
-
-.prescription > #receipt >
-  img  {
-    margin: 0;
-    height: 100pt;
-    padding: 10pt;
-}
-/* ********************************* */
 
 
 /* ********************************* */
