@@ -84,7 +84,7 @@ class Prescription extends HTMLElement {
                     </div>
                 </div>
             </div>
-
+            <div id="bottom-space"></div>
          </div> \
         `, this);
     }
