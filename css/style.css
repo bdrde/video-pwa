@@ -675,6 +675,7 @@ nav > ul > li > a {
 }
 
 .presc-header {
+  display:flex;
   background-color: #FDF6F7;
   padding: 10px 20px 10px;
   border-radius: 20px 20px 0px 0px;

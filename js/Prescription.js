@@ -39,11 +39,11 @@ class Prescription extends HTMLElement {
             
             <div id="presc-1" class="presc">
                 <div class="presc-header">
-                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:80pt;"> \
+                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:100pt;"> \
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
                     <div id="signing_done" style="display:none; width:100%; text-align:right;">
-                        <img style="width: 48px;"src="./images/checkmark_boxed.png"></img>
+                        <img style="height:100%;"src="./images/Elektronisches Siegel blau grün.png"></img>
                     </div>
                 </div>
 
