@@ -43,7 +43,7 @@ class Prescription extends HTMLElement {
                         <img src="./images/sign-me.svg"></img> \
                     </button> \
                     <div id="signing_done" style="display:none; width:100%; text-align:right;">
-                        <img style="height:100%;"src="./images/Elektronisches Siegel blau grün.png"></img>
+                        <img style="height:100%;"src="./images/siegel-blau-gruen.png"></img>
                     </div>
                 </div>
 

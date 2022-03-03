@@ -16,6 +16,9 @@ var URLS = [
   `${GHPATH}/images/icon-144.png`,
   `${GHPATH}/images/cloud-icon-144.png`,
   `${GHPATH}/images/cloud-icon-152.png`,
+  `${GHPATH}/images/siegel-blau-gruen.png`,
+  `${GHPATH}/images/bdr-small-light.png`,
+  `${GHPATH}/images/bdr-small-dark.png`,
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
