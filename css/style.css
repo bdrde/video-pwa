@@ -95,7 +95,10 @@ body {
 .responsive {
   display: flex;
   flex-wrap: wrap;
-/*  height: 70%;*/
+  /*height: 70%;*/
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-around;
 }
 
 .responsive-left {
@@ -111,7 +114,8 @@ body {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
+  .responsive { height: 70%;}
   .responsive-right, .responsive-left {
     flex-direction: 100%;
   }
@@ -130,12 +134,17 @@ body {
   padding: 15px 15px 15px 15px;
 }
 
+/*
+#login-1, #login-2 > #inner > a {
+  display:inline-flex;
+}
+*/
+
 /*#login-1 > #inner > a {*/
 .login-button, .button {
-
   font-size: 13pt;
   margin: 5pt;
-  display: flex;/*inline-flex;*/
+  display: inline-flex;
   /*flex-wrap: wrap;*/
   /*justify-content: center;*/
   
