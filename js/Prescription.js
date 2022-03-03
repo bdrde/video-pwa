@@ -25,7 +25,7 @@ class Prescription extends HTMLElement {
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
-                    <div class="data-bubble-content">DAK-Gesundheit</div>
+                    <div class="data-bubble-content">DAK-Gesundheit <br>15035218</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
@@ -33,6 +33,13 @@ class Prescription extends HTMLElement {
                     Dr. med. Markus Heinze
                     </br>Musterallee 25
                     </br>12976 Musterstadt
+                    </div>
+                </div>
+                <div class="data-bubble">
+                    <div class="data-bubble-title">Arzt-Nr / Betriebsstätten-Nr.</div>
+                    <div class="data-bubble-content">
+                    123456789 / 
+                    112233440
                     </div>
                 </div>
             </div>
@@ -54,10 +61,10 @@ class Prescription extends HTMLElement {
                     </div>
                     <div class="data-bubble">
                         <div class="data-bubble-title">
-                            Medikament
+                            Rp.
                         </div>
                         <div class="data-bubble-content">
-                            <textarea class="data-bubble-input" rows="3" >Cardio Plus 7000\n(2x täglich)</textarea>
+                            <textarea class="data-bubble-input" rows="3" >Antistressin Impfstoff Amp. 10 x 0.5 ml\nMuster Pharma GmbH</textarea>
                         </div>
                     </div>
 
