@@ -657,11 +657,17 @@ nav > ul > li > a {
 #prescription-header {
   padding: 7pt;
   margin: 0pt;
+  background-color: none;
+  margin-bottom: 20px;
 }
 
-#prescription-header {
-  background-color: none;
-  margin-bottom: 20px;;
+.presc {
+  background-color: #BFEBFB;
+}
+
+#bottom-space {
+  background-color: #BFEBFB;
+  height: 50px;
 }
 .data-bubble {
   margin-top: 10px;
