@@ -29,7 +29,10 @@ class Video extends HTMLElement {
                     <img src="./images/h-icon.svg" style="width: 50pt;" />
                 </div>
                 <h2>Es befindet sich ein Patient im Warteraum</h2>
-                <button class="button light" @click=${_ => this.startVideo()} style="font-size: 15px;">Video starten</button>
+                <button class="button light" @click=${_ => this.startVideo()} style="height:40px;">
+                    <img class="button-logo" src="./images/camera-filled.svg" />
+                    <div class="button-text">Video starten</div>
+                </button>
             </div>
 
             <div id="video-all">

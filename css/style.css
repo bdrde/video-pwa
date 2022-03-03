@@ -152,8 +152,13 @@ body {
   border-style: none;
 }
 
-.login-button > img {
+.button > .button-logo {
   justify-content: left;
+  height: 80%;
+}
+.button > .button-text {
+  width:100%;
+  text-align:center;
 }
 
 .dark {
