@@ -133,19 +133,21 @@ body {
 /*#login-1 > #inner > a {*/
 .login-button, .button {
 
+  font-size: 13pt;
   margin: 5pt;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex;/*inline-flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
   
   /*width: 120px;*/
  
   text-decoration: none;
 
   font-weight: bold;
-  padding: 7px;  
+  padding: 7px;
+  padding-top:10px;
   width: 330px;
-  height: 30pt;
+  height: 25pt;
   border-radius: 5px;
   border-style: none;
 }
