@@ -70,7 +70,7 @@ class Prescription extends HTMLElement {
 
                     <div id="bubble-template" class="data-bubble" style="display:block;">
                         <div class="data-bubble-title">
-                            Medikament
+                            Rp.
                         </div>
                         <div class="data-bubble-content">
                             <textarea class="data-bubble-input" rows="3" ></textarea>
