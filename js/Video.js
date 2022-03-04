@@ -37,7 +37,7 @@ class Video extends HTMLElement {
 
             <div id="video-all">
                 <div id="video-peer">
-                  <img src="./images/patient-cartoon.jpeg"></img>
+                  <img src="./images/women-arm-rest.jpg"></img>
                   </div>
                 <div class="bottom-overlay-space">
                     <div class="control-button-group">
