@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/icon-152.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
     <meta name="theme-color" content="#bfebfb" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -22,8 +23,13 @@
 <body>
     <div id="login-overlay">
         <div class="logo">
-            <img src="./images/cloud-icon-128.png" style="width: 50pt;" />
+            <img src="./images/cloud-icon-128.png" style="width: 80pt;" />
             <img src="./images/h-icon.svg" style="width: 50pt;" />
+            <!--
+            <div style="background-color:white; width: 80px; height: 1px; margin:1px;"></div>
+            <div style="background-color:white; width: 160px; height: 2px; margin:1px;"></div>
+            <div style="background-color:white; width: 250px; height: 5px; margin:1px;"></div>
+            -->
         </div>
 
         <div id="logins" class="responsive">
@@ -31,7 +37,8 @@
                 <div id="inner">
                     <h3>Ich bin Patient</h3>
                     <p>Einloggen mit bdr Wallet und ihrer Gesundheitskarte</p>
-                    <a class="button dark" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
+                    <a class="button dark"
+                        href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
                         <img class="button-logo" src="./images/bdr-small-light.png" />
                         <div class="button-text">Login mit Gesundheitskarte</div>
                     </a>
@@ -41,7 +48,9 @@
                 <div id="inner">
                     <h3>Ich bin Arzt</h3>
                     <p>Einloggen mit bdr Wallet und ihrem Heilberufsausweis</p>
-                    <a class="button light" href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/" onclick="showWaitingScreen();">
+                    <a class="button light"
+                        href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/"
+                        onclick="showWaitingScreen();">
                         <img class="button-logo" src="./images/bdr-small-dark.png" />
                         <div class="button-text">Login mit Heilberufsausweis</div>
                     </a>
