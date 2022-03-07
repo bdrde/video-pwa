@@ -27,6 +27,7 @@ class Video extends HTMLElement {
                 <div class="logo">
                     <img class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
                     <img src="./images/h-icon.svg" style="width: 50pt;" />
+                    <img src="./images/lines.svg" style="width: 110pt;" />
                 </div>
                 <h2>Es befindet sich ein Patient im Warteraum</h2>
                 <button class="button light" @click=${_ => this.startVideo()} style="height:40px;">
