@@ -1,6 +1,11 @@
 :root {
-  --main-color-theme:#bfebfb;
-  --main-color-theme-rgb: 191, 235, 251; /* needed in this format for use in rgba() */
+  --main-color-theme: #bfebfb;
+  /* --main-color-theme: #dadada; */
+
+  /* needed in this format for use in rgba() */
+  --main-color-theme-rgb: 191, 235, 251;
+  /*--main-color-theme-rgb: 86, 86, 86; */
+
   --main-color-light: white;
   --main-color-dark:#030045;
   --main-color-nav: #f9f9f9;
