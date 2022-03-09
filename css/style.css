@@ -1,3 +1,18 @@
+:root {
+  --main-color-theme:#bfebfb;
+  --main-color-theme-rgb: 191, 235, 251; /* needed in this format for use in rgba() */
+  --main-color-light: white;
+  --main-color-dark:#030045;
+  --main-color-nav: #f9f9f9;
+
+  --prescription-color-main: #fee8eb;
+  --prescription-color-light: #fdf6f7;
+}
+
+/* ************************************************
+ * 
+ * ***********************************************/
+
 html,
 body {
   height: 100%;
@@ -25,7 +40,7 @@ body {
   height: 100%;
   z-index: 1;
 
-  background-color: #bfebfb;
+  background-color: var(--main-color-theme);
 
   text-align: center;
 }
@@ -50,8 +65,8 @@ body {
   text-align: center;
   align-items: center;
 
-  background-color: #bfebfb;
-  color: #030045;
+  background-color: var(--main-color-theme);
+  color: var(--main-color-dark);
 }
 #login-waiting-overlay > h2 {
   padding-left: 110px;
@@ -133,10 +148,10 @@ body {
 }
 
 #login-1 > #inner {
-  background-color: white;
+  background-color: var(--main-color-light);
   border-radius: 10pt;
 
-  color: #030045;
+  color: var(--main-color-dark);
   padding: 15px 15px 15px 15px;
 }
 
@@ -180,13 +195,13 @@ body {
 }
 
 .dark {
-  background-color: #030045;
-  color: white;
+  background-color: var(--main-color-dark);
+  color: var(--main-color-light);
 }
 
 .light {
-  background-color: white;
-  color: #030045;
+  background-color: var(--main-color-light);
+  color: var(--main-color-dark);
 }
 
 /**********************/
@@ -197,14 +212,14 @@ body {
 }
 
 #login-2 > #inner {
-  color: white;
+  color: var(--main-color-light);
   height: 100%;
-  background-color: #030045;
+  background-color: var(--main-color-dark);
   padding: 15px 25px 15px 25px;
 }
 
 #login-2 > #inner > button {
-  background-color: white;
+  background-color: var(--main-color-light);
   color: black;
   font-weight: bolder;
   padding: 7px;  
@@ -228,7 +243,7 @@ body {
   
   /*
   background:rgba(200, 200, 200, 0.2);
-  background: white;
+  background: var(--main-color-light);
   */
   background-image: url('../images/icon-512.png');
     
@@ -298,11 +313,11 @@ body {
   /*width: 120px;*/
  
   font-weight: bold;
-  color: white;
+  color: var(--main-color-light);
 
 
   background-color: cornflowerblue; /*rgb(124, 222, 255);*/
-  /*background-color: white;*/
+  /*background-color: var(--main-color-light);*/
  
   border-style: solid ;
   border-color: cornflowerblue;
@@ -347,7 +362,7 @@ body {
   padding: 20pt;
   margin: 0pt;
  
-  color: whitesmoke;
+  color: var(--main-color-light);
   background-color: cornflowerblue;
 
   border-radius: 10pt;
@@ -369,7 +384,7 @@ header {
    width: 100%;
    max-height: 35pt;
    min-height: 35pt;
-   background-color: #bfebfb;/*lightgray;*/
+   background-color: var(--main-color-theme);/*lightgray;*/
    overflow: auto;
    flex-direction: row;
    
@@ -444,7 +459,7 @@ header > div {
  * Main content area
  * *********************************/
  main {
-  background-color: white;
+  background-color: var(--main-color-light);
   flex-grow : 1;
   overflow: auto;
 }
@@ -457,7 +472,7 @@ nav {
   height: 60pt;
   min-height: 60pt;
   max-height: 60pt;
-  background-color: #F9F9F9;
+  background-color: var(--main-color-nav);
 
 }
 
@@ -525,7 +540,7 @@ nav > ul > li > a {
   overflow: hidden;
   margin: 0pt;
   padding:20pt;
-  background-color: #bfebfb;
+  background-color: var(--main-color-theme);
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -539,7 +554,7 @@ nav > ul > li > a {
 .card {
   padding: 5pt;
   margin: 10pt;
-  border: 1pt whitesmoke solid;
+  border: 1pt var(--main-color-light) solid;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 /* ********************************* 
@@ -557,8 +572,8 @@ nav > ul > li > a {
   text-align: center;
   align-items: center;
 
-  background-color: #bfebfb;
-  color: #030045;
+  background-color: var(--main-color-theme);
+  color: var(--main-color-dark);
 }
 
 #video-all {
@@ -571,7 +586,7 @@ nav > ul > li > a {
   flex-direction: row;
   justify-content: center;
 
-  /*background-color: #BFEBFB;*/
+  /*background-color: var(--main-color-theme);*/
 }
 
 #video-peer {
@@ -587,7 +602,7 @@ nav > ul > li > a {
   
   max-width: 100%;
   max-height: 100%;
-  /*border: 2px white solid;*/
+  /*border: 2px var(--main-color-light) solid;*/
   border-radius: 30px;
 }
 
@@ -596,7 +611,7 @@ nav > ul > li > a {
   position: absolute;
   height: 20%;
   width: 100%;
-  background-color: #bfebfb7f;
+  background-color: rgba(var(--main-color-theme-rgb), 0.5);
   justify-content: baseline; /*space-between;*/
   align-self: flex-end;
 }
@@ -608,10 +623,8 @@ nav > ul > li > a {
   max-width: 50%;
   /*transform: translateY(100%);*/
   align-self: center;
-  
-  border: 0px white solid;
+  border: 0px var(--main-color-light) solid;
   border-radius: 6pt;
-  
 }
 
 .control-button-group {
@@ -654,7 +667,7 @@ nav > ul > li > a {
 }
 
 .round-button {
-  background-color: white;
+  background-color: var(--main-color-light);
   /*background-image: url('../images/microphone.svg');*/
   border: 0px lightgray solid;
   border-radius: 50%;
@@ -670,7 +683,7 @@ nav > ul > li > a {
   height: 100%;
   margin: 0pt;
   padding: 0pt;
-  background-color: #BFEBFB;
+  background-color: var(--main-color-theme);
 }
 
 #prescription-header {
@@ -681,11 +694,11 @@ nav > ul > li > a {
 }
 
 .presc {
-  background-color: #BFEBFB;
+  background-color: var(--main-color-theme);
 }
 
 #bottom-space {
-  background-color: #BFEBFB;
+  background-color: var(--main-color-theme);
   height: 50px;
 }
 .data-bubble {
@@ -695,7 +708,7 @@ nav > ul > li > a {
 .data-bubble-title {
   margin: 0;
   font-size: 80%;
-  background-color: white;
+  background-color: var(--main-color-light);
   padding: 10px 20px 10px;
   border-radius: 13px 13px 0px 0px;
 }
@@ -704,18 +717,18 @@ nav > ul > li > a {
   font-weight: bold;
   font-size: 80%;
   padding: 10px 20px 10px;
-  background-color: white;
+  background-color: var(--main-color-light);
   border-radius: 0pt 0pt 13pt 13pt;
 }
 
 .data-bubble-input {
-  border : 1px solid #FEE8EB;
+  border : 1px solid var(--prescription-color-main);
   width: 100%;
 }
 
 .presc-header {
   display:flex;
-  background-color: #FDF6F7;
+  background-color: var(--prescription-color-light);
   padding: 10px 20px 10px;
   border-radius: 20px 20px 0px 0px;
   height: 50px;
@@ -723,7 +736,7 @@ nav > ul > li > a {
 }
 
 .presc-body {
-  background-color: #FEE8EB;
+  background-color: var(--prescription-color-main);
   margin: 0;
 /*  padding: 10px 20px 10px;*/
   padding-top: 1px;
@@ -736,21 +749,21 @@ nav > ul > li > a {
 /* background of bubles in header */
 #prescription-header > .data-bubble > .data-bubble-title
 , #prescription-header > .data-bubble > .data-bubble-content {
-  background-color: white;
+  background-color: var(--main-color-light);
 }
 
 /* background of bubles in prescription */
 .presc-body > .data-bubble > 
 .data-bubble-title,
 .data-bubble-content {
-  background-color: #FDF6F7;
+  background-color: var(--prescription-color-light);
 }
 
 #sign-prescription-button {
   width: 70pt;
   height: 34pt;
   border-width: 0pt;
-  background-color: #FDF6F7; /*#FEE8EB;*/
+  background-color: var(--prescription-color-light); /*var(--prescription-color-main);*/
 }
 
 
@@ -791,7 +804,7 @@ nav > ul > li > a {
  */
  .loader {
   border: 5px solid; 
-  border-color: whitesmoke transparent whitesmoke transparent;
+  border-color: var(--main-color-light) transparent var(--main-color-light) transparent;
   border-radius: 50%;
   width: 20px;
   height: 20px;
