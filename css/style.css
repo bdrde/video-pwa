@@ -10,6 +10,8 @@
   --main-color-dark:#030045;
   --main-color-nav: #f9f9f9;
 
+  --main-color-accent: lightgray;
+
   --prescription-color-main: #fee8eb;
   --prescription-color-light: #fdf6f7;
 }
@@ -508,7 +510,7 @@ nav > ul > li {
 
     /* centering vertically, see also -nav-icon */
     position: relative;
-    border-color: lightgray;
+    border-color: var(--main-color-accent); /*lightgray;*/
     border-top-width: 1pt;
     border-top-style: solid;
     
