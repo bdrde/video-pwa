@@ -227,7 +227,7 @@ body {
 
 #login-2 > #inner > button {
   background-color: var(--main-color-light);
-  color: black;
+  color: var(--main-color-dark);
   font-weight: bolder;
   padding: 7px;  
   width: 330px;
@@ -281,7 +281,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  color: black;
+  color: var(--main-color-dark);
   background-color: rgba(255,255,255,0.0);
   text-align: center;
   z-index: 3;
@@ -426,7 +426,7 @@ header > div {
   width: 60%;
   text-align: center;
   align-content: center;
-  color: cornflowerblue;
+  color: var(--main-color-dark);
   font-weight: bold;
 }
 
