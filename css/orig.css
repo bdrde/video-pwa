@@ -1,0 +1,84 @@
+:root {
+  --main-color-theme: #bfebfb;
+  /* --main-color-theme: #dadada; */
+
+  /* needed in this format for use in rgba() */
+  --main-color-theme-rgb: 191, 235, 251;
+  /*--main-color-theme-rgb: 86, 86, 86; */
+
+  --main-color-light: white;
+  --main-color-dark:#030045;
+  --main-color-nav: #f9f9f9;
+
+  --main-color-accent: #d3d3d3;
+
+  --prescription-color-main: #fee8eb;
+  --prescription-color-light: #fdf6f7;
+}
+
+/* ************************************************
+ * 
+ * ***********************************************/
+
+
+.nav-icon {    
+  height: 13pt;
+}
+
+
+.logo > #top, #icon, #sep {
+}
+
+.logo > #text {
+  display: none;
+}
+
+
+
+
+#login-2 {
+  margin: 0pt;
+  align-self: flex-end;
+}
+
+#login-2 > #inner {
+  color: var(--main-color-light);
+  height: 100%;
+  background-color: var(--main-color-dark);
+  padding: 15px 25px 15px 25px;
+}
+
+#login-1 > #inner > .button,
+#login-2 > #inner > .button 
+{
+  font-weight: bolder;
+  padding: 7px;  
+  width: 330px;
+  height: 30pt;
+  border-radius: 5px;
+  border-style: none;
+}
+
+#login-1 > #inner > .button
+{
+  background-color: var(--main-color-dark);
+  color: var(--main-color-light);
+}
+
+#login-2 > #inner > .button 
+{
+  background-color: var(--main-color-light);
+  color: var(--main-color-dark);
+}
+
+#login-1 > #inner > .button > .button-logo {
+  background-image:  url('../images/bdr-small-light.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#login-2 > #inner > .button > .button-logo {
+  background-image:  url('../images/bdr-small-dark.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,10 +1,10 @@
+@import "dtr.css";
+
+/*
 :root {
   --main-color-theme: #bfebfb;
-  /* --main-color-theme: #dadada; */
 
-  /* needed in this format for use in rgba() */
   --main-color-theme-rgb: 191, 235, 251;
-  /*--main-color-theme-rgb: 86, 86, 86; */
 
   --main-color-light: white;
   --main-color-dark:#030045;
@@ -15,7 +15,7 @@
   --prescription-color-main: #fee8eb;
   --prescription-color-light: #fdf6f7;
 }
-
+*/
 /* ************************************************
  * 
  * ***********************************************/
@@ -82,6 +82,8 @@ body {
 /*
  *
  */
+
+ 
 .logo {  
   display: flex;
   flex-direction: column;
@@ -192,15 +194,18 @@ body {
 
 .button > .button-logo {
   justify-content: left;
-  height: 70%;
+  height: 32px;
+  width: 32px;
   padding-top: 4px;
 }
+
 .button > .button-text {
   width:100%;
   text-align:center;
   padding-top: 10px;
 }
 
+/*
 .dark {
   background-color: var(--main-color-dark);
   color: var(--main-color-light);
@@ -210,9 +215,9 @@ body {
   background-color: var(--main-color-light);
   color: var(--main-color-dark);
 }
-
+*/
 /**********************/
-
+/*
 #login-2 {
   margin: 0pt;
   align-self: flex-end;
@@ -224,7 +229,8 @@ body {
   background-color: var(--main-color-dark);
   padding: 15px 25px 15px 25px;
 }
-
+*/
+/*
 #login-2 > #inner > button {
   background-color: var(--main-color-light);
   color: var(--main-color-dark);
@@ -235,6 +241,7 @@ body {
   border-radius: 5px;
   border-style: none;
 }
+*/
 
 #login-overlay > #blurred {
   position: absolute;
@@ -528,10 +535,11 @@ nav > ul > li > a {
   height: 100%;
 }
 
+/*
 .nav-icon {    
     height: 13pt;
 }
-
+*/
 .center-vertically {
     position: absolute;
     top:50%;
@@ -606,11 +614,29 @@ nav > ul > li > a {
 #video-peer > img {
   /*display: flex;*/
   /*width: 100%; */
-  
   max-width: 100%;
   max-height: 100%;
   /*border: 2px var(--main-color-light) solid;*/
   border-radius: 30px;
+}
+
+
+.top-overlay-space {
+  display: block;
+  position: absolute;
+  transform: translateY(10px);
+  height: 5%;
+  background-color: transparent;
+  /*background-color: rgba(var(--main-color-theme-rgb), 0.5); */
+  text-align: center;
+  align-self: flex-start;
+
+  color: var(--main-color-dark);
+}
+
+.top-overlay-space > h4,
+.clock {
+  margin: 0;
 }
 
 .bottom-overlay-space {

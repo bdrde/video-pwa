@@ -21,7 +21,7 @@ class Prescription extends HTMLElement {
             <div id="prescription-header">
                 <div class="data-bubble">
                     <div class="data-bubble-title">Name, Vorname</div>
-                    <div class="data-bubble-content">Mustermann, Erika</div>
+                    <div class="data-bubble-content">Maximann, Max</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
@@ -30,7 +30,7 @@ class Prescription extends HTMLElement {
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
                     <div class="data-bubble-content">
-                    Prof. Dr. med. Erika Mustermann
+                    Dr. med. Erika Mustermann
                     </br>Musterallee 25
                     </br>12976 Musterstadt
                     </div>
