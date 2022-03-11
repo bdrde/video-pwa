@@ -25,18 +25,26 @@ class Video extends HTMLElement {
             <div id="video-other">
                 <h1>Willkommen</h1>
                 <div class="logo">
-                    <img class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
-                    <img src="./images/h-icon.svg" style="width: 50pt;" />
-                    <img src="./images/lines.svg" style="width: 110pt;" />
+                    <img id="top" class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
+                    <h1 id="text">Videosprechstunde</h1>
+                    <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
+                    <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
                 </div>
+
+                <div id="video-waiting">
                 <h2>Es befindet sich ein Patient im Warteraum</h2>
-                <button class="button light" @click=${_ => this.startVideo()} style="height:40px;">
+                <button class="button" @click=${_ => this.startVideo()} style="height:40px;">
                     <!-- <img class="button-logo" src="./images/camera-filled.svg"/> -->
                     <div class="button-text">Video starten</div>
                 </button>
+                </div>
             </div>
 
             <div id="video-all">
+                <div class="top-overlay-space">
+                <h4>Max Maximann<h4>
+                <div id="clock">0:49</div>
+                </div>
                 <div id="video-peer">
                   <img src="./images/women-arm-rest.jpg"></img>
                   </div>
@@ -108,10 +116,10 @@ class Video extends HTMLElement {
         /*
         render(html` \
             <span class="blink"></span>`
-            , document.querySelector('#custom-header'));
+            , document.querySelector('#left-header'));
             */
-        render('', document.querySelector('#custom-header'));
-        render('', document.querySelector('#data-header'));
+        render('', document.querySelector('#left-header'));
+        render('', document.querySelector('#center-header'));
     }
 
     displayVideo(show) {

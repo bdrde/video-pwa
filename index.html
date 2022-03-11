@@ -23,19 +23,20 @@
 <body>
     <div id="login-overlay">
         <div class="logo">
-            <img src="./images/cloud-icon-128.png" style="width: 80pt;" />
-            <img src="./images/h-icon.svg" style="width: 50pt;" />
-            <img src="./images/lines.svg" style="width: 110pt;" />
+            <img id="top" src="./images/cloud-icon-128.png" style="width: 80pt;" />
+            <h1 id="text">Videosprechstunde</h1>
+            <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
+            <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
         </div>
 
         <div id="logins" class="responsive">
             <div id="login-1" class="responsive-left">
                 <div id="inner">
                     <h3>Ich bin Patient</h3>
-                    <p>Einloggen mit bdr Wallet und ihrer Gesundheitskarte</p>
-                    <a class="button dark"
+                    <p>Melden Sie sich mit Ihrer digitalen Versichertenidentität an</p>
+                    <a class="button"
                         href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/">
-                        <img class="button-logo" src="./images/bdr-small-light.png" />
+                        <div class="button-logo"></div>
                         <div class="button-text">Login mit Gesundheitskarte</div>
                     </a>
                 </div>
@@ -43,11 +44,11 @@
             <div id="login-2" class="responsive-right">
                 <div id="inner">
                     <h3>Ich bin Arzt</h3>
-                    <p>Einloggen mit bdr Wallet und ihrem Heilberufsausweis</p>
-                    <a class="button light"
-                        href="https://authr.herokuapp.com/authenticate?callback=https://bdrde.github.io/video-pwa/"
+                    <p>Melden Sie sich mit Ihrer digitalen Arztidentität an</p>
+                    <a class="button"
+                        href="https://authr.herokuapp.com/authenticate2?callback=https://bdrde.github.io/video-pwa/"
                         onclick="showWaitingScreen();">
-                        <img class="button-logo" src="./images/bdr-small-dark.png" />
+                        <div class="button-logo"></div>
                         <div class="button-text">Login mit Heilberufsausweis</div>
                     </a>
                 </div>
@@ -57,23 +58,24 @@
 
     <div id="login-waiting-overlay">
         <div class="logo">
-            <img class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
-            <img src="./images/h-icon.svg" style="width: 50pt;" />
-            <img src="./images/lines.svg" style="width: 110pt;" />            
+            <img id="top" class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
+            <h1 id="text">Videosprechstunde</h1>
+            <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
+            <img id="sep" src="./images/lines.svg" style="width: 110pt;" />            
         </div>
-        <h2>Please approve in your bdr wallet</h2>
+        <h2>Sie werden zur Freigabe in die Wallet geleitet</h2>
     </div>
 
     <div id="container">
         <header>
-            <div id="custom-header">
-                <img src="./images/cloud-icon-128.png" style="height: 60%; margin: auto;" />
-            </div>
-            <div id="data-header"></div>
-            <div id="signout-header">
+            <div id="left-header">
                 <button onclick="logout()" class="nav-button-signout" style="margin: auto;">
                     <img src="./images/flat_cross_icon.svg" style="width: 20px;" />
                 </button>
+            </div>
+            <div id="center-header"></div>
+            <div id="right-header">
+                <img src="./images/settings-gear.svg" style="height: 50%; margin: auto;" />
             </div>
         </header>
 

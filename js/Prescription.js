@@ -25,12 +25,12 @@ class Prescription extends HTMLElement {
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
-                    <div class="data-bubble-content">DAK-Gesundheit <br>15035218</div>
+                    <div class="data-bubble-content">DAK-Gesundheit <br>U635662485</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
                     <div class="data-bubble-content">
-                    Dr. med. Markus Heinze
+                    Dr. med. Erika Mustermann
                     </br>Musterallee 25
                     </br>12976 Musterstadt
                     </div>
@@ -153,11 +153,11 @@ class Prescription extends HTMLElement {
         /*
         render(html`\
            <img class="header-image" src="./images/checkmark_boxed.png"></img>\
-        `, document.querySelector('#custom-header'));
+        `, document.querySelector('#left-header'));
 
         render(html`\
            signiert am ${new Date().toLocaleString()}\
-        `, document.querySelector('#data-header'));
+        `, document.querySelector('#center-header'));
 */
         signPopupRef.close();
     }
