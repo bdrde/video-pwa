@@ -21,16 +21,16 @@ class Prescription extends HTMLElement {
             <div id="prescription-header">
                 <div class="data-bubble">
                     <div class="data-bubble-title">Name, Vorname</div>
-                    <div class="data-bubble-content">Maximann, Max</div>
+                    <div class="data-bubble-content">Mustermann, Erika</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
-                    <div class="data-bubble-content">DAK-Gesundheit <br>15035218</div>
+                    <div class="data-bubble-content">DAK-Gesundheit <br>U635662485</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
                     <div class="data-bubble-content">
-                    Dr. med. Markus Heinze
+                    Prof. Dr. med. Erika Mustermann
                     </br>Musterallee 25
                     </br>12976 Musterstadt
                     </div>
