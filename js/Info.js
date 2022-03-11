@@ -24,9 +24,9 @@ class Info extends HTMLElement {
     }
 
     setCustomHeader() {
-//        document.querySelector('#custom-header').innerHTML = '';
-        render('', document.querySelector('#custom-header'));
-        render('', document.querySelector('#data-header'));
+//        document.querySelector('#left-header').innerHTML = '';
+        render('', document.querySelector('#left-header'));
+        render('', document.querySelector('#center-header'));
     }
 
 }

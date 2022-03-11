@@ -10,7 +10,7 @@
   --main-color-dark:#030045;
   --main-color-nav: #f9f9f9;
 
-  --main-color-accent: lightgray;
+  --main-color-accent: #d3d3d3;
 
   --prescription-color-main: #fee8eb;
   --prescription-color-light: #fdf6f7;
@@ -415,14 +415,14 @@ header > div {
 */
 }
 
-#custom-header {
+#left-header {
   display: flex;
   width: 20%; 
   justify-content: center;
 }
 
 
-#data-header {
+#center-header {
   width: 60%;
   text-align: center;
   align-content: center;
@@ -430,7 +430,7 @@ header > div {
   font-weight: bold;
 }
 
-#signout-header {
+#right-header {
   display: flex;
   justify-content: center;
   width: 20%;

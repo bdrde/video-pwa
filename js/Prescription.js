@@ -153,11 +153,11 @@ class Prescription extends HTMLElement {
         /*
         render(html`\
            <img class="header-image" src="./images/checkmark_boxed.png"></img>\
-        `, document.querySelector('#custom-header'));
+        `, document.querySelector('#left-header'));
 
         render(html`\
            signiert am ${new Date().toLocaleString()}\
-        `, document.querySelector('#data-header'));
+        `, document.querySelector('#center-header'));
 */
         signPopupRef.close();
     }

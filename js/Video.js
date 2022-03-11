@@ -108,10 +108,10 @@ class Video extends HTMLElement {
         /*
         render(html` \
             <span class="blink"></span>`
-            , document.querySelector('#custom-header'));
+            , document.querySelector('#left-header'));
             */
-        render('', document.querySelector('#custom-header'));
-        render('', document.querySelector('#data-header'));
+        render('', document.querySelector('#left-header'));
+        render('', document.querySelector('#center-header'));
     }
 
     displayVideo(show) {

@@ -42,7 +42,7 @@ if (null == idToken) {
   Router.go('/video-pwa/video');
   // show this text only after 'login'
 /*  
-  document.querySelector('#data-header').innerHTML=' \
+  document.querySelector('#center-header').innerHTML=' \
   Max Musterman <br/> Techniker Krankenkasse\
   ';
   */
