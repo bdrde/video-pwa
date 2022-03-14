@@ -46,14 +46,15 @@ class Prescription extends HTMLElement {
             
             <div id="presc-1" class="presc">
                 <div class="presc-header">
-                    <img src="./images/Euclid gematik E-Rezept Logo vert rgb.svg" style="height:55px;"/>
-                    <button id="add-prescription-btn" @click=${_ => this.addPrescription()}>
-                        <img src="./images/plus.png" style="height: 35px; background-color: transparent; " />
+                    <img src="./images/Euclid gematik E-Rezept Logo vert rgb.svg" style="width:55px; height:55px;"/>
+                    <button id="add-prescription-btn" class="presc-header-field" @click=${_ => this.addPrescription()}>
+                        <img src="./images/plus.png" style="height: 35px; width: 35px;background-color: transparent; " />
                         <span style="display:block;">neu</span>
                     </button>
 
-                    <div id="signing_done" style="display:none; text-align:right;">
-                        <img style="height:100%;"src="./images/siegel-blau-gruen.png"></img>
+                    <div id="signing_done" class="presc-header-field" style="display:none;">
+                        <img style="height:35px;"src="./images/siegel-blau-gruen.png"></img>
+                        <span style="display:block;">signiert</span>
                     </div>
                 </div>
 
@@ -138,8 +139,8 @@ class Prescription extends HTMLElement {
 
 
         signPopupRef = window.open(
-            //domain + '/video-pwa/sign-me/start.html'
-            domain + '/sign-me/start.html?doc_id=1'
+            domain + '/video-pwa/sign-me/start.html'
+            //domain + '/sign-me/start.html?doc_id=1'
             ,'Signieren'
             ,`
             popup
@@ -160,6 +161,12 @@ class Prescription extends HTMLElement {
 
         document.querySelector('#signing_done').style.display = 'block';
         document.querySelector('#sign-prescription-button').style.display = 'none';
+
+        /*
+        document.querySelector('.data-bubble-input').forEach((tag) => {
+            tag.style.display = 'none';
+          });
+        */
 
         /*
         render(html`\

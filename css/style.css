@@ -726,12 +726,13 @@ nav > ul > li > a {
   margin-bottom: 20px;
 }
 
-#add-prescription-btn {
+.presc-header-field {
   height:fit-content; 
   border:0; 
   background-color:transparent; 
   
   color: var(--main-color-dark);
+  font-size: smaller;
 }
 
 .presc {
