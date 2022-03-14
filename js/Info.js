@@ -25,7 +25,7 @@ class Info extends HTMLElement {
     setCustomHeader() {
 //        document.querySelector('#left-header').innerHTML = '';
         render('', document.querySelector('#left-header'));
-        render('', document.querySelector('#center-header'));
+        //render('', document.querySelector('#center-header'));
     }
 
 }
