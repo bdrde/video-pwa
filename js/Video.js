@@ -44,9 +44,9 @@ class Video extends HTMLElement {
             </div>
 
             <div id="video-all">
-                <div class="top-overlay-space">
-                <h4>Max Maximann<h4>
-                <div id="clock">0:49</div>
+                <div class="top-overlay-space" style="display:none;">
+                    <h4>Max Maximann</h4>
+                    <div id="clock">0:00</div>
                 </div>
                 <div id="video-peer">
                   <img src="./images/women-arm-rest.jpg"></img>
@@ -88,9 +88,30 @@ class Video extends HTMLElement {
         }
     }
 
+    time() {
+        var cntSeconds = parseInt(window.localStorage.getItem('cntSeconds'));
+        cntSeconds += 1;
+        window.localStorage.setItem('cntSeconds', cntSeconds);
+
+        
+        const mins = Math.floor(cntSeconds / 60);
+        const secs = cntSeconds % 60;
+        
+        document.querySelector("#clock").textContent = mins + ':' + (secs < 10 ? '0' + secs : secs);
+    }
+
     startVideo() {
         this.displayVideo(true);
         this.initCamera();
+
+        document.querySelector('#video-on').style.display = 'inline-block';
+
+        this.cntSeconds = window.localStorage.getItem('cntSeconds');
+        if (this.cntSeconds == null) {
+            window.localStorage.setItem('cntSeconds', 0);
+            this.clockInterval = setInterval(this.time, 1000);
+        };
+
     }
 
     initCamera() {
@@ -111,18 +132,14 @@ class Video extends HTMLElement {
                 this.stream = stream;
             })
             .catch((error) => { console.error("Error: ", error); });
-
     }
 
     setCustomHeader() {
 
-        /*
-        render(html` \
-            <span class="blink"></span>`
-            , document.querySelector('#left-header'));
-            */
         render('', document.querySelector('#left-header'));
-        render('', document.querySelector('#center-header'));
+        render(html`
+        <h4 style="margin:0;">Max Maximann</h4>
+        <span id="video-on" class="blink"></span><span id="clock">0:00</span>`, document.querySelector('#center-header'));
     }
 
     displayVideo(show) {
@@ -165,8 +182,12 @@ class Video extends HTMLElement {
         });
         this.stream = null;
 
-
+        document.querySelector('#video-on').style.display = 'none';
+        
         this.displayVideo(false);
+
+        clearInterval(this.clockInterval);
+
         /* lokalen Speicher leeren. Default ist damit wieder 'false' */
         window.localStorage.clear();
     }
