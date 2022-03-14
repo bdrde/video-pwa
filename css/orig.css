@@ -9,6 +9,7 @@
   --main-color-light: white;
   --main-color-dark:#030045;
   --main-color-nav: #f9f9f9;
+  --main-color-nav-icon: #007AFF;
 
   --main-color-accent: #d3d3d3;
 
@@ -19,7 +20,11 @@
 /* ************************************************
  * 
  * ***********************************************/
-
+.nav-icon > circle,
+.nav-icon > path {  
+   fill: var(--main-color-nav-icon);
+ }
+ 
 
 .nav-icon {    
   height: 13pt;

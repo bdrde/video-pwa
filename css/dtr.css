@@ -16,6 +16,10 @@
 
 /* *************************************************************** */
 
+.nav-icon > circle,
+.nav-icon > path {  
+  fill: var(--main-color-dark);
+}
 
 .nav-icon {    
   height: 18pt;

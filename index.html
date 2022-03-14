@@ -6,7 +6,7 @@
     <title>Teleclinic</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/icon-152.png">
+    <link rel="apple-touch-icon" href="images/icon-152-dark.png">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
     <!--meta name="theme-color" content="#bfebfb" /-->
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Teleclinic">
-    <meta name="msapplication-TileImage" content="images/icon-144.png">
+    <meta name="msapplication-TileImage" content="images/icon-152-dark.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
     <link rel="canonical" href="https://bdrde.github.io/video-pwa/">
@@ -69,7 +69,7 @@
                 <h1 id="text">Videosprechstunde</h1>
             </div>
             <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
-            <img id="sep" src="./images/lines.svg" style="width: 110pt;" />            
+            <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
         </div>
         <h2>Sie werden zur Freigabe in die Wallet geleitet</h2>
     </div>
@@ -94,18 +94,30 @@
             <ul>
                 <li style="text-align: left;">
                     <a href="/video-pwa/info">
-                        <img src="./images/info-filled.svg" class="nav-icon" />
+                        <svg class="nav-icon" id="IconInfo" viewBox="0 0 24 24">
+                            <path fill="#007AFF"
+                                d="M24,12A12,12,0,1,1,12,0,12.013,12.013,0,0,1,24,12ZM14,12a2,2,0,0,0-2-2H10v2h2v7h2ZM12,5a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,12,5Z" />
+                        </svg>
                     </a>
                 </li>
                 <li style="text-align: center;">
                     <a href="/video-pwa/video">
-                        <img src="./images/camera-filled.svg" class="nav-icon" />
+                        <svg class="nav-icon" id="IconCamera" viewBox="0 0 24 24">
+                            <path fill="#007AFF"
+                                d="M17.721,3,16.308,1.168A3.023,3.023,0,0,0,13.932,0H10.068A3.023,3.023,0,0,0,7.692,1.168L6.279,3Z" />
+                            <circle fill="#007AFF" cx="12" cy="14" r="4" />
+                            <path fill="#007AFF"
+                                d="M19,5H5a5.006,5.006,0,0,0-5,5v9a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10A5.006,5.006,0,0,0,19,5ZM12,20a6,6,0,1,1,6-6A6.006,6.006,0,0,1,12,20Z" />
+                        </svg>
                     </a>
                 </li>
                 <li style="text-align: right;">
                     <a href="/video-pwa/prescription">
-
-                        <img src="./images/document-signed-filled.svg" class="nav-icon" />
+                        <svg class="nav-icon" id="IconDocumentSigned" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+                            <path fill="#007AFF"
+                                d="m16 .3a4.968 4.968 0 0 1 1.879 1.164l1.656 1.658a4.954 4.954 0 0 1 1.165 1.878h-4.7zm5 6.7v12a5.006 5.006 0 0 1 -5 5h-8a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h6v5a2 2 0 0 0 2 2zm-4.192 10.413a1 1 0 0 0 -1.4-.222 4.586 4.586 0 0 1 -2.273.809 1.347 1.347 0 0 1 -.864-.345 3.025 3.025 0 0 0 -1.832-.655 5.861 5.861 0 0 0 -3.046 1.206 1 1 0 1 0 1.214 1.588 3.951 3.951 0 0 1 1.832-.794c.246 0 .371.078.7.3a3.252 3.252 0 0 0 2 .7 6.464 6.464 0 0 0 3.456-1.193 1 1 0 0 0 .213-1.394zm.192-3.413a1 1 0 0 0 -1-1h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 1-1zm0-4a1 1 0 0 0 -1-1h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 1-1z" />
+                        </svg>
                     </a>
                 </li>
             </ul>
