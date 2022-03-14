@@ -46,15 +46,18 @@ class Prescription extends HTMLElement {
             
             <div id="presc-1" class="presc">
                 <div class="presc-header">
-                    <button id="sign-prescription-button" @click=${_ => this.sign()} style="width:100pt;"> \
-                        <img src="./images/sign-me.svg"></img> \
-                    </button> \
+                    <img src="./images/Euclid gematik E-Rezept Logo vert rgb.svg" style="height:55px;"/>
+                    <button id="add-prescription-btn" @click=${_ => this.addPrescription()}>
+                        <img src="./images/plus.png" style="height: 35px; background-color: transparent; " />
+                        <span style="display:block;">neu</span>
+                    </button>
+
                     <div id="signing_done" style="display:none; width:100%; text-align:right;">
                         <img style="height:100%;"src="./images/siegel-blau-gruen.png"></img>
                     </div>
                 </div>
 
-                <div class="presc-body">
+                <div id="prescription-body-1" class="presc-body" style="display:none;">
                     <div class="data-bubble">
                         <div class="data-bubble-title">Datum</div>
                         <div class="data-bubble-content datum">${this.currentDateFormatted()}</div>
@@ -77,19 +80,27 @@ class Prescription extends HTMLElement {
                         </div>
                     </div>
 
-                    <div id="last-element" style="width:100%; text-align:right; margin-top:10px;">
-                        <button @click=${_ => this.addNew(_)} style="background-color: #FEE8EB; border:none;">
+                    <div id="last-element" style="width:100%; text-align:right; align-content:center;margin-top:10px;">
+                        <button @click=${_ => this.addRp(_)} style="background-color: #FEE8EB; border:none;">
                             <img src="./images/plus.png" style="height: 25px; background-color: #FEE8EB; "></img>
+                        </button>
+
+                        <button id="sign-prescription-button" @click=${_ => this.sign()} style="display:block;">
+                            <img src="./images/sign-me.svg" style="width:100pt;"></img>
                         </button>
                     </div>
                 </div>
             </div>
-            <div id="bottom-space"></div>
          </div> \
         `, this);
     }
 
-    addNew(){
+    addPrescription() {        
+        this.querySelector("#prescription-body-1").style.display = 'block';
+        this.querySelector("#add-prescription-btn").style.display = 'none';
+    }
+
+    addRp(){
         const template = this.querySelector("#bubble-template");
         const newBubble = template.cloneNode(true);
 

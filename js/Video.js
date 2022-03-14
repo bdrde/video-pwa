@@ -26,7 +26,10 @@ class Video extends HTMLElement {
                 <h1>Willkommen</h1>
                 <div class="logo">
                     <img id="top" class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
-                    <h1 id="text">Videosprechstunde</h1>
+                    <div id="title">
+                        <img class="logo-corner-image" src="./images/dtr-logo-corner-red.png" />
+                        <h1 id="text">Videosprechstunde</h1>
+                    </div>        
                     <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
                     <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
                 </div>

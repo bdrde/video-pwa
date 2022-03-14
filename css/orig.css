@@ -29,7 +29,11 @@
 .logo > #top, #icon, #sep {
 }
 
-.logo > #text {
+.logo > #title > #text {
+  display: none;
+}
+
+.logo-corner-image {
   display: none;
 }
 
