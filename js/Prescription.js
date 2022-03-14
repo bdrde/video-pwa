@@ -85,7 +85,7 @@ class Prescription extends HTMLElement {
                             <img src="./images/plus.png" style="height: 25px; background-color: #FEE8EB; "></img>
                         </button>
 
-                        <button id="sign-prescription-button" @click=${_ => this.sign()} style="display:block;">
+                        <button id="sign-prescription-button" @click=${_ => this.sign()} style="display:block; width:fit-content;">
                             <img src="./images/sign-me.svg" style="width:100pt;"></img>
                         </button>
                     </div>

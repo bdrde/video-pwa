@@ -13,7 +13,7 @@ var URLS = [
   `${GHPATH}/js/Prescription.js`,
   `${GHPATH}/js/vaadin-router.js`,
   `${GHPATH}/favicon.ico`,
-  `${GHPATH}/images/icon-144.png`,
+  `${GHPATH}/images/icon-152-dark.png`,
   `${GHPATH}/images/cloud-icon-144.png`,
   `${GHPATH}/images/cloud-icon-152.png`,
   `${GHPATH}/images/siegel-blau-gruen.png`,
