@@ -21,11 +21,11 @@ class Prescription extends HTMLElement {
             <div id="prescription-header">
                 <div class="data-bubble">
                     <div class="data-bubble-title">Name, Vorname</div>
-                    <div class="data-bubble-content">Maximann, Max</div>
+                    <div class="data-bubble-content">Maximann, Max <br>U635662485</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
-                    <div class="data-bubble-content">DAK-Gesundheit <br>U635662485</div>
+                    <div class="data-bubble-content">DAK-Gesundheit <br>1055830016</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
@@ -52,7 +52,7 @@ class Prescription extends HTMLElement {
                         <span style="display:block;">neu</span>
                     </button>
 
-                    <div id="signing_done" style="display:none; width:100%; text-align:right;">
+                    <div id="signing_done" style="display:none; text-align:right;">
                         <img style="height:100%;"src="./images/siegel-blau-gruen.png"></img>
                     </div>
                 </div>
