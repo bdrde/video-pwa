@@ -90,13 +90,17 @@ class Video extends HTMLElement {
 
     time() {
         var cntSeconds = parseInt(window.localStorage.getItem('cntSeconds'));
+
+        if (cntSeconds == null) {
+            return;
+        }
+        
         cntSeconds += 1;
         window.localStorage.setItem('cntSeconds', cntSeconds);
 
-        
         const mins = Math.floor(cntSeconds / 60);
         const secs = cntSeconds % 60;
-        
+
         document.querySelector("#clock").textContent = mins + ':' + (secs < 10 ? '0' + secs : secs);
     }
 
@@ -139,7 +143,7 @@ class Video extends HTMLElement {
         render('', document.querySelector('#left-header'));
         render(html`
         <h4 style="margin:0;">Max Maximann</h4>
-        <span id="video-on" class="blink"></span><span id="clock">0:00</span>`, document.querySelector('#center-header'));
+        <span id="video-on" class="blink" style="display:none;"></span><span id="clock">0:00</span>`, document.querySelector('#center-header'));
     }
 
     displayVideo(show) {
