@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="doubleSlash GmbH">
+  <meta name="copyright" content="Bundesdruckerei GmbH">
+  <meta name="theme-color" content="#049080">
+  <meta name="msapplication-navbutton-color" content="#049080">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#dadada">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+
+
+
+  <meta http-equiv="refresh" content="1497">
+  <title>sign-me | D-Trust GmbH</title>
+
+  <link href="https://cloud.sign-me.de/signature/static/resources/src/img/favicon.ico" type="image/vnd.microsoft.icon"
+    rel="shortcut icon">
+  <link href="https://cloud.sign-me.de/signature/static/resources/src/img/favicon.ico" type="image/vnd.microsoft.icon"
+    rel="icon">
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/sign-me-responsive.css">
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/pdf-viewer.css">
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="static/resources/src/css/internal/noscript.css">
+  </noscript>
+  <link rel="stylesheet" type="text/css" href="./sign-me _ D-Trust GmbH_files/nodep-date-input-polyfill.css">
+
+  <script src="./sign-me _ D-Trust GmbH_files/jquery-3.5.1.min.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/bootstrap.min.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/nodep-date-input-polyfill.dist.js"></script>
+
+  <script src="./sign-me _ D-Trust GmbH_files/core.enum.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.store.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.router.js"></script>
+  <script src="./sign-me _ D-Trust GmbH_files/core.plugins.js"></script>
+
+  <script>
+    function sign() {
+        setInterval(() => done(), 2000);
+    }
+
+    function done() {
+        //window.opener.postMessage("signed", "http://localhost:5500");
+        window.opener.postMessage("signed", "https://bdrde.github.io");
+    }
+
+    $(document).ready(function() {
+      $("#fingerprint-scan-btn").on("mousedown", start_scan);
+      $("#fingerprint-scan-btn").on("mouseup", stop_scan);
+
+      
+    });
+
+    function start_scan() {
+      setTimeout(scan_done, 1500);
+      document.querySelector('#shiny-effect').style.display = 'none';
+      document.querySelector('#scan-effect').style.display = 'block';
+    }
+    function stop_scan() {
+      document.querySelector('#shiny-effect').style.display = 'block';
+      document.querySelector('#scan-effect').style.display = 'none';
+    }
+
+    function scan_done() {
+      stop_scan();
+      console.log("fingerprint scanned");
+      $("#scanner").hide();
+      $("#scan-confirmation").show();
+
+      setTimeout(done,1000);
+    }
+</script>
+
+
+  <style>
+    .card-body-inner { 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+
+      height:100%;
+    }
+
+    .shiny {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .shiny > img {
+      height: inherit;
+      width: inherit;
+    }
+
+    .shiny-effect {
+      position: absolute; 
+      top:0; 
+      left:0; 
+      height: inherit; /*100px; */
+      width: inherit; /* 100px; */
+      z-index: 2; 
+      background: linear-gradient(-45deg, #ffffff00,  #ffffff00, #ffffff44, #ffffffAA, #ffffff00, #ffffff00, #ffffff00); 
+      background-size: 400% 400%;
+      border-radius: 50%;
+      animation: gradient 6s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .scan-effect {
+      display: none;
+      position: absolute; 
+      top:0; 
+      left:0; 
+      z-index: 2; 
+
+      height: inherit; /*100px; */
+      width: inherit;
+      border-radius: 50%;
+      background: 
+        linear-gradient(0deg, 
+        rgba(0,0,0,0) calc(50% - 15px),
+        rgba(256,0,0,0.3) calc(50% - 2px),
+        rgba(256,0,0,0.5) calc(50%), 
+        rgba(256,0,0,0.3) calc(50% + 2px),
+        rgba(0,0,0,0) calc(50% + 15px) );
+      background-size: 100% 250%;
+
+      animation: scan 3s forwards infinite;
+
+    }
+
+    @keyframes scan {
+      0% {
+        background-position: 0% 20%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+
+    #fingerprint-scan-btn {
+      width: 150px;
+      height: 150px;
+
+      padding: 20px;
+      border: 3px dashed #dadada;
+      border-radius: 10px;
+
+      box-shadow: 2px;
+
+      justify-self: flex-end; 
+      background-color: transparent;
+    }
+
+  </style>
+</head>
+
+<body ontouchstart="" class="pb-4 pb-sm-0  ">
+  <script src="./sign-me _ D-Trust GmbH_files/start.js"></script>
+  <section id="start-html" class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-xl-3 left-side-content text-right d-none d-md-block">
+        <div class="lsc-fixed">
+          <!-- lsc-header -->
+          <h2 class="mt-4">sign-me. How remote signing works</h2>
+          <ul>
+            <ul>
+              <li>Signing documents online</li>
+              <li>As legally secure as a handwritten signature</li>
+              <li>A D-Trust GmbH service</li>
+            </ul>
+          </ul>
+
+
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.bundesdruckerei.de/en/sign-me">More information</a><br><br>
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.youtube.com/watch?v=eVzz-7DmP8k">sign-me demo | registration and
+            identification</a><br><br>
+          <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+            href="https://www.bundesdruckerei.de/system/files/dokumente/pdf/Quick-reference-guide_sign-me.pdf">sign-me
+            quick guide</a>
+        </div>
+      </div>
+      <div class=" col-md-8 col-xl-9 mb-3">
+        <div class="row">
+          <div class="col d-block header-logo">
+            <a href="https://cloud.sign-me.de/signature/start" target="_self">
+              <img alt="signme logo" src="./sign-me _ D-Trust GmbH_files/signme_logo_color.svg">
+            </a>
+          </div>
+          <div class="col text-right header-logo textright mb-xl-2 mt-xl-2">
+            <a href="https://cloud.sign-me.de/signature/start?ct=8d5d0b2#" target="_blank">
+              <img alt="dtrust logo de" src="./sign-me _ D-Trust GmbH_files/dtr_logo.svg">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Ihr Signaturauftrag</h5>
+                <p>e-Rezept, Maxi Maximann</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6">
+          <h3 class="mb-4 mt-4" id="form_heading">Signaturauftrag freigeben</h3>
+        </div>
+
+        <div class="row">
+        </div>
+          <div class="col-xl-6">
+            <noscript>
+              <div class="card bg-warning mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript is not active</h5>
+                  <p class="card-text">You have deactivated JavaScript for this website. For an enhanced user
+                    experience, please, allow 'JavaScript' in your browser or contact your administrator.</p>
+                </div>
+              </div>
+            </noscript>
+            <div class="accordion mt-2 mb-2 mt-lg-0" id="accordion-faq" style="">
+              <div class="card mb-2">
+                <div class="card-header" id="heading-1">
+                  <h5 class="mb-0">
+                    <button class="btn-link" type="button" data-toggle="collapse" data-target="#collapse-1"
+                      aria-controls="collapse-1" aria-expanded="false">
+                      <img src="../images/fingerprint.svg" style="height : 25px; margin-right: 10px;"/>
+                      mit Fingerabdruck                      
+                      <span class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-1" class="collapse" aria-labelledby="heading-1" data-parent="#accordion-faq" style="">
+                  <div class="card-body" style="height:350px;">
+                    <div id="scanner" class="card-body-inner">
+                      <h2>Bitte legen Sie Ihren Finger auf</h2>
+                        <button id="fingerprint-scan-btn">
+                          <div class="shiny">
+                            <img src="../images/fingerprint-large.svg" />
+                            <div id="shiny-effect" class="shiny-effect"></div>
+                            <div id="scan-effect" class="scan-effect"></div>
+                          </div>
+                        </button>                        
+                    </div>
+
+                    <div id="scan-confirmation" class="card-body-inner" style="display:none;">
+                      <h2>Danke</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-header" id="heading-2">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-2"
+                      aria-controls="collapse-2" aria-expanded="false">
+                      <img src="../images/FaceID-logo.svg" style="height : 25px; margin-right: 10px;"/>
+                      mit Face ID<span class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-faq" style="">
+                  <div class="card-body">
+                    Schauen Sie in die Kamera
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-header" id="heading-3">
+                  <h5 class="mb-0">
+                    <button class="btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-3"
+                      aria-controls="collapse-3" aria-expanded="false">
+                      <img src="../images/sign-me-no-text.svg" style="height : 25px; margin-right: 10px;"/>
+                      mit der sign-me 2FA-App<span
+                        class="collapse-icon-plus"></span>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-faq" style="">
+                  <div class="card-body">                    
+                    TAN an App schicken
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col pb-5 mt-3 left-side-content lsc-mobile d-md-none d-lg-none">
+        <h2 class="mt-4">sign-me. How remote signing works</h2>
+        <ul>
+          <ul>
+            <li>Signing documents online</li>
+            <li>As legally secure as a handwritten signature</li>
+            <li>A D-Trust GmbH service</li>
+          </ul>
+        </ul>
+
+
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.bundesdruckerei.de/en/sign-me">More information</a><br><br>
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.youtube.com/watch?v=eVzz-7DmP8k">sign-me demo | registration and identification</a><br><br>
+        <a class="mb-5 external-link-white" target="_blank" rel="noopener noreferrer"
+          href="https://www.bundesdruckerei.de/system/files/dokumente/pdf/Quick-reference-guide_sign-me.pdf">sign-me
+          quick guide</a>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    START_FRAGMENT.init();
+  </script>
+  <footer class="footer container-fluid unselectable">
+    <div class="row">
+      <div class="col text-center mb-5 mb-xl-0">
+        <a class="footer-link" href="https://d-trust.net/en/privacy-policy-sign-me.html" target="_blank"
+          rel="noopener noreferrer">Privacy Policy</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/impressum.html" target="_blank"
+          rel="noopener noreferrer">Legal Notice</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/kontakt.html" target="_blank"
+          rel="noopener noreferrer">Contact</a>
+        <span class="d-none d-sm-inline">&nbsp;|&nbsp;</span><br class="d-block d-sm-none">
+        <a class="footer-link" href="https://www.d-trust.net/barrierefreiheit.html" target="_blank"
+          rel="noopener noreferrer">Accessibility</a>
+      </div>
+      <a class="eidas-logo" alt="eidas logo" target="_blank" rel="noopener noreferrer"
+        href="https://www.elektronische-vertrauensdienste.de/EVD/DE/Verbraucher/Anbieterliste/Anbieterliste-start.html">
+        <img alt="eidas logo" src="./sign-me _ D-Trust GmbH_files/eidas.jpg">
+      </a>
+      <a class="bdr-logo" href="https://bundesdruckerei.de/" alt="bdr logo" target="_blank" rel="noopener noreferrer">
+        <img class="img-fluid" alt="bdr logo" src="./sign-me _ D-Trust GmbH_files/bdr_logo_color_en.svg">
+      </a>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>
