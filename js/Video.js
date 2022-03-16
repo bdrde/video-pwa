@@ -50,7 +50,7 @@ class Video extends HTMLElement {
                     <div id="clock">0:00</div>
                 </div>
                 <div id="video-peer">
-                  <img src="./images/women-arm-rest.jpg"></img>
+                  <img src="./images/patient-3.jpeg"></img>
                   </div>
                 <div class="bottom-overlay-space">
                     <div class="control-button-group">
@@ -90,14 +90,16 @@ class Video extends HTMLElement {
     }
 
     time() {
-        var cntSeconds = parseInt(window.localStorage.getItem('cntSeconds'));
+        const strCntSeconds = window.localStorage.getItem('cntSeconds');
 
-        if (cntSeconds == null) {
+        if ( strCntSeconds == null ||  strCntSeconds === "") {
             return;
         }
+
+        var cntSeconds = parseInt(strCntSeconds);
         
         cntSeconds += 1;
-        window.localStorage.setItem('cntSeconds', cntSeconds);
+        window.localStorage.setItem('cntSeconds', cntSeconds.toString());
 
         const mins = Math.floor(cntSeconds / 60);
         const secs = cntSeconds % 60;
