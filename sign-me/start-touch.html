@@ -54,12 +54,16 @@
       
     });
 
+    var scanning = null;
     function start_scan() {
-      setTimeout(scan_done, 1500);
+      // the finger has to be down for some time, to simulate a scan
+      scanning = setInterval(scan_done, 1500);
+
       document.querySelector('#shiny-effect').style.display = 'none';
       document.querySelector('#scan-effect').style.display = 'block';
     }
     function stop_scan() {
+      clearInterval(scanning);
       document.querySelector('#shiny-effect').style.display = 'block';
       document.querySelector('#scan-effect').style.display = 'none';
     }
@@ -70,6 +74,7 @@
       $("#scanner").hide();
       $("#scan-confirmation").show();
 
+      // wait another moment before closing, so that the message can be seen
       setTimeout(done,1000);
     }
 </script>
@@ -84,6 +89,30 @@
       text-align: center;
 
       height:100%;
+    }
+
+    #fingerprint-scan-btn {
+      position: relative;
+      width: 200px;
+      height: 150px;
+
+/*      padding: 20px 0px;*/
+      border: 3px dashed #dadada;
+      border-radius: 10px;
+
+      box-shadow: 2px;
+
+      justify-self: flex-end; 
+      background-color: transparent;
+
+    }
+
+    .area {
+      display: inline-flex;
+      position: relative;
+      height: 150px;
+      width: 150px;
+      padding: 20px;
     }
 
     .shiny {
@@ -101,8 +130,8 @@
       position: absolute; 
       top:0; 
       left:0; 
-      height: inherit; /*100px; */
-      width: inherit; /* 100px; */
+      height: 100%; /*100px; */
+      width: 100%; /* 100px; */
       z-index: 2; 
       background: linear-gradient(-45deg, #ffffff00,  #ffffff00, #ffffff44, #ffffffAA, #ffffff00, #ffffff00, #ffffff00); 
       background-size: 400% 400%;
@@ -128,11 +157,12 @@
       position: absolute; 
       top:0; 
       left:0; 
-      z-index: 2; 
+      width: 100%;
+      z-index: 2;
 
       height: inherit; /*100px; */
       width: inherit;
-      border-radius: 50%;
+      /*border-radius: 50%;*/
       background: 
         linear-gradient(0deg, 
         rgba(0,0,0,0) calc(50% - 15px),
@@ -153,20 +183,6 @@
       100% {
         background-position: 0% 100%;
       }
-    }
-
-    #fingerprint-scan-btn {
-      width: 150px;
-      height: 150px;
-
-      padding: 20px;
-      border: 3px dashed #dadada;
-      border-radius: 10px;
-
-      box-shadow: 2px;
-
-      justify-self: flex-end; 
-      background-color: transparent;
     }
 
   </style>
@@ -256,11 +272,13 @@
                     <div id="scanner" class="card-body-inner">
                       <h2>Bitte legen Sie Ihren Finger auf</h2>
                         <button id="fingerprint-scan-btn">
-                          <div class="shiny">
-                            <img src="../images/fingerprint-large.svg" />
-                            <div id="shiny-effect" class="shiny-effect"></div>
-                            <div id="scan-effect" class="scan-effect"></div>
+                          <div class="area">
+                            <div class="shiny">
+                              <img src="../images/fingerprint-large.svg" />
+                              <div id="shiny-effect" class="shiny-effect"></div>
+                            </div>
                           </div>
+                          <div id="scan-effect" class="scan-effect"></div>
                         </button>                        
                     </div>
 
