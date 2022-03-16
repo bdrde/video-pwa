@@ -47,17 +47,20 @@
         window.opener.postMessage("signed", "https://bdrde.github.io");
     }
 
-    $(document).ready(function() {
-      $("#fingerprint-scan-btn").on("mousedown", start_scan);
-      $("#fingerprint-scan-btn").on("mouseup", stop_scan);
 
-      
+    $(document).ready(function() {
+    /*  
+      $("#fingerprint-scan-btn").on("mousedown", start_scan);
+      $("#fingerprint-scan-btn").on("touchstart", start_scan);
+      $("#fingerprint-scan-btn").on("mouseup", stop_scan);
+      $("#fingerprint-scan-btn").on("touchend", stop_scan);      
+      */
     });
 
     var scanning = null;
     function start_scan() {
       // the finger has to be down for some time, to simulate a scan
-      scanning = setTimeout(scan_done, 1500);
+      scanning = setTimeout(scan_done, 1700);
 
       document.querySelector('#shiny-effect').style.display = 'none';
       document.querySelector('#scan-effect').style.display = 'block';
@@ -275,7 +278,7 @@
                   <div class="card-body" style="height:350px;">
                     <div id="scanner" class="card-body-inner">
                       <h2>Bitte legen Sie Ihren Finger auf</h2>
-                        <button id="fingerprint-scan-btn">
+                        <button id="fingerprint-scan-btn" ontouchstart="start_scan()" ontouchend="stop_scan()">
                           <div class="area">
                             <div class="shiny">
                               <img src="../images/fingerprint-large.svg" />
