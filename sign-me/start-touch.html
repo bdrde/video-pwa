@@ -38,29 +38,15 @@
   <script src="./sign-me _ D-Trust GmbH_files/core.plugins.js"></script>
 
   <script>
-    function sign() {
-        setInterval(() => done(), 2000);
-    }
-
     function done() {
         //window.opener.postMessage("signed", "http://localhost:5500");
         window.opener.postMessage("signed", "https://bdrde.github.io");
     }
 
-
-    $(document).ready(function() {
-    /*  
-      $("#fingerprint-scan-btn").on("mousedown", start_scan);
-      $("#fingerprint-scan-btn").on("touchstart", start_scan);
-      $("#fingerprint-scan-btn").on("mouseup", stop_scan);
-      $("#fingerprint-scan-btn").on("touchend", stop_scan);      
-      */
-    });
-
     var scanning = null;
     function start_scan() {
       // the finger has to be down for some time, to simulate a scan
-      scanning = setTimeout(scan_done, 1700);
+      scanning = setTimeout(scan_done, 1500);
 
       document.querySelector('#shiny-effect').style.display = 'none';
       document.querySelector('#scan-effect').style.display = 'block';
@@ -240,7 +226,7 @@
             <div class="card mb-4">
               <div class="card-body">
                 <h5 class="card-title">Ihr Signaturauftrag</h5>
-                <p>e-Rezept, Maxi Maximann</p>
+                <p>e-Rezept, Max Maximann</p>
               </div>
             </div>
           </div>
@@ -291,6 +277,7 @@
 
                     <div id="scan-confirmation" class="card-body-inner" style="display:none;">
                       <h2>Danke</h2>
+                      <img src="../images/success-circled.svg" style="height:100px; justify-self: flex-end;" />
                     </div>
                   </div>
                 </div>
