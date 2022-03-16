@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="author" content="doubleSlash GmbH">
   <meta name="copyright" content="Bundesdruckerei GmbH">
-  <meta name="theme-color" content="#049080">
-  <meta name="msapplication-navbutton-color" content="#049080">
+  <meta name="theme-color" content="#dadada">
+  <meta name="msapplication-navbutton-color" content="#dadada">
   <meta name="apple-mobile-web-app-status-bar-style" content="#dadada">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
@@ -57,13 +57,15 @@
     var scanning = null;
     function start_scan() {
       // the finger has to be down for some time, to simulate a scan
-      scanning = setInterval(scan_done, 1500);
+      scanning = setTimeout(scan_done, 1500);
 
       document.querySelector('#shiny-effect').style.display = 'none';
       document.querySelector('#scan-effect').style.display = 'block';
     }
     function stop_scan() {
-      clearInterval(scanning);
+      if (scanning) {
+        clearTimeout(scanning);
+      }
       document.querySelector('#shiny-effect').style.display = 'block';
       document.querySelector('#scan-effect').style.display = 'none';
     }
@@ -105,6 +107,8 @@
       justify-self: flex-end; 
       background-color: transparent;
 
+      -webkit-user-select: none !important; /* disable selection/Copy of UIWebView */
+      -webkit-touch-callout: none !important; /* disable the IOS popup when long-press on a link */
     }
 
     .area {
