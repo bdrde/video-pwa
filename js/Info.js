@@ -13,11 +13,15 @@ class Info extends HTMLElement {
         render(html`
         <div class="info">
             <div class="logo">
-                <img id="top" src="./images/cloud-icon-128.png" style="width: 50pt;" />
+                <img id="top" class="bounce" src="./images/cloud-icon-128.png" style="width: 50pt;" />
+                <div id="title">
+                    <img class="logo-corner" src="./images/dtr-logo-corner.svg" />
+                    <h1 id="text">Videosprechstunde</h1>
+                    <img class="logo-dot" src="./images/dtr-logo-dot.svg" />
+                </div>        
                 <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
+                <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
             </div>
-
-            <h1>Videosprechstunde</h1>
         </div>
         `, this);
     }

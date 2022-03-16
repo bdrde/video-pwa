@@ -47,11 +47,17 @@
   margin: 0;
 }
 
-.logo-corner-image {
+.logo-corner {
   width: 30px;
   position: absolute;
   left: -13px;
   top: -8px;
+}
+.logo-dot {
+  width: 30px;
+  position: absolute;
+  right: -12px;
+  bottom: 5px;
 }
 
 /* *************************************************************** */
