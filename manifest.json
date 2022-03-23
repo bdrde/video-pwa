@@ -1,6 +1,6 @@
 {
-  "name": "Teleclinic - Video-Sprechstunde",
-  "short_name": "Teleclinic",
+  "name": "Videosprechstunde",
+  "short_name": "Videosprechstunde",
   "icons": [{
       "src": "/video-pwa/images/icon-144.png",
       "sizes": "144x144",
