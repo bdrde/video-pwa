@@ -205,43 +205,8 @@ body {
   padding-top: 10px;
 }
 
-/*
-.dark {
-  background-color: var(--main-color-dark);
-  color: var(--main-color-light);
-}
-
-.light {
-  background-color: var(--main-color-light);
-  color: var(--main-color-dark);
-}
-*/
 /**********************/
-/*
-#login-2 {
-  margin: 0pt;
-  align-self: flex-end;
-}
 
-#login-2 > #inner {
-  color: var(--main-color-light);
-  height: 100%;
-  background-color: var(--main-color-dark);
-  padding: 15px 25px 15px 25px;
-}
-*/
-/*
-#login-2 > #inner > button {
-  background-color: var(--main-color-light);
-  color: var(--main-color-dark);
-  font-weight: bolder;
-  padding: 7px;  
-  width: 330px;
-  height: 30pt;
-  border-radius: 5px;
-  border-style: none;
-}
-*/
 
 #login-overlay > #blurred {
   position: absolute;
@@ -453,21 +418,6 @@ header > div {
   margin: 0;
   background-color: transparent;
 }
-
-/*
-.header-image {
-  height: 100%;
-  margin: 0;
-  border: 0;
-}
-*/
-/*
-.nav-icon-signout {    
-  height: 30pt;
-  margin: 0;
-  border: 0;
-}
-*/
 
 /* ********************************* 
  * Main content area

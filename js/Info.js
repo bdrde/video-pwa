@@ -9,7 +9,8 @@ class Info extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
-        this.setCustomHeader();
+        render('', document.querySelector('#left-header'));
+        
         render(html`
         <div class="info">
             <div class="logo">
@@ -24,12 +25,6 @@ class Info extends HTMLElement {
             </div>
         </div>
         `, this);
-    }
-
-    setCustomHeader() {
-//        document.querySelector('#left-header').innerHTML = '';
-        render('', document.querySelector('#left-header'));
-        //render('', document.querySelector('#center-header'));
     }
 
 }
