@@ -14,7 +14,6 @@ class Prescription extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
-        this.setCustomHeader();
 
         render(html`\
          <div class="prescription"> \
@@ -122,9 +121,6 @@ class Prescription extends HTMLElement {
     }
 
 
-    setCustomHeader() {
-    }
-
     sign() {
         //alert('TODO: sign with sign-me');
         const w=300;
@@ -162,21 +158,6 @@ class Prescription extends HTMLElement {
         document.querySelector('#signing_done').style.display = 'block';
         document.querySelector('#sign-prescription-button').style.display = 'none';
 
-        /*
-        document.querySelector('.data-bubble-input').forEach((tag) => {
-            tag.style.display = 'none';
-          });
-        */
-
-        /*
-        render(html`\
-           <img class="header-image" src="./images/checkmark_boxed.png"></img>\
-        `, document.querySelector('#left-header'));
-
-        render(html`\
-           signiert am ${new Date().toLocaleString()}\
-        `, document.querySelector('#center-header'));
-*/
         signPopupRef.close();
     }
 }

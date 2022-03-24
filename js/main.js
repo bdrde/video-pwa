@@ -3,8 +3,6 @@ import './Video.js'
 import './Prescription.js'
 import {Router} from './vaadin-router.js';
 
-console.log('I am running!');
-
 const outlet = document.querySelector('main');
 const router = new Router(outlet);
 router.setRoutes([
@@ -20,15 +18,6 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idToken = urlParams.get('id_token')
 
-/*
-if (null == idToken) {
-  //alert('not authenticated')
-  document.querySelectorAll("header").forEach((tag) => {
-    tag.style.background = 'lightcoral';
-  })
-
-}
-*/
 if (null == idToken) {
   document.querySelectorAll("#login-overlay").forEach((tag) => {
     tag.style.display = 'block';
@@ -40,10 +29,4 @@ if (null == idToken) {
   })
 
   Router.go('/video-pwa/video');
-  // show this text only after 'login'
-/*  
-  document.querySelector('#center-header').innerHTML=' \
-  Max Musterman <br/> Techniker Krankenkasse\
-  ';
-  */
 }

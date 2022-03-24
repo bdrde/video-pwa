@@ -11,16 +11,15 @@ class Video extends HTMLElement {
     // aufgerufen wenn Browser das Element mit dem DOM verknüpft
     // DOM-spezifische Operationen kommen hier rein
     connectedCallback() {
-        this.setCustomHeader();
+        // set custom header
+        render('', document.querySelector('#left-header'));
+        render(html`
+            <h4 style="margin:0;">Max Maximann</h4>
+            <span id="video-on" class="blink" style="display:none;"></span>
+            <span id="clock">0:00</span>`
+            , document.querySelector('#center-header')
+        );
 
-        /*
-        <button class="captureBack">Capture back</button>
-        <button class="captureFront">Capture front</button>
-        <button class="fullscreen">Full screen</button>
-
-                          <img src="./images/patient-cartoon.jpeg" id="video-peer"></img> \
-
-        */
         render(html`
             <div id="video-other">
                 <h1>Willkommen</h1>
@@ -78,7 +77,6 @@ class Video extends HTMLElement {
                 </div>
             </div>
         `, this);
-        //        <video id="video-self" autoplay></video>
 
         /* Video bereits an aus früherer Aktion */
         this.videoOn = window.localStorage.getItem('videoOn');
@@ -92,12 +90,12 @@ class Video extends HTMLElement {
     time() {
         const strCntSeconds = window.localStorage.getItem('cntSeconds');
 
-        if ( strCntSeconds == null ||  strCntSeconds === "") {
+        if (strCntSeconds == null || strCntSeconds === "") {
             return;
         }
 
         var cntSeconds = parseInt(strCntSeconds);
-        
+
         cntSeconds += 1;
         window.localStorage.setItem('cntSeconds', cntSeconds.toString());
 
@@ -141,14 +139,6 @@ class Video extends HTMLElement {
             .catch((error) => { console.error("Error: ", error); });
     }
 
-    setCustomHeader() {
-
-        render('', document.querySelector('#left-header'));
-        render(html`
-        <h4 style="margin:0;">Max Maximann</h4>
-        <span id="video-on" class="blink" style="display:none;"></span><span id="clock">0:00</span>`, document.querySelector('#center-header'));
-    }
-
     displayVideo(show) {
         if (show) {
             document.querySelector('#video-other').style.display = 'none';
@@ -190,7 +180,7 @@ class Video extends HTMLElement {
         this.stream = null;
 
         document.querySelector('#video-on').style.display = 'none';
-        
+
         this.displayVideo(false);
 
         clearInterval(this.clockInterval);
@@ -199,22 +189,6 @@ class Video extends HTMLElement {
         window.localStorage.clear();
     }
 
-    /*
-    fullscreen() {
-        const video = document.querySelector("#video-self");
-        if (this.video.webkitEnterFullScreen) {
-            this.video.webkitEnterFullScreen(); // Mobile Safari
-        } else if (this.video.requestFullscreen) {
-            this.video.requestFullscreen();
-        } else if (this.video.webkitRequestFullscreen) {
-            // Regular Safari
-            this.video.webkitRequestFullscreen();
-        } else if (this.video.msRequestFullscreen) {
-            // IE11
-            this.video.msRequestFullscreen();
-        }
-    }
-    */
 }
 
 customElements.define('x-video-view', Video)
