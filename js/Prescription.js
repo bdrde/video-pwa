@@ -45,7 +45,7 @@ class Prescription extends HTMLElement {
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Krankenkasse bzw. Kostenträger</div>
-                    <div class="data-bubble-content">DAK-Gesundheit <br>1055830016</div>
+                    <div class="data-bubble-content">DAK-Gesundheit <br>101575519</div>
                 </div>
                 <div class="data-bubble">
                     <div class="data-bubble-title">Vertragsarzt</div>
@@ -53,13 +53,6 @@ class Prescription extends HTMLElement {
                     Dr. med. Erika Mustermann
                     </br>Musterallee 25
                     </br>12976 Musterstadt
-                    </div>
-                </div>
-                <div class="data-bubble">
-                    <div class="data-bubble-title">Arzt-Nr / Betriebsstätten-Nr.</div>
-                    <div class="data-bubble-content">
-                    123456789 / 
-                    112233440
                     </div>
                 </div>
             </div>
