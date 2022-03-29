@@ -69,8 +69,8 @@ class Prescription extends HTMLElement {
                     </div>
 
                     <div id="signing_done" class="presc-header-field" ?hidden=${!this.isSigned()}>
-                        <img style="height:35px;"src="./images/siegel-blau-gruen.png"></img>
-                        <span style="display:block;">signiert</span>
+                        <img style="height:50px;"src="./images/zertifikat_siegel_d-trust_rgb_72dpi.png"></img>
+                        <span style="display:none;">signiert</span>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@ class Prescription extends HTMLElement {
 
                         <div ?hidden=${this.isSigned()}> <!-- wrapped in block-element, cause hidden wouldn't work otherwise -->
                             <button id="sign-prescription-button" @click=${_ => this.sign()} style="display:block; width:fit-content;">
-                                <img src="./images/sign-me.svg" style="width:100pt;"></img>
+                                <img src="./images/sign-me-dark.svg" style="width:100pt;"></img>
                             </button>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ class Prescription extends HTMLElement {
         this.rpKeys.push(newId);
         this.currentPrescriptions[0].rp[newId] = "";
 
-        //this.currentPrescriptions[0].signed = true;   // test-only
+        this.currentPrescriptions[0].signed = true;   // test-only
         this.update();
 
 
