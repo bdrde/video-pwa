@@ -60,6 +60,7 @@ class Prescription extends HTMLElement {
             <div id="presc-1" class="presc">
                 <div class="presc-header">
                     <img src="./images/Euclid gematik E-Rezept Logo vert rgb.svg" style="width:55px; height:55px;" />
+                    <!--img src="./images/Euclid gematik E-Rezept Logo vert rgb.svg" style="width:55px; height:55px; background-color:white; border-radius:8px;" /-->
 
                     <div ?hidden=${this.rpKeys.length > 0}>
                         <button id="add-prescription-btn" class="presc-header-field" @click=${_ => this.addPrescription()}>
@@ -69,7 +70,7 @@ class Prescription extends HTMLElement {
                     </div>
 
                     <div id="signing_done" class="presc-header-field" ?hidden=${!this.isSigned()}>
-                        <img style="height:50px;"src="./images/zertifikat_siegel_d-trust_rgb_72dpi.png"></img>
+                        <img style="height:55px;"src="./images/zertifikat_siegel_d-trust_rgb_72dpi.png"></img>
                         <span style="display:none;">signiert</span>
                     </div>
                 </div>
@@ -131,7 +132,7 @@ class Prescription extends HTMLElement {
         this.rpKeys.push(newId);
         this.currentPrescriptions[0].rp[newId] = "";
 
-        this.currentPrescriptions[0].signed = true;   // test-only
+        //this.currentPrescriptions[0].signed = true;   // test-only
         this.update();
 
 
