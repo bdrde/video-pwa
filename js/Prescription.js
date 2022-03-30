@@ -143,7 +143,7 @@ class Prescription extends HTMLElement {
         var value = "";
         if (0 == len) {
             // first Rp -> use a default
-            value = "Antistressin Impfstoff Amp. 10 x 0.5 ml\\nMuster Pharma GmbH"
+            value = "Antistressin Impfstoff Amp. 10 x 0.5 ml\nMuster Pharma GmbH"
         }
         const newId = 'rp-' + len;
 
