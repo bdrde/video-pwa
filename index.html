@@ -54,7 +54,7 @@
                     <p>Melden Sie sich mit Ihrer digitalen Arztidentität an</p>
                     <a class="button"
                         href="bdrwlt://authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/"
-                        onclick="showWaitingScreen();">
+                        onclick="startAuthenticate();">
                         <div class="button-logo"></div>
                         <div class="button-text">Login mit Heilberufsausweis</div>
                     </a>
@@ -75,7 +75,7 @@
             <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
         </div>
         <h2>Sie werden zur Freigabe in die Wallet geleitet</h2>
-        <span onclick="hideWaitingScreen();">Abbrechen</span>
+        <span onclick="stopAuthenticate();">Abbrechen</span>
     </div>
 
     <div id="container">
@@ -141,6 +141,25 @@
         function logout() {
             window.localStorage.clear();
             window.location.href = 'https://bdrde.github.io/video-pwa/';
+        }
+
+        function startAuthenticate() {
+            showWaitingScreen();
+
+            auth = setTimeout(() => {
+                window.location.href = 'https://authr.herokuapp.com/authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/'
+                
+                // for local testing
+                //window.location.href = 'https://authr.herokuapp.com/authenticate?scope=health.hba.auth&redirect_uri=http://localhost:5500/'
+            }, 5000);
+        }
+
+        function stopAuthenticate() {
+            if (auth) {
+                clearTimeout(auth);
+            }
+
+            hideWaitingScreen();
         }
 
         function showWaitingScreen() {
