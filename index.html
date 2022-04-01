@@ -75,6 +75,7 @@
             <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
         </div>
         <h2>Sie werden zur Freigabe in die Wallet geleitet</h2>
+        <span onclick="hideWaitingScreen();">Abbrechen</span>
     </div>
 
     <div id="container">
@@ -146,6 +147,12 @@
             document.querySelectorAll("#login-waiting-overlay").forEach((tag) => {
                 tag.style.display = 'flex';
                 //tag.style.display = 'none'
+            })
+        }
+
+        function hideWaitingScreen() {
+            document.querySelectorAll("#login-waiting-overlay").forEach((tag) => {
+                tag.style.display = 'none'
             })
         }
 

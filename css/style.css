@@ -193,6 +193,7 @@ body {
 }
 
 .button > .button-logo {
+  display: none;
   justify-content: left;
   height: 32px;
   width: 32px;
