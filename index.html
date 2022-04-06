@@ -53,7 +53,7 @@
                     <h3>Ich bin Arzt</h3>
                     <p>Melden Sie sich mit Ihrer digitalen Arztidentität an</p>
                     <a class="button"
-                        href="bdrwlt://authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/"
+                        href="bdrwlt://authenticate?scope=health.hba.auth&nonce=123456&redirect_uri=https://bdrde.github.io/video-pwa/"
                         onclick="startAuthenticate();">
                         <div class="button-logo"></div>
                         <div class="button-text">Login mit Heilberufsausweis</div>
@@ -74,7 +74,8 @@
             <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
             <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
         </div>
-        <h2>Sie werden zur Freigabe in die Wallet geleitet</h2>
+        <h2 id="wait-message">Sie werden zur Freigabe in die Wallet geleitet</h2>
+        <h2 id="deny-message" style="color:red">Die Identifizierung wurde verweigert</h2>
         <span onclick="stopAuthenticate();">Abbrechen</span>
     </div>
 
@@ -131,6 +132,11 @@
 
 
     <script>
+        const domain = 'https://bdrde.github.io/video-pwa/';
+        //const domain=  'http://localhost:5500/';
+
+        const POLLING_INTERVAL_MS = 1500;
+
         if (navigator.serviceWorker) {
             navigator.serviceWorker.register(
                 '/video-pwa/sw.js',
@@ -140,23 +146,59 @@
 
         function logout() {
             window.localStorage.clear();
-            window.location.href = 'https://bdrde.github.io/video-pwa/';
+            window.location.href = domain; // go back without token (means logout);
+        }
+
+        let poll = null;
+
+        function authResultAvailable() {
+            let response = fetch(
+                'https://authr.herokuapp.com/result?nonce=123456'
+                //'http://localhost:9999/result?nonce=123456'
+            ).then(function (response) {
+                if (response.status == 200) {
+                    // console.log("Fetch: result received");
+
+                    response.json().then(data => {
+                        if (data.result == "deny") {
+                            // show info
+                            document.querySelector("#login-waiting-overlay > #wait-message").style.display = 'none';
+                            document.querySelector("#login-waiting-overlay > #deny-message").style.display = 'inline';
+                        } else {
+                            if (data.result == "health.hba.auth" || data.result == "health.hba.sign" || data.result == "health.egk.auth") {
+                                // redirect with appended token (means login)
+                                const redirect_url = domain + '?id_token=' + data.result;
+                                console.log("redirect to ", redirect_url);
+                                window.location.href = redirect_url;
+                            } else {
+                                alert("fehlerhaft Identifizierungsdaten erhalten");
+                                stopAuthenticate();
+                            }
+                        }
+                    });
+                }
+                //console.log("Fetch: No result");
+            }).catch(function (error) {
+                console.log("Fetch-Error: ", error);
+            });
+        }
+
+        function handleAuth() {
+            if (!authResultAvailable()) {
+                poll = setTimeout(handleAuth, POLLING_INTERVAL_MS);
+            }
         }
 
         function startAuthenticate() {
             showWaitingScreen();
 
-            auth = setTimeout(() => {
-                window.location.href = 'https://authr.herokuapp.com/authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/'
-                
-                // for local testing
-                //window.location.href = 'https://authr.herokuapp.com/authenticate?scope=health.hba.auth&redirect_uri=http://localhost:5500/'
-            }, 5000);
+            poll = setTimeout(handleAuth, POLLING_INTERVAL_MS);
         }
 
         function stopAuthenticate() {
-            if (auth) {
-                clearTimeout(auth);
+            if (poll) {
+                clearTimeout(poll);
+                poll = null;
             }
 
             hideWaitingScreen();
@@ -167,6 +209,9 @@
                 tag.style.display = 'flex';
                 //tag.style.display = 'none'
             })
+
+            document.querySelector("#login-waiting-overlay > #wait-message").style.display = 'inline';
+            document.querySelector("#login-waiting-overlay > #deny-message").style.display = 'none';
         }
 
         function hideWaitingScreen() {
