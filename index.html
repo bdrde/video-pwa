@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#dadada" />
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Videosprechstunde">
     <meta name="msapplication-TileImage" content="images/icon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -136,6 +136,18 @@
         //const domain=  'http://localhost:5500/';
 
         const POLLING_INTERVAL_MS = 1500;
+
+        var ua = navigator.userAgent,
+            iphone = ~ua.indexOf('iPhone');
+
+        var setupScroll = window.onload = function () {
+            // Start out by adding the height of the location bar to the width, so that
+            // we can scroll past it
+            if (iphone) {
+                scrollTo(0, 1);
+            }
+        }
+
 
         if (navigator.serviceWorker) {
             navigator.serviceWorker.register(
