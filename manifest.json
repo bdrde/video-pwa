@@ -15,5 +15,5 @@
   "scope": "/video-pwa/",
   "display": "standalone",
   "background_color": "white",
-  "theme_color": "#BFEBFB"
+  "theme_color": "#dadada"
 }
