@@ -137,18 +137,6 @@
 
         const POLLING_INTERVAL_MS = 1500;
 
-        var ua = navigator.userAgent,
-            iphone = ~ua.indexOf('iPhone');
-
-        var setupScroll = window.onload = function () {
-            // Start out by adding the height of the location bar to the width, so that
-            // we can scroll past it
-            if (iphone) {
-                scrollTo(0, 1);
-            }
-        }
-
-
         if (navigator.serviceWorker) {
             navigator.serviceWorker.register(
                 '/video-pwa/sw.js',
