@@ -52,9 +52,7 @@
                 <div id="inner">
                     <h3>Ich bin Arzt</h3>
                     <p>Melden Sie sich mit Ihrer digitalen Arztidentität an</p>
-                    <a class="button"
-                        href="bdrwlt://authenticate?scope=health.hba.auth&nonce=123456&redirect_uri=https://bdrde.github.io/video-pwa/&auth_uri=https://authr.herokuapp.com/authenticate"
-                        onclick="startAuthenticate();">
+                    <a class="button" id="a-login-2" onclick="startAuthenticate();">
                         <div class="button-logo"></div>
                         <div class="button-text">Login mit Heilberufsausweis</div>
                     </a>
@@ -136,12 +134,32 @@
         //const domain=  'http://localhost:5500/';
 
         const POLLING_INTERVAL_MS = 1500;
+        let authId = null;
 
         if (navigator.serviceWorker) {
             navigator.serviceWorker.register(
                 '/video-pwa/sw.js',
                 { scope: '/video-pwa/' }
             )
+        }
+
+        // thanks to https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+        // dec2hex :: Integer -> String
+        // i.e. 0-255 -> '00'-'ff'
+        function dec2hex(dec) {
+            return dec.toString(16).padStart(2, "0")
+        }
+
+        // generateId :: Integer -> String
+        function generateId(len) {
+            var arr = new Uint8Array((len || 40) / 2)
+            window.crypto.getRandomValues(arr)
+            return Array.from(arr, dec2hex).join('')
+        }
+
+        function newAuthID() {
+            this.authId = generateId(8);
+            return this.authId;
         }
 
         function logout() {
@@ -153,8 +171,8 @@
 
         function authResultAvailable() {
             let response = fetch(
-                'https://authr.herokuapp.com/result?nonce=123456'
-                //'http://localhost:9999/result?nonce=123456'
+                'https://authr.herokuapp.com/result?nonce=' + this.authId
+                //'http://localhost:9999/result?nonce=' + this.authId
             ).then(function (response) {
                 if (response.status == 200) {
                     // console.log("Fetch: result received");
@@ -190,6 +208,11 @@
         }
 
         function startAuthenticate() {
+            // the anchor href of the3 login button contains a dynamically created part
+            // we have to set it afterwards
+            // generate a new auth ID and construct and set the href here
+            document.getElementById('a-login-2').href = 'bdrwlt://authenticate?scope=health.hba.auth&nonce=' + newAuthID() + '&redirect_uri=https://bdrde.github.io/video-pwa/&auth_uri=https://authr.herokuapp.com/authenticate';
+
             showWaitingScreen();
 
             poll = setTimeout(handleAuth, POLLING_INTERVAL_MS);
