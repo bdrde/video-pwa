@@ -188,7 +188,7 @@ class Prescription extends HTMLElement {
         signPopupRef = window.open(
             domain + '/video-pwa/sign-me/start-touch.html?doc_id=1'
             //domain + '/sign-me/start-touch.html?doc_id=1'
-            , '_blank'//'Signieren'
+            ,'Signieren'
             , `
             popup
             ,width=${w / systemZoom}
@@ -211,13 +211,11 @@ class Prescription extends HTMLElement {
         this.currentPrescriptions[0].signed = true;
 
         document.getElementById('debug').innerHTML=JSON.stringify(this.currentPrescriptions);
-        //this.saveState();
-        this.update();
-
-        //Router.go('/video-pwa/prescription');
-
+        this.saveState();
+        //this.update();
 
         signPopupRef.close();
+        Router.go('/video-pwa/prescription');
     }
 }
 
