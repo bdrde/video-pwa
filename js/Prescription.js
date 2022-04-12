@@ -210,11 +210,10 @@ class Prescription extends HTMLElement {
 
         this.currentPrescriptions[0].signed = true;
 
-        document.getElementById('debug').innerHTML=JSON.stringify(this.currentPrescriptions);
         this.saveState();
         //this.update();
 
-        signPopupRef.close();
+        //signPopupRef.close();
         Router.go('/video-pwa/prescription');
     }
 }
