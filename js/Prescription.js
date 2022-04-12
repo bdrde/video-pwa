@@ -211,10 +211,10 @@ class Prescription extends HTMLElement {
         this.currentPrescriptions[0].signed = true;
 
         this.saveState();
-        //this.update();
+        this.update();
 
-        //signPopupRef.close();
-        setTimeout(Router.go('/video-pwa/prescription'), 500);
+        signPopupRef.close();
+        //setTimeout(Router.go('/video-pwa/prescription'), 500);
     }
 }
 
