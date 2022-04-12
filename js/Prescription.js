@@ -1,4 +1,5 @@
 import { html, render } from './lit-html/lit-html.js';
+import { Router } from './vaadin-router.js';
 
 var signPopupRef = null;
 //var domain = 'http://localhost:5500';
@@ -114,6 +115,10 @@ class Prescription extends HTMLElement {
 
 
     disconnectedCallback() {
+        this.saveState();
+    }
+
+    saveState() {
         console.log("store: " + JSON.stringify(this.currentPrescriptions));
         window.localStorage.setItem('prescriptions', JSON.stringify(this.currentPrescriptions));
     }
@@ -135,7 +140,6 @@ class Prescription extends HTMLElement {
 
         //this.currentPrescriptions[0].signed = true;   // test-only
         this.update();
-
 
     }
 
@@ -184,7 +188,7 @@ class Prescription extends HTMLElement {
         signPopupRef = window.open(
             domain + '/video-pwa/sign-me/start-touch.html?doc_id=1'
             //domain + '/sign-me/start-touch.html?doc_id=1'
-            , 'Signieren'
+            , '_blank'//'Signieren'
             , `
             popup
             ,width=${w / systemZoom}
@@ -207,11 +211,13 @@ class Prescription extends HTMLElement {
         this.currentPrescriptions[0].signed = true;
 
         document.getElementById('debug').innerHTML=JSON.stringify(this.currentPrescriptions);
-
-
+        //this.saveState();
         this.update();
 
-        //signPopupRef.close();
+        //Router.go('/video-pwa/prescription');
+
+
+        signPopupRef.close();
     }
 }
 
