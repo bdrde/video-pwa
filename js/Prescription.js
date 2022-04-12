@@ -108,6 +108,7 @@ class Prescription extends HTMLElement {
                 </div>
             </div>
          </div> \
+         <div id="debug"></div>
         `, this);
     }
 
@@ -199,12 +200,18 @@ class Prescription extends HTMLElement {
     }
 
     onSignDone(event) {
+        console.log("signing finished: ", event)
+
         if (event.origin !== domain) return;
 
         this.currentPrescriptions[0].signed = true;
+
+        document.getElementById('debug').innerHTML=JSON.stringify(this.currentPrescriptions);
+
+
         this.update();
 
-        signPopupRef.close();
+        //signPopupRef.close();
     }
 }
 

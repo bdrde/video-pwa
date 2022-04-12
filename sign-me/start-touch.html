@@ -39,8 +39,10 @@
 
   <script>
     function done() {
+      window.opener.postMessage("signed", "*");
         //window.opener.postMessage("signed", "http://localhost:5500");
-        window.opener.postMessage("signed", "https://bdrde.github.io");
+        //window.opener.postMessage("signed", "https://bdrde.github.io");
+        window.close();
     }
 
     var scanning = null;
