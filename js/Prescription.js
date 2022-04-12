@@ -214,7 +214,7 @@ class Prescription extends HTMLElement {
         //this.update();
 
         //signPopupRef.close();
-        Router.go('/video-pwa/prescription');
+        setTimeout(Router.go('/video-pwa/prescription'), 500);
     }
 }
 
