@@ -1,6 +1,6 @@
 {
   "name": "Videosprechstunde",
-  "short_name": "Video",
+  "short_name": "Videosprechstunde",
   "icons": [{
       "src": "/video-pwa/images/icon-144.png",
       "sizes": "144x144",
