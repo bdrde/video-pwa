@@ -1,15 +1,15 @@
 import './Info.js'
 import './Video.js'
 import './Prescription.js'
-import {Router} from './vaadin-router.js';
+import { Router } from './vaadin-router.js';
 
 const outlet = document.querySelector('main');
 const router = new Router(outlet);
 router.setRoutes([
-  {path: '/video-pwa/',     component: 'x-login-view'},
-  {path: '/video-pwa/info',  component: 'x-info-view'},
-  {path: '/video-pwa/video', component: 'x-video-view'},
-  {path: '/video-pwa/prescription', component: 'x-prescription-view'}
+  { path: '/video-pwa/', component: 'x-login-view' },
+  { path: '/video-pwa/info', component: 'x-info-view' },
+  { path: '/video-pwa/video', component: 'x-video-view' },
+  { path: '/video-pwa/prescription', component: 'x-prescription-view' }
   //{path: '(.*)', component: 'x-login-view'},
 ]);
 
@@ -28,5 +28,22 @@ if (null == idToken) {
     tag.style.display = 'none';
   })
 
-  Router.go('/video-pwa/video');
+
+  // nachfolgender Code sorgt für Umgehung eines seltsamen Verhaltens auf iPhone 13
+  var returnFromSigning = false;
+  const jsonPrescriptions = window.localStorage.getItem('prescriptions');
+  if (null == jsonPrescriptions || jsonPrescriptions.length == 0) {
+    //jsonPrescriptions = '[{}]';
+  } else {
+    const currentPrescriptions = JSON.parse(jsonPrescriptions);
+    if (currentPrescriptions.length > 0 && currentPrescriptions[0].signed) {
+      returnFromSigning = true;
+    }
+  }
+
+  if (returnFromSigning) {
+    Router.go('/video-pwa/prescription');
+  } else {
+    Router.go('/video-pwa/video');
+  }
 }

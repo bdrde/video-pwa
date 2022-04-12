@@ -23,7 +23,7 @@ class Info extends HTMLElement {
                 <img id="icon" src="./images/h-icon.svg" style="width: 50pt;" />
                 <img id="sep" src="./images/lines.svg" style="width: 110pt;" />
             </div>
-            <span>Build 0.9.0-4</span>
+            <span>Build 0.9.0-5</span>
         </div>
         `, this);
     }
