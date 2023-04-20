@@ -42,7 +42,7 @@
                     <h3>Ich bin Patient</h3>
                     <p>Melden Sie sich mit Ihrer digitalen Versichertenidentität an</p>
                     <a class="button"
-                        href="http://vpwa.eu-central-1.elasticbeanstalk.com/authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/">
+                        href="https://vpwa.eu-central-1.elasticbeanstalk.com/authenticate?scope=health.hba.auth&redirect_uri=https://bdrde.github.io/video-pwa/">
                         <div class="button-logo"></div>
                         <div class="button-text">Login mit Gesundheitskarte</div>
                     </a>
@@ -171,7 +171,7 @@
 
         function authResultAvailable() {
             let response = fetch(
-                'http://vpwa.eu-central-1.elasticbeanstalk.com/result?nonce=' + this.authId
+                'https://vpwa.eu-central-1.elasticbeanstalk.com/result?nonce=' + this.authId
                 //'http://localhost:9999/result?nonce=' + this.authId
             ).then(function (response) {
                 if (response.status == 200) {
@@ -211,7 +211,7 @@
             // the anchor href of the3 login button contains a dynamically created part
             // we have to set it afterwards
             // generate a new auth ID and construct and set the href here
-            document.getElementById('a-login-2').href = 'bdrwlt://authenticate?scope=health.hba.auth&nonce=' + newAuthID() + '&redirect_uri=https://bdrde.github.io/video-pwa/&auth_uri=http://vpwa.eu-central-1.elasticbeanstalk.com/authenticate';
+            document.getElementById('a-login-2').href = 'bdrwlt://authenticate?scope=health.hba.auth&nonce=' + newAuthID() + '&redirect_uri=https://bdrde.github.io/video-pwa/&auth_uri=https://vpwa.eu-central-1.elasticbeanstalk.com/authenticate';
 
             showWaitingScreen();
 
